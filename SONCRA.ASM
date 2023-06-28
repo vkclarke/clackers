@@ -557,7 +557,7 @@ loc_64E:
 		move.w	d5,(a0)
 		move.w	d3,(a0)
 		move.w	d1,d2
-		ori.w	#$80,d2	; 'Ä'
+		ori.w	#$80,d2	; 'ÔøΩ'
 		move.w	d2,-(sp)
 		move.w	(sp)+,(a0)
 		move.w	d3,(a0)
@@ -3777,7 +3777,7 @@ loc_41E2:				; CODE XREF: sub_41AA+32j
 		subq.w	#1,d3
 		bne.s	loc_41CE
 		swap	d5
-		andi.w	#$80,d0	; 'Ä'
+		andi.w	#$80,d0	; 'ÔøΩ'
 		eor.b	d0,d5
 		bpl.s	loc_41FC
 		sub.b	d2,d0
@@ -3794,14 +3794,14 @@ loc_41FC:				; CODE XREF: sub_41AA+48j
 loc_4204:				; CODE XREF: sub_41AA+6j
 		sub.w	d2,d4
 		smi	d0
-		andi.w	#$80,d0	; 'Ä'
+		andi.w	#$80,d0	; 'ÔøΩ'
 		addi.w	#$40,d0	; '@'
 		movem.l	(sp)+,d1-d5
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_4216:				; CODE XREF: sub_41AA+10j
-		andi.w	#$80,d0	; 'Ä'
+		andi.w	#$80,d0	; 'ÔøΩ'
 		movem.l	(sp)+,d1-d5
 		rts
 ; End of function sub_41AA
@@ -3947,7 +3947,7 @@ loc_430E:				; CODE XREF: sub_42CE+3Aj
 		subq.w	#1,d3
 		bne.s	loc_42FA
 		swap	d5
-		andi.w	#$80,d0	; 'Ä'
+		andi.w	#$80,d0	; 'ÔøΩ'
 		eor.b	d0,d5
 		bpl.s	loc_4330
 		sub.b	d2,d0
@@ -3969,7 +3969,7 @@ loc_4330:				; CODE XREF: sub_42CE+50j
 loc_433E:				; CODE XREF: sub_42CE+Ej
 		sub.w	d2,d4
 		smi	d2
-		andi.w	#$80,d2	; 'Ä'
+		andi.w	#$80,d2	; 'ÔøΩ'
 		addi.w	#$40,d2	; '@'
 		movem.l	(sp)+,d0-d1/d3-d5
 		addq.b	#8,d2
@@ -3978,7 +3978,7 @@ loc_433E:				; CODE XREF: sub_42CE+Ej
 ; ---------------------------------------------------------------------------
 
 loc_4356:				; CODE XREF: sub_42CE+18j
-		andi.w	#$80,d0	; 'Ä'
+		andi.w	#$80,d0	; 'ÔøΩ'
 		move.b	d0,d2
 		movem.l	(sp)+,d0-d1/d3-d5
 		addq.b	#8,d2
@@ -4518,7 +4518,7 @@ loc_5144:				; CODE XREF: ROM:00005146j
 loc_5152:	dc.b $27 ; '            ; DATA XREF: ROM:loc_50FCo
 		dc.b $10
 		dc.b   3
-		dc.b $E8 ; Ë
+		dc.b $E8 ; ÔøΩ
 		dc.b   0
 		dc.b $64 ; d
 		dc.b   0
@@ -4529,9 +4529,9 @@ loc_5152:	dc.b $27 ; '            ; DATA XREF: ROM:loc_50FCo
 		dc.b   0
 		dc.b $34 ; 4
 		dc.b   0
-		dc.b $E5 ; Â
-		dc.b $8A ; ä
-		dc.b $E4 ; ‰
+		dc.b $E5 ; ÔøΩ
+		dc.b $8A ; ÔøΩ
+		dc.b $E4 ; ÔøΩ
 		dc.b $4A ; J
 		dc.b   0
 		dc.b $42 ; B
@@ -4540,9 +4540,9 @@ loc_5152:	dc.b $27 ; '            ; DATA XREF: ROM:loc_50FCo
 		dc.b $48 ; H
 		dc.b $42 ; B
 		dc.b $23 ; #
-		dc.b $C2 ; ¬
+		dc.b $C2 ; ÔøΩ
 		dc.b   0
-		dc.b $C0 ; ¿
+		dc.b $C0 ; ÔøΩ
 		dc.b   0
 		dc.b   4
 		dc.b $70 ; p
@@ -5307,7 +5307,7 @@ loc_6A02:				; CODE XREF: ROM:000069EAj
 		move.w	#$18,($FFFFCDDE).w
 		move.w	#$14,($FFFFCDE0).w
 		lea	(RomStart).w,a4
-		move.w	#$80,d4	; 'Ä'
+		move.w	#$80,d4	; 'ÔøΩ'
 		moveq	#3,d6
 		moveq	#$F,d7
 		bra.w	loc_6728
@@ -5341,7 +5341,7 @@ loc_6A54:				; CODE XREF: ROM:00006A3Cj
 		move.w	#$18,($FFFFCDDE).w
 		move.w	#$14,($FFFFCDE0).w
 		lea	($00000020).w,a4
-		move.w	#$80,d4	; 'Ä'
+		move.w	#$80,d4	; 'ÔøΩ'
 		moveq	#3,d6
 		moveq	#$1F,d7
 		bra.w	loc_669A
@@ -5379,7 +5379,7 @@ loc_6AB6:				; CODE XREF: ROM:00006A92j
 		move.w	#$118,($FFFFCDDE).w
 		move.w	#$114,($FFFFCDE0).w
 		lea	(loc_1430).w,a4
-		move.w	#$80,d4	; 'Ä'
+		move.w	#$80,d4	; 'ÔøΩ'
 		moveq	#3,d6
 		moveq	#$F,d7
 		bra.w	loc_662A
@@ -5387,13 +5387,13 @@ loc_6AB6:				; CODE XREF: ROM:00006A92j
 
 loc_6AE6:				; CODE XREF: ROM:0000698Aj
 		move.w	#$200,d7
-		move.w	#$E0,d0	; '‡'
+		move.w	#$E0,d0	; 'ÔøΩ'
 		bra.s	loc_6B0C
 ; ---------------------------------------------------------------------------
 
 loc_6AF0:				; CODE XREF: ROM:0000699Ej
 		move.w	#$240,d7
-		move.w	#$F0,d0	; ''
+		move.w	#$F0,d0	; 'ÔøΩ'
 		bra.s	loc_6B0C
 ; ---------------------------------------------------------------------------
 
@@ -5410,8 +5410,8 @@ loc_6B04:				; CODE XREF: ROM:000069C6j
 loc_6B0C:				; CODE XREF: ROM:00006AEEj
 					; ROM:00006AF8j ...
 		move.w	#4,($FFFFFAC6).w
-		move.w	#$A0,($FFFFCA5E).w ; '†'
-		move.w	#$A0,($FFFFCA60).w ; '†'
+		move.w	#$A0,($FFFFCA5E).w ; 'ÔøΩ'
+		move.w	#$A0,($FFFFCA60).w ; 'ÔøΩ'
 		move.w	#$118,($FFFFCDDE).w
 		move.w	#$114,($FFFFCDE0).w
 		lea	($FFFFD164).w,a0
@@ -5461,11 +5461,11 @@ loc_6B94:				; CODE XREF: ROM:000069CAj
 loc_6B9E:				; CODE XREF: ROM:00006B7Aj
 					; ROM:00006B86j ...
 		move.w	#4,($FFFFFAC6).w
-		move.w	#$A0,($FFFFCA5E).w ; '†'
-		move.w	#$A0,($FFFFCA60).w ; '†'
+		move.w	#$A0,($FFFFCA5E).w ; 'ÔøΩ'
+		move.w	#$A0,($FFFFCA60).w ; 'ÔøΩ'
 		move.w	#$118,($FFFFCDDE).w
 		move.w	#$114,($FFFFCDE0).w
-		move.w	#$D8,(a0)+ ; 'ÿ'
+		move.w	#$D8,(a0)+ ; 'ÔøΩ'
 		addq.l	#2,a0
 		move.l	d7,(a0)
 		lea	($FFFFD164).w,a0
@@ -5547,9 +5547,9 @@ loc_6C70:				; CODE XREF: ROM:00006C86j
 		move	#$2300,sr
 		addq.w	#4,($FFFFFAC4).w
 		move.w	#$20,($FFFFFAC6).w ; ' '
-		move.w	#$F8,($FFFFCA5E).w ; '¯'
+		move.w	#$F8,($FFFFCA5E).w ; 'ÔøΩ'
 		move.w	#$18,($FFFFCDDE).w
-		move.w	#$F8,($FFFFCA60).w ; '¯'
+		move.w	#$F8,($FFFFCA60).w ; 'ÔøΩ'
 		move.w	#$18,($FFFFCDE0).w
 		lea	($FF0200).l,a0
 		movea.w	($FFFFD816).w,a6
@@ -6285,7 +6285,7 @@ loc_80D2:				; CODE XREF: sub_8064+70j
 		move.l	d0,(a0)+
 		dbf	d1,loc_80D2
 		lea	($FFFFCA5E).w,a0
-		move.w	#$DF,d1	; 'ﬂ'
+		move.w	#$DF,d1	; 'ÔøΩ'
 
 loc_80E0:				; CODE XREF: sub_8064+7Ej
 		move.l	d0,(a0)+
@@ -6353,7 +6353,7 @@ sub_8196:				; CODE XREF: ROM:00007E74p
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_81CC
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#2,6(a0)
 		move.w	#$70,8(a0) ; 'p'
 		move.w	#$70,$C(a0) ; 'p'
@@ -6364,9 +6364,9 @@ loc_81CC:				; CODE XREF: sub_8196+12j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	locret_81F6
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$802,6(a0)
-		move.w	#$B0,8(a0) ; '∞'
+		move.w	#$B0,8(a0) ; 'ÔøΩ'
 		move.w	#$70,$C(a0) ; 'p'
 		move.w	#$8000,$20(a0)
 		move.w	a0,($FFFFD864).w
@@ -6496,9 +6496,9 @@ sub_82B2:				; CODE XREF: ROM:00007F1Ap
 		moveq	#0,d0
 
 loc_82BA:				; CODE XREF: sub_82B2+4j
-		cmpi.w	#$BF,d0	; 'ø'
+		cmpi.w	#$BF,d0	; 'ÔøΩ'
 		bcs.s	loc_82C4
-		move.w	#$BF,d0	; 'ø'
+		move.w	#$BF,d0	; 'ÔøΩ'
 
 loc_82C4:				; CODE XREF: sub_82B2+Cj
 		move.w	d0,($FFFFD830).w
@@ -6583,7 +6583,7 @@ loc_837C:				; CODE XREF: sub_82B2+44j
 		swap	d0
 		move.w	d1,d0
 		lea	($FFFFCA5E).w,a0
-		move.w	#$DF,d1	; 'ﬂ'
+		move.w	#$DF,d1	; 'ÔøΩ'
 
 loc_8392:				; CODE XREF: sub_82B2+E2j
 		move.l	d0,(a0)+
@@ -6883,7 +6883,7 @@ sub_860A:				; CODE XREF: sub_82B2+EAp sub_82B2+F2p
 		bne.s	locret_8630
 		addq.b	#4,(a1)
 		move.b	(a1),d0
-		andi.w	#$FC,d0	; '¸'
+		andi.w	#$FC,d0	; 'ÔøΩ'
 		move.w	(a0,d0.w),(a2)
 		move.w	2(a0,d0.w),d0
 		bpl.s	loc_862C
@@ -6907,11 +6907,11 @@ locret_8630:				; CODE XREF: sub_860A+8j
 sub_8634:				; CODE XREF: ROM:00007E52p
 		tst.w	($FFFFD834).w
 		bne.w	loc_866E
-		lea	(PAL_RainbowField).l,a0	; "\bÊ†@\x04Ó\nÓŒ\x04j\né\fÆ\bl\x06L\x0EÍ\x0Eƒ\x0EÇ\x0E@Ó\x0F\xFF\x0F\xFF\x0F\xFF\x0F\xFF\x0F\xFF\x06"...
+		lea	(PAL_RainbowField).l,a0	; "\bÔøΩÔøΩ@\x04ÔøΩ\nÔøΩÔøΩ\x04j\nÔøΩ\fÔøΩ\bl\x06L\x0EÔøΩ\x0EÔøΩ\x0EÔøΩ\x0E@ÔøΩ\x0F\xFF\x0F\xFF\x0F\xFF\x0F\xFF\x0F\xFF\x06"...
 		bsr.w	sub_86A0
-		lea	(ARTCRA_RainbowField8x8).l,a0 ;	"\x01 \x02\x03B€z\aOó›\b˘àﬁ1\x19à80X0à¯1\x0FWüÁàä®°ä\x06®™®∏"...
+		lea	(ARTCRA_RainbowField8x8).l,a0 ;	"\x01 \x02\x03BÔøΩz\aOÔøΩÔøΩ\bÔøΩÔøΩÔøΩ1\x19ÔøΩ80X0ÔøΩÔøΩ1\x0FWÔøΩÁàäÔøΩÔøΩÔøΩ\x06ÔøΩÔøΩÔøΩÔøΩ"...
 		bsr.w	sub_86BA
-		lea	(MAPUNC_RainbowFieldFG).l,a0 ; "\x03¡\x1F\x1F\x01\x02\x02\x03\x04\x05\x06\a\b\t\n\x02\v\f\f\f\r\x01\x02\x0E\x0F\x10\x11\x12\x0F\x10\x13\x14\x02\v\f\f\f\r\x02"...
+		lea	(MAPUNC_RainbowFieldFG).l,a0 ; "\x03ÔøΩ\x1F\x1F\x01\x02\x02\x03\x04\x05\x06\a\b\t\n\x02\v\f\f\f\r\x01\x02\x0E\x0F\x10\x11\x12\x0F\x10\x13\x14\x02\v\f\f\f\r\x02"...
 		movea.w	($FFFFD816).w,a1
 		bsr.w	sub_86EA
 		lea	(MAPUNC_RainbowFieldBG).l,a0 ; "\x01c\b\x1F\x1F\x01\x02\x03\x04\x05\x06\a\b\t\n\v\f\r\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x13\x14\x15\x16\x17\x18\x1A\x1B\x1C"...
@@ -6921,14 +6921,14 @@ sub_8634:				; CODE XREF: ROM:00007E52p
 ; ---------------------------------------------------------------------------
 
 loc_866E:				; CODE XREF: sub_8634+4j
-		lea	(PAL_ElectricField).l,a0 ; "\x06f\x0EÓ\nH\x06$\x02\x02\x06Ñ\x04b\x02@\nd\bB\x04	\x0E‡\b‡\x0E‡\b‡\x0EÓ\f‡\n¬\bÄ\x06"...
+		lea	(PAL_ElectricField).l,a0 ; "\x06f\x0EÔøΩ\nH\x06$\x02\x02\x06ÔøΩ\x04b\x02@\nd\bB\x04	\x0EÔøΩ\bÔøΩ\x0EÔøΩ\bÔøΩ\x0EÔøΩ\fÔøΩ\nÔøΩ\bÔøΩ\x06"...
 		bsr.w	sub_86A0
-		lea	(ARTCRA_ElectricField8x8).l,a0 ; "\x01\t\x02sÖ∑\x03\x17+?Sg{©ç\fù™¨\nªºz´\f\x18\x1C\x18ª\x19ª\x0F›Ã™™\b<"...
+		lea	(ARTCRA_ElectricField8x8).l,a0 ; "\x01\t\x02sÔøΩÔøΩ\x03\x17+?Sg{ÔøΩÔøΩ\fÔøΩÔøΩÔøΩ\nÔøΩÔøΩzÔøΩ\f\x18\x1C\x18ÔøΩ\x19ÔøΩ\x0FÔøΩÃ™ÔøΩ\b<"...
 		bsr.w	sub_86BA
-		lea	(MAPUNC_ElectricFieldFG).l,a0 ;	"\x03¿H\x1F\x1F\x01\x02\x03\x04\x05\x06\a\b\t\n\v\f\r\x0E\x0F\x10\x10\x11\x12\x13\x14\x15\x16\x15\x17\x18\n\v\f\f\x19\x1A\x10\x10"...
+		lea	(MAPUNC_ElectricFieldFG).l,a0 ;	"\x03ÔøΩH\x1F\x1F\x01\x02\x03\x04\x05\x06\a\b\t\n\v\f\r\x0E\x0F\x10\x10\x11\x12\x13\x14\x15\x16\x15\x17\x18\n\v\f\f\x19\x1A\x10\x10"...
 		movea.w	($FFFFD816).w,a1
 		bsr.w	sub_86EA
-		lea	(MAPUNC_ElectricFieldBG).l,a0 ;	"\x02\x10bÿ3\x0F\x01\x02\b\x03\x04\x05\x06\a\b\t\n\v\f\r\v\x0E\x0F\v\v\v\v\v\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A"...
+		lea	(MAPUNC_ElectricFieldBG).l,a0 ;	"\x02\x10bÔøΩ3\x0F\x01\x02\b\x03\x04\x05\x06\a\b\t\n\v\f\r\v\x0E\x0F\v\v\v\v\v\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A"...
 		movea.w	($FFFFD818).w,a1
 		bsr.w	sub_86EA
 		rts
@@ -7004,7 +7004,7 @@ loc_8714:				; CODE XREF: sub_86EA+34j
 		add.w	d5,d0
 		move.w	d0,($C00000).l
 		dbf	d2,loc_8714
-		addi.w	#$80,d6	; 'Ä'
+		addi.w	#$80,d6	; 'ÔøΩ'
 		dbf	d3,loc_86FC
 		move	#$2300,sr
 		move.w	(sp)+,d7
@@ -7172,11 +7172,11 @@ Levels:					; CODE XREF: ROM:00005026j
 		beq.s	loc_88C2
 		move.w	($FFFFD83A).w,d0
 		andi.w	#3,d0
-		addi.w	#$82,d0	; 'Ç'
+		addi.w	#$82,d0	; 'ÔøΩ'
 
 loc_88C2:				; CODE XREF: ROM:000088B4j
 		jsr	(PlayMusic).l
-		lea	PAL_PrimaryColours(pc),a1 ; "\n®\x06D\nà\x0EÓ\x0Eà\x0Ef\f\"\x0ED\bÆÆéL\x04\b\x0E\n®\x06D\nà\x0EÓ\bN\x04\f\x02\x06D"...
+		lea	PAL_PrimaryColours(pc),a1 ; "\nÔøΩ\x06D\nÔøΩ\x0EÔøΩ\x0EÔøΩ\x0Ef\f\"\x0ED\bÔøΩÔøΩÔøΩL\x04\b\x0E\nÔøΩ\x06D\nÔøΩ\x0EÔøΩ\bN\x04\f\x02\x06D"...
 		lea	($FFFFD3E4).w,a0
 		moveq	#$F,d1
 
@@ -7461,15 +7461,15 @@ sub_8C30:				; CODE XREF: ROM:00008934p
 		tst.w	($FFFFD834).w
 		beq.s	locret_8C7E
 		move	#$2700,sr
-		lea	(ARTNEM_Springs).l,a0 ;	"AÄ\x063\x15\x1A&65\x17E\x16U\x18f8s\x01Å\x03\x17x8Ûx˜Ç\x04\x05\x14\a%\x138ÓÉ\x04\x04\x15"...
+		lea	(ARTNEM_Springs).l,a0 ;	"AÔøΩ\x063\x15\x1A&65\x17E\x16U\x18f8s\x01ÔøΩ\x03\x17x8ÔøΩxÔøΩÔøΩ\x04\x05\x14\a%\x138ÔøΩÔøΩ\x04\x04\x15"...
 		move.l	#$40E00002,($C00004).l
 		jsr	NemDec
 		move	#$2700,sr
-		lea	(ARTNEM_SpikesVer).l,a0	; "Ä\x10Ä\x03\x03\x16;%\x1B5\x1CF:T\frÅ\x03\x02\x17}Ç\a|É\x04\vÜ\x06<á\x05\x1A\x16=à\x03\x04ä"...
+		lea	(ARTNEM_SpikesVer).l,a0	; "ÔøΩ\x10ÔøΩ\x03\x03\x16;%\x1B5\x1CF:T\frÔøΩ\x03\x02\x17}ÔøΩ\a|ÔøΩ\x04\vÔøΩ\x06<ÔøΩ\x05\x1A\x16=ÔøΩ\x03\x04ÔøΩ"...
 		move.l	#$7EE00001,($C00004).l
 		jsr	NemDec
 		move	#$2700,sr
-		lea	(ARTNEM_SpikesHoz).l,a0	; "Ä8Ä\x04\a\x15\x14&24\bE\x1AV3e\x18rÅ\x03\x02\x167'vWywrÇ\x04\x06\x1687tGwW"...
+		lea	(ARTNEM_SpikesHoz).l,a0	; "ÔøΩ8ÔøΩ\x04\a\x15\x14&24\bE\x1AV3e\x18rÔøΩ\x03\x02\x167'vWywrÔøΩ\x04\x06\x1687tGwW"...
 		move.l	#$77E00001,($C00004).l
 		jsr	NemDec
 
@@ -7503,11 +7503,11 @@ locret_8CB8:				; CODE XREF: ROM:00008C8Ej
 		rts
 ; ---------------------------------------------------------------------------
 word_8CBA:	dc.w $80E0		; DATA XREF: ROM:00008C80o
-		dc.l ARTNEM_Springs	; "AÄ\x063\x15\x1A&65\x17E\x16U\x18f8s\x01Å\x03\x17x8Ûx˜Ç\x04\x05\x14\a%\x138ÓÉ\x04\x04\x15"...
+		dc.l ARTNEM_Springs	; "AÔøΩ\x063\x15\x1A&65\x17E\x16U\x18f8s\x01ÔøΩ\x03\x17x8ÔøΩxÔøΩÔøΩ\x04\x05\x14\a%\x138ÔøΩÔøΩ\x04\x04\x15"...
 		dc.w $7EE0
-		dc.l ARTNEM_SpikesVer	; "Ä\x10Ä\x03\x03\x16;%\x1B5\x1CF:T\frÅ\x03\x02\x17}Ç\a|É\x04\vÜ\x06<á\x05\x1A\x16=à\x03\x04ä"...
+		dc.l ARTNEM_SpikesVer	; "ÔøΩ\x10ÔøΩ\x03\x03\x16;%\x1B5\x1CF:T\frÔøΩ\x03\x02\x17}ÔøΩ\a|ÔøΩ\x04\vÔøΩ\x06<ÔøΩ\x05\x1A\x16=ÔøΩ\x03\x04ÔøΩ"...
 		dc.w $77E0
-		dc.l ARTNEM_SpikesHoz	; "Ä8Ä\x04\a\x15\x14&24\bE\x1AV3e\x18rÅ\x03\x02\x167'vWywrÇ\x04\x06\x1687tGwW"...
+		dc.l ARTNEM_SpikesHoz	; "ÔøΩ8ÔøΩ\x04\a\x15\x14&24\bE\x1AV3e\x18rÔøΩ\x03\x02\x167'vWywrÔøΩ\x04\x06\x1687tGwW"...
 		dc.w $FFFF
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -7538,7 +7538,7 @@ loc_8CE4:				; CODE XREF: ROM:00008CE0j
 		move.w	($FFFFD83A).w,d0
 		andi.w	#3,d0
 		lsl.l	#6,d0
-		lea	(PAL_TechnoTowerZone).l,a1 ; "\nf\fÆ\nh\x06D\x0EÍ\x0EÑ\n\x02\x0EÆ\x0E*\x06\x02Ój\x0E\x02\"\x0EÓ\nf\x0EÓ\fÃ\n™\bf\x06D"...
+		lea	(PAL_TechnoTowerZone).l,a1 ; "\nf\fÔøΩ\nh\x06D\x0EÔøΩ\x0EÔøΩ\n\x02\x0EÔøΩ\x0E*\x06\x02ÔøΩj\x0E\x02\"\x0EÔøΩ\nf\x0EÔøΩ\fÔøΩ\nÔøΩ\bf\x06D"...
 		adda.l	d0,a1
 		lea	($FFFFD424).w,a0
 		move.b	#$1F,d7
@@ -7582,7 +7582,7 @@ loc_8E1C:				; CODE XREF: ROM:loc_8E14j
 		moveq	#0,d2
 		move.w	#$C000,d3
 		jsr	sub_86E
-		lea	ARTNEM_MenuSelectorBorder(pc),a0 ; "Ä\x10Ä\x04\f\x14\rqÅ\x05\x1ED\x0Er\x02\xFFˆVv\xFFD\x01∂]û˛Ö@\nï*˛á≤ÏÄ\x1B˝\x1D"...
+		lea	ARTNEM_MenuSelectorBorder(pc),a0 ; "ÔøΩ\x10ÔøΩ\x04\f\x14\rqÔøΩ\x05\x1ED\x0Er\x02\xFFÔøΩVv\xFFD\x01ÔøΩ]ÔøΩÔøΩÔøΩ@\nÔøΩ*ÔøΩÔøΩÔøΩÔøΩÔøΩ\x1BÔøΩ\x1D"...
 		move.l	#$4C000000,($C00004).l
 		jsr	NemDec
 		move.l	#$42000003,d0
@@ -7626,7 +7626,7 @@ loc_8EE0:				; CODE XREF: ROM:00008EDCj
 		move.w	d0,($FFFFD834).w
 		move.w	d0,d1
 		lsl.w	#5,d1
-		subi.w	#$90,d1	; 'ê'
+		subi.w	#$90,d1	; 'ÔøΩ'
 		move.w	d1,($FFFFD830).w
 		lea	MAPUNC_SelectMenu_2(pc),a1 ; "7/2,$\x117/2,$\x127/2,$\x137/2,$\x147/2,$\x157/2,$\x167/2"...
 		lsl.w	#4,d0
@@ -7646,7 +7646,7 @@ loc_8EE0:				; CODE XREF: ROM:00008EDCj
 		moveq	#5,d2
 		move.w	#0,d3
 		jsr	MapScreen
-		move.w	#$80,($FFFFD820).w ; 'Ä'
+		move.w	#$80,($FFFFD820).w ; 'ÔøΩ'
 		bra.w	loc_8FCA
 ; ---------------------------------------------------------------------------
 
@@ -7852,7 +7852,7 @@ loc_93DC:				; CODE XREF: ROM:loc_93D4j
 		move.l	#$78000003,($C00004).l
 		move.l	#0,($C00000).l
 		move.l	#0,($C00000).l
-		move.w	#$80,($FFFFD82A).w ; 'Ä'
+		move.w	#$80,($FFFFD82A).w ; 'ÔøΩ'
 		move	#$2300,sr
 		addq.w	#4,($FFFFD824).w
 		rts
@@ -8141,7 +8141,7 @@ loc_967C:				; CODE XREF: ROM:loc_9670j
 		move	#$2700,sr
 		lea	($FFFFC9DE).w,a1
 		move.w	#$104,$1E(a1)
-		lea	PAL_SpeedSliderZone(pc),a0 ; "\b\x02\x02\f(\bà\x0EÓ\x02‰Ó\x0E‡Ä\fÃ\x0E¬é\x0E\x02\b\x04\f\b\x0EÓ‡@\x02\x0E`\x0E@\f \n\x04"...
+		lea	PAL_SpeedSliderZone(pc),a0 ; "\b\x02\x02\f(\bÔøΩ\x0EÔøΩ\x02ÔøΩÔøΩ\x0EÔøΩÔøΩ\fÔøΩ\x0E¬é\x0E\x02\b\x04\f\b\x0EÔøΩÔøΩ@\x02\x0E`\x0E@\f \n\x04"...
 		lea	($FFFFD424).w,a2
 		bsr.w	sub_9E6E
 		lea	loc_9C28(pc),a0
@@ -8242,7 +8242,7 @@ sub_97B4:				; CODE XREF: ROM:0000975Ep
 		move.w	$10(a1),d0
 		move.w	d0,$12(a1)
 		move.w	$C(a0),d1
-		subi.w	#$80,d1	; 'Ä'
+		subi.w	#$80,d1	; 'ÔøΩ'
 		mulu.w	#2,d1
 		ext.l	d1
 		divu.w	#5,d1
@@ -8346,7 +8346,7 @@ loc_988C:
 loc_9898:				; CODE XREF: ROM:loc_988Cj
 		move	#$2700,sr
 		lea	($FFFFC9DE).w,a1
-		lea	PAL_TechnoTowerZoneUnused(pc),a0 ; "\b\x0EÃ\nà\x06D\x0E‚\bÇ\x02@\x06,\x02\b\x02\x02Ój.\x02\"\x0EÓ\b\x0EÓ\n™\x06à\x04f\x02D\"\x0E"...
+		lea	PAL_TechnoTowerZoneUnused(pc),a0 ; "\b\x0EÔøΩ\nÔøΩ\x06D\x0EÔøΩ\bÔøΩ\x02@\x06,\x02\b\x02\x02ÔøΩj.\x02\"\x0EÔøΩ\b\x0EÔøΩ\nÔøΩ\x06ÔøΩ\x04f\x02D\"\x0E"...
 		lea	($FFFFD424).w,a2
 		bsr.w	sub_9E6E
 		lea	loc_9CB0(pc),a0
@@ -8732,20 +8732,20 @@ locret_9C1E:				; CODE XREF: ROM:0000964Cj
 		rts
 ; ---------------------------------------------------------------------------
 SSZ_ArtLocs:	dc.l ARTNEM_SSZ8x8_FG	; DATA XREF: ROM:000096A4o
-					; "ÇÛÄ\x03\x14\x03%\n5\x13F/U\x18f4t\x02Å\x04\x06\x17sÇ\x04\x04\x17n(ÚÉ\x05\x0E\x17kÑ\x05\x15\x18"...
-		dc.l ARTNEM_SSZ8x8_BG	; "¿Ä\x06.\x165'nGzWyt\x06Ñ\x03\x01(¯Ö\x04\b\x16/&37rGsX˜v4Ü\x04\x05\x15\x13"...
+					; "ÔøΩÔøΩÔøΩ\x03\x14\x03%\n5\x13F/U\x18f4t\x02ÔøΩ\x04\x06\x17sÔøΩ\x04\x04\x17n(ÔøΩÔøΩ\x05\x0E\x17kÔøΩ\x05\x15\x18"...
+		dc.l ARTNEM_SSZ8x8_BG	; "ÔøΩÔøΩ\x06.\x165'nGzWyt\x06ÔøΩ\x03\x01(ÔøΩÔøΩ\x04\b\x16/&37rGsXÔøΩv4ÔøΩ\x04\x05\x15\x13"...
 loc_9C28:	dc.b   0		; DATA XREF: ROM:00009696o
 		dc.b   0
 		dc.b   0
-		dc.b $D0 ; –
-		dc.b $80 ; Ä
+		dc.b $D0 ; ÔøΩ
+		dc.b $80 ; ÔøΩ
 		dc.b $10
-		dc.b $80 ; Ä
+		dc.b $80 ; ÔøΩ
 		dc.b  $C
 		dc.b   0
 		dc.b $40 ; @
 		dc.b $7E ; ~
-		dc.b $C0 ; ¿
+		dc.b $C0 ; ÔøΩ
 		dc.b   0
 		dc.b   0
 		dc.b   5
@@ -8753,9 +8753,9 @@ loc_9C28:	dc.b   0		; DATA XREF: ROM:00009696o
 		dc.b   0
 		dc.b   0
 SSZ_MapFGLocs:	dc.l MAPENI_SSZ16x16_FG	; DATA XREF: ROM:000096B8o
-					; "\n\x1F@@\x01*¯P‚Ä%\x05D\x01\\p`\x0FπÄ?√\x01Ã\x03π\aX\x0F0\x1E¿\x01Ä\x03˛\x02\nx"...
-		dc.l MAPENI_SSZ128x128_FG ; "\v\x1F\x01˜ﬂ{N\aµ7êP0PnÁñ˜äË\nË\x0E\a–géh\fX\nß≠«äÔ‡\x15"...
-		dc.l MAPENI_SSZLayout_FG ; "\v\x1F\x01·åØ \f`\x05ETxc)ƒ†§\x01æ \x05\x05	\fpTU}>\x1A\tu§\"+\"–+"...
+					; "\n\x1F@@\x01*ÔøΩPÔøΩÔøΩ%\x05D\x01\\p`\x0FÔøΩÔøΩ?ÔøΩ\x01ÔøΩ\x03ÔøΩ\aX\x0F0\x1EÔøΩ\x01ÔøΩ\x03ÔøΩ\x02\nx"...
+		dc.l MAPENI_SSZ128x128_FG ; "\v\x1F\x01ÔøΩÔøΩ{ÔøΩN\aÔøΩ7ÔøΩP0PnÔøΩÔøΩÔøΩÔøΩÔøΩ\nÔøΩ\x0E\aÔøΩgÔøΩh\fX\nÔøΩÔøΩ«äÔøΩÔøΩ\x15"...
+		dc.l MAPENI_SSZLayout_FG ; "\v\x1F\x01·åØ \f`\x05ETxc)ƒ†ÔøΩ\x01ÔøΩ \x05\x05	\fpTU}>\x1A\tuÔøΩ\"+\"ÔøΩ+"...
 		dc.l COL_SSZPrimary	; "\x01\x01\x02\x01\x01\x05\x06\x02\x01\x06\x01\x01\x01\x01\x01\x01\x06\x05\x01\x02\x06\v\f\r\x02\x01\x01\t\n\x01\x01\x06\x01\x01\x01\b\b\a\x01"...
 loc_9C4A:	dc.b   0		; DATA XREF: ROM:000096C8o
 		dc.b   0
@@ -8768,7 +8768,7 @@ loc_9C4A:	dc.b   0		; DATA XREF: ROM:000096C8o
 		dc.b   3
 		dc.b $33 ; 3
 		dc.b   0
-		dc.b $C0 ; ¿
+		dc.b $C0 ; ÔøΩ
 		dc.b   0
 		dc.b   0
 		dc.b   2
@@ -8776,18 +8776,18 @@ loc_9C4A:	dc.b   0		; DATA XREF: ROM:000096C8o
 		dc.b   0
 		dc.b   0
 SSZ_MapBGLocs:	dc.l MAPENI_SSZ16x16_BG	; DATA XREF: ROM:000096E0o
-					; "\b\f``\x01!`‡Ä@¡@ÈÇ`ÿ\x16\tÇ\x01Î\x06¿L\v\x05¡0L\a\x02¬0@‡·`s"...
-		dc.l MAPENI_SSZ128x128_BG ; "\a\x01\x01˜ﬂxh@¿\t\x06àO\x10ë\bb8D∏\b”\x18Ü7DÇ)\f\"(Ç¥HËíC\x15é"...
-		dc.l MAPENI_SSZLayout_BG ; "\v\x01\x02Ç¡ –h8\x16\r\x06ÉÅ@‡@ì˛"
+					; "\b\f``\x01!`ÔøΩÔøΩ@ÔøΩ@ÔøΩÔøΩ`ÔøΩ\x16\tÔøΩ\x01ÔøΩ\x06ÔøΩÔøΩL\v\x05ÔøΩ0L\a\x02ÔøΩ0@ÔøΩÔøΩ`s"...
+		dc.l MAPENI_SSZ128x128_BG ; "\a\x01\x01ÔøΩÔøΩxh@ÔøΩ\t\x06ÔøΩO\x10ÔøΩ\bb8DÔøΩ\bÔøΩ\x18ÔøΩ7DÔøΩ)\f\"(ÔøΩÔøΩHÔøΩÔøΩC\x15ÔøΩ"...
+		dc.l MAPENI_SSZLayout_BG ; "\v\x01\x02ÔøΩÔøΩ ÔøΩh8\x16\r\x06ÔøΩÔøΩ@ÔøΩ@ÔøΩÔøΩ"
 PAL_SpeedSliderZone:incbin  Palettes\PalSpeedSliderZone.bin ; DATA XREF: ROM:0000968Ao
 		even
 TTZ_ArtLocs:	dc.l ARTNEM_TTZ8x8_FG	; DATA XREF: ROM:000098BAo
-					; "Å/Ä\x03\x14\a$\b5\x13F.U\x12gkt\x06Å\x04\x03\x15\x18't8ÚXÛÇ\x064\x18ÍÉ\x04\x02\x162"...
-		dc.l ARTNEM_TTZ8x8_BG	; "ÅkÄ\x03\x01\x14\a%\x125\x13F0V1f3sÅ\x03\x02\x15\x16'qÇ\x05\x14\x17pÉ\x04\x06\x16/'t8Ì"...
+					; "ÔøΩ/ÔøΩ\x03\x14\a$\b5\x13F.U\x12gkt\x06ÔøΩ\x04\x03\x15\x18't8ÔøΩXÔøΩÔøΩ\x064\x18ÔøΩÔøΩ\x04\x02\x162"...
+		dc.l ARTNEM_TTZ8x8_BG	; "ÔøΩkÔøΩ\x03\x01\x14\a%\x125\x13F0V1f3sÔøΩ\x03\x02\x15\x16'qÔøΩ\x05\x14\x17pÔøΩ\x04\x06\x16/'t8ÔøΩ"...
 loc_9CB0:	dc.b   0		; DATA XREF: ROM:000098ACo
 		dc.b $15
 		dc.b  $D
-		dc.b $E0 ; ‡
+		dc.b $E0 ; ÔøΩ
 		dc.b $10
 		dc.b $20
 		dc.b $10
@@ -8795,7 +8795,7 @@ loc_9CB0:	dc.b   0		; DATA XREF: ROM:000098ACo
 		dc.b   0
 		dc.b $40 ; @
 		dc.b   6
-		dc.b $C0 ; ¿
+		dc.b $C0 ; ÔøΩ
 		dc.b   0
 		dc.b   0
 		dc.b  $F
@@ -8803,9 +8803,9 @@ loc_9CB0:	dc.b   0		; DATA XREF: ROM:000098ACo
 		dc.b   0
 		dc.b   0
 TTZ_MapFGLocs:	dc.l MAPENI_TTZ16x16_FG	; DATA XREF: ROM:000098CEo
-					; "\t\x1B@\x01¿Né{`\az\x02¿&Ä\v†Jx\x06·†öò\n˝†Ï\a¯;\x02\x1E\f¿èÇx"...
-		dc.l MAPENI_TTZ128x128_FG ; "\v\x1Fc}˜ﬂ£‡IK¿≥áÅu/\x02oﬁ\x03˛\x06æ\x06ﬁ\x03ﬁ\x06æ\x05˛\a\x1E\x13^\tû\aæ"...
-		dc.l MAPENI_TTZLayout_FG ; "\v\x1F\x01·,Øê\tq:ppppzzzzppppzq+P\x05ZK\x02\x03\x03\x03\x03\x03\x03\x02Ä"...
+					; "\t\x1B@\x01ÔøΩNÔøΩ{`\az\x02ÔøΩ&ÔøΩÔøΩ\vÔøΩJx\x06·†öÔøΩ\nÔøΩÔøΩÔøΩ\aÔøΩ;\x02\x1E\fÔøΩÔøΩÔøΩx"...
+		dc.l MAPENI_TTZ128x128_FG ; "\v\x1Fc}ÔøΩﬂ£ÔøΩIKÔøΩÔøΩÔøΩÔøΩu/\x02oÔøΩ\x03ÔøΩ\x06ÔøΩ\x06ÔøΩ\x03ÔøΩ\x06ÔøΩ\x05ÔøΩ\a\x1E\x13^\tÔøΩ\aÔøΩ"...
+		dc.l MAPENI_TTZLayout_FG ; "\v\x1F\x01ÔøΩ,ÔøΩÔøΩ\tq:ppppzzzzppppzq+P\x05ZK\x02\x03\x03\x03\x03\x03\x03\x02ÔøΩ"...
 		dc.l COL_TTZPrimary	; "\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01"...
 loc_9CD2:	dc.b   0		; DATA XREF: ROM:000098DEo
 		dc.b $30 ; 0
@@ -8818,7 +8818,7 @@ loc_9CD2:	dc.b   0		; DATA XREF: ROM:000098DEo
 		dc.b   1
 		dc.b $6F ; o
 		dc.b   4
-		dc.b $C0 ; ¿
+		dc.b $C0 ; ÔøΩ
 		dc.b   0
 		dc.b   0
 		dc.b  $B
@@ -8826,9 +8826,9 @@ loc_9CD2:	dc.b   0		; DATA XREF: ROM:000098DEo
 		dc.b   0
 		dc.b   0
 TTZ_MapBGLocs:	dc.l MAPENI_TTZ16x16_BG	; DATA XREF: ROM:000098F6o
-					; "\t\x0F@“`N¶z‡\aÿ\x03¿\x16\x01p\tW–∞\x17_\x01ú\x1BÅL\aRˆ\x05x‡ãtI"...
-		dc.l MAPENI_TTZ128x128_BG ; "\v\x01\x01˜ﬂx*@\x03@§\x01¥Ä7∞\x06¿	Ä\x10\f»\x01R\x01™ \x1BD\a∫p\x10@ÿ\x0E\r "...
-		dc.l MAPENI_TTZLayout_BG ; "\v\x03\x04ä∞¥zú \x11ê\x12\x14èPÅÄ\x02t\x01\x01QÍ 0\x04®oÄË 2=B\x06–Bã‡"...
+					; "\t\x0F@ÔøΩ`NÔøΩzÔøΩ\aÔøΩ\x03ÔøΩ\x16\x01p\tW–∞\x17_\x01ÔøΩÔøΩ\x1BÔøΩL\aÔøΩRÔøΩ\x05xÔøΩÔøΩtÔøΩI"...
+		dc.l MAPENI_TTZ128x128_BG ; "\v\x01\x01ÔøΩÔøΩx*@\x03@ÔøΩ\x01ÔøΩÔøΩ7ÔøΩ\x06ÔøΩ	ÔøΩ\x10\fÔøΩ\x01R\x01ÔøΩ \x1BD\aÔøΩp\x10@ÔøΩ\x0E\r "...
+		dc.l MAPENI_TTZLayout_BG ; "\v\x03\x04ÔøΩÔøΩÔøΩzÔøΩ \x11ÔøΩ\x12\x14ÔøΩPÔøΩÔøΩ\x02t\x01\x01QÔøΩ 0\x04ÔøΩoÔøΩÔøΩ 2=B\x06ÔøΩBÔøΩÔøΩ"...
 PAL_TechnoTowerZoneUnused:incbin  Palettes\PalTechnoTowerZoneUnused.bin
 					; DATA XREF: ROM:000098A0o
 		even
@@ -9599,7 +9599,7 @@ loc_A40A:				; CODE XREF: ROM:0000A3F4j
 		neg.w	d0
 
 loc_A412:				; CODE XREF: ROM:0000A40Ej
-		cmpi.w	#$80,d0	; 'Ä'
+		cmpi.w	#$80,d0	; 'ÔøΩ'
 		bcc.s	loc_A420
 		eor.w	d1,$24(a6)
 		moveq	#0,d0
@@ -9689,7 +9689,7 @@ loc_A4B4:				; CODE XREF: ROM:0000A2B4j
 		neg.w	d1
 
 loc_A4D6:				; CODE XREF: ROM:0000A4D0j
-		cmpi.w	#$80,d1	; 'Ä'
+		cmpi.w	#$80,d1	; 'ÔøΩ'
 		bcc.s	loc_A4F0
 		clr.w	$2C(a6)
 
@@ -10002,7 +10002,7 @@ loc_A7E0:				; CODE XREF: ROM:0000A7D8j
 		neg.w	d0
 
 loc_A7E8:				; CODE XREF: ROM:0000A7E4j
-		cmpi.w	#$80,d0	; 'Ä'
+		cmpi.w	#$80,d0	; 'ÔøΩ'
 		bcc.s	loc_A7F6
 		eor.w	d1,$24(a6)
 		moveq	#0,d0
@@ -10091,7 +10091,7 @@ loc_A88A:				; CODE XREF: ROM:0000A77Ej
 		neg.w	d1
 
 loc_A8AC:				; CODE XREF: ROM:0000A8A6j
-		cmpi.w	#$80,d1	; 'Ä'
+		cmpi.w	#$80,d1	; 'ÔøΩ'
 		bcc.s	loc_A8C6
 		clr.w	$2C(a6)
 
@@ -10512,7 +10512,7 @@ loc_ACA6:				; CODE XREF: ROM:0000ACA0j
 		neg.w	d0
 
 loc_ACC4:				; CODE XREF: ROM:0000ACC0j
-		cmpi.w	#$80,d0	; 'Ä'
+		cmpi.w	#$80,d0	; 'ÔøΩ'
 		bcc.s	loc_ACD2
 		eor.w	d1,$24(a6)
 		moveq	#0,d0
@@ -10601,7 +10601,7 @@ loc_AD66:				; CODE XREF: ROM:0000AB7Aj
 		neg.w	d1
 
 loc_AD88:				; CODE XREF: ROM:0000AD82j
-		cmpi.w	#$80,d1	; 'Ä'
+		cmpi.w	#$80,d1	; 'ÔøΩ'
 		bcc.s	loc_ADA2
 		clr.w	$2C(a6)
 
@@ -10909,7 +10909,7 @@ loc_B08E:				; CODE XREF: ROM:0000B086j
 		neg.w	d0
 
 loc_B096:				; CODE XREF: ROM:0000B092j
-		cmpi.w	#$80,d0	; 'Ä'
+		cmpi.w	#$80,d0	; 'ÔøΩ'
 		bcc.s	loc_B0A4
 		eor.w	d1,$24(a6)
 		moveq	#0,d0
@@ -10998,7 +10998,7 @@ loc_B138:				; CODE XREF: ROM:0000B02Cj
 		neg.w	d1
 
 loc_B15A:				; CODE XREF: ROM:0000B154j
-		cmpi.w	#$80,d1	; 'Ä'
+		cmpi.w	#$80,d1	; 'ÔøΩ'
 		bcc.s	loc_B174
 		clr.w	$2C(a6)
 
@@ -11346,7 +11346,7 @@ word_B448:	dc.w $34
 		dc.w $358
 		dc.w $360
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		cmpi.b	#2,$28(a5)
 		bne.s	loc_B492
 		andi.w	#$FF7F,4(a6)
@@ -11365,7 +11365,7 @@ loc_B4A2:				; CODE XREF: ROM:0000B516j
 					; ROM:0000B5BCj
 		tst.w	$2E(a5)
 		beq.s	sub_B4EC
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		move.b	$2B(a5),d0
 		addq.b	#8,d0
 		lsr.w	#3,d0
@@ -11398,7 +11398,7 @@ word_B4CC:	dc.w $9C
 
 sub_B4EC:				; CODE XREF: ROM:0000B4A6j
 					; ROM:0000B6D0p
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#0,d4
 		move.b	$28(a5),d4
 		add.w	d4,d4
@@ -11524,7 +11524,7 @@ loc_B5C0:	dc.w $5C		; DATA XREF: ROM:0000B5B8o
 		dc.w $FFEF
 		dc.w 0
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF2,d0
 		moveq	#$FFFFFFF3,d1
 		btst	#0,$28(a5)
@@ -11536,7 +11536,7 @@ loc_B604:				; CODE XREF: ROM:0000B600j
 		move.w	#$6C,$26(a6) ; 'l'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFE,d0
 		moveq	#$FFFFFFF6,d1
 		btst	#0,$28(a5)
@@ -11549,7 +11549,7 @@ loc_B626:				; CODE XREF: ROM:0000B620j
 		move.w	#$70,$26(a6) ; 'p'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF3,d0
 		moveq	#$FFFFFFF8,d1
 		btst	#0,$28(a5)
@@ -11561,7 +11561,7 @@ loc_B646:				; CODE XREF: ROM:0000B642j
 		move.w	#$74,$26(a6) ; 't'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFD,d0
 		moveq	#$FFFFFFF4,d1
 		btst	#0,$28(a5)
@@ -11577,7 +11577,7 @@ loc_B668:				; CODE XREF: ROM:0000B662j
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFEA,d0
 		moveq	#$FFFFFFF4,d1
 		bsr.w	sub_CA82
@@ -11638,14 +11638,14 @@ loc_B6D6:	dc.w $100		; DATA XREF: ROM:0000B6CCo
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFD,d0
 		moveq	#$FFFFFFF3,d1
 		bsr.w	sub_CA82
-		move.w	#$BC,$26(a6) ; 'º'
+		move.w	#$BC,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#0,d0
 		moveq	#$FFFFFFF3,d1
 		btst	#0,$28(a5)
@@ -11654,10 +11654,10 @@ loc_B6D6:	dc.w $100		; DATA XREF: ROM:0000B6CCo
 
 loc_B728:				; CODE XREF: ROM:0000B724j
 		bsr.w	sub_CA82
-		move.w	#$BC,$26(a6) ; 'º'
+		move.w	#$BC,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#4,d0
 		moveq	#$FFFFFFE7,d1
 		btst	#0,$28(a5)
@@ -11667,10 +11667,10 @@ loc_B728:				; CODE XREF: ROM:0000B724j
 
 loc_B74A:				; CODE XREF: ROM:0000B744j
 		bsr.w	sub_CA82
-		move.w	#$C0,$26(a6) ; '¿'
+		move.w	#$C0,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFB,d0
 		moveq	#$FFFFFFE9,d1
 		btst	#0,$28(a5)
@@ -11679,10 +11679,10 @@ loc_B74A:				; CODE XREF: ROM:0000B744j
 
 loc_B76A:				; CODE XREF: ROM:0000B766j
 		bsr.w	sub_CA82
-		move.w	#$C4,$26(a6) ; 'ƒ'
+		move.w	#$C4,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFEE,d0
 		moveq	#$FFFFFFF6,d1
 		btst	#0,$28(a5)
@@ -11692,7 +11692,7 @@ loc_B76A:				; CODE XREF: ROM:0000B766j
 
 loc_B78C:				; CODE XREF: ROM:0000B786j
 		bsr.w	sub_CA82
-		move.w	#$C8,$26(a6) ; '»'
+		move.w	#$C8,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
 		andi.w	#$FF7F,4(a6)
@@ -11701,7 +11701,7 @@ loc_B78C:				; CODE XREF: ROM:0000B786j
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF0,d0
 		moveq	#$FFFFFFE9,d1
 		bsr.w	sub_CA82
@@ -11788,7 +11788,7 @@ word_B840:	dc.w $34
 		dc.w $372
 		dc.w $37A
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		cmpi.b	#2,$28(a5)
 		bne.s	loc_B892
 		moveq	#$FFFFFFF9,d0
@@ -11810,7 +11810,7 @@ loc_B8A2:				; CODE XREF: ROM:0000B91Aj
 					; ROM:0000B960j ...
 		tst.w	$2E(a5)
 		beq.s	sub_B8F0
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		move.b	$2B(a5),d0
 		addq.b	#8,d0
 		lsr.w	#3,d0
@@ -11844,7 +11844,7 @@ word_B8D0:	dc.w $20
 
 sub_B8F0:				; CODE XREF: ROM:0000B8A6j
 					; ROM:0000BAB8p ...
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#0,d4
 		move.b	$28(a5),d4
 		add.w	d4,d4
@@ -12005,34 +12005,34 @@ loc_B9F4:	dc.w $80		; DATA XREF: ROM:0000B9ECo
 		ori.l	#$470F0,d0
 		moveq	#$FFFFFFEE,d1
 		bsr.w	sub_CA82
-		move.w	#$A8,$26(a6) ; '®'
+		move.w	#$A8,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF0,d0
 		moveq	#$FFFFFFE9,d1
 		bsr.w	sub_CA82
-		move.w	#$AC,$26(a6) ; '¨'
+		move.w	#$AC,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFEE,d0
 		moveq	#$FFFFFFF0,d1
 		bsr.w	sub_CA82
-		move.w	#$B0,$26(a6) ; '∞'
+		move.w	#$B0,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF0,d0
 		moveq	#$FFFFFFE8,d1
 		bsr.w	sub_CA82
-		move.w	#$B4,$26(a6) ; '¥'
+		move.w	#$B4,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF4,d0
 		cmpi.b	#$14,$28(a5)
 		bcs.s	loc_BAA6
@@ -12089,14 +12089,14 @@ loc_BAE8:	dc.w $4C		; DATA XREF: ROM:0000BADEo
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFD,d0
 		moveq	#$FFFFFFFB,d1
 		bsr.w	sub_CA82
-		move.w	#$BC,$26(a6) ; 'º'
+		move.w	#$BC,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#0,d0
 		moveq	#$FFFFFFFB,d1
 		btst	#0,$28(a5)
@@ -12105,10 +12105,10 @@ loc_BAE8:	dc.w $4C		; DATA XREF: ROM:0000BADEo
 
 loc_BB3A:				; CODE XREF: ROM:0000BB36j
 		bsr.w	sub_CA82
-		move.w	#$BC,$26(a6) ; 'º'
+		move.w	#$BC,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#4,d0
 		moveq	#$FFFFFFE7,d1
 		btst	#0,$28(a5)
@@ -12118,10 +12118,10 @@ loc_BB3A:				; CODE XREF: ROM:0000BB36j
 
 loc_BB5C:				; CODE XREF: ROM:0000BB56j
 		bsr.w	sub_CA82
-		move.w	#$C0,$26(a6) ; '¿'
+		move.w	#$C0,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFFB,d0
 		moveq	#$FFFFFFE9,d1
 		btst	#0,$28(a5)
@@ -12130,10 +12130,10 @@ loc_BB5C:				; CODE XREF: ROM:0000BB56j
 
 loc_BB7C:				; CODE XREF: ROM:0000BB78j
 		bsr.w	sub_CA82
-		move.w	#$C4,$26(a6) ; 'ƒ'
+		move.w	#$C4,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFEE,d0
 		moveq	#$FFFFFFF6,d1
 		btst	#0,$28(a5)
@@ -12143,7 +12143,7 @@ loc_BB7C:				; CODE XREF: ROM:0000BB78j
 
 loc_BB9E:				; CODE XREF: ROM:0000BB98j
 		bsr.w	sub_CA82
-		move.w	#$C8,$26(a6) ; '»'
+		move.w	#$C8,$26(a6) ; 'ÔøΩ'
 		rts
 ; ---------------------------------------------------------------------------
 		andi.w	#$FF7F,4(a6)
@@ -12152,7 +12152,7 @@ loc_BB9E:				; CODE XREF: ROM:0000BB98j
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#$FFFFFFF4,d0
 		moveq	#$FFFFFFEE,d1
 		bsr.w	sub_CA82
@@ -12260,7 +12260,7 @@ loc_BCA0:				; CODE XREF: ROM:0000BC9Cj
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		move.w	#$67,$26(a6) ; 'g'
 		moveq	#$FFFFFFF0,d0
 		moveq	#0,d1
@@ -12274,12 +12274,12 @@ loc_BCE6:				; CODE XREF: ROM:0000BCDEj
 		bsr.w	loc_CA8A
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		move.w	$18(a5),d0
 		move.w	$1C(a5),d1
 		jsr	sub_42CE
 		addi.w	#$10,d2
-		andi.w	#$E0,d2	; '‡'
+		andi.w	#$E0,d2	; 'ÔøΩ'
 		lsr.w	#2,d2
 		move.w	word_BD3A(pc,d2.w),d0
 		move.b	$28(a5),d1
@@ -12377,7 +12377,7 @@ word_BD76:	dc.w $54
 		andi.w	#$FF7F,4(a6)
 		rts
 ; ---------------------------------------------------------------------------
-		ori.w	#$80,4(a6) ; 'Ä'
+		ori.w	#$80,4(a6) ; 'ÔøΩ'
 		moveq	#0,d0
 		move.b	$28(a5),d0
 		add.w	d0,d0
@@ -12446,7 +12446,7 @@ sub_BE72:				; CODE XREF: ROM:00008922p
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_BE9C
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$800,6(a0)
 		move.w	#0,$20(a0)
 		move.w	a0,($FFFFD862).w
@@ -12455,10 +12455,10 @@ loc_BE9C:				; CODE XREF: sub_BE72+12j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_BEE0
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#2,6(a0)
 		move.w	($FFFFC9DE).w,d0
-		addi.w	#$B8,d0	; '∏'
+		addi.w	#$B8,d0	; 'ÔøΩ'
 		move.w	d0,8(a0)
 		move.w	($FFFFC9EE).w,d0
 		addi.w	#$70,d0	; 'p'
@@ -12473,7 +12473,7 @@ loc_BEE0:				; CODE XREF: sub_BE72+30j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_BF00
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$1000,6(a0)
 		move.w	#0,$20(a0)
 		move.w	($FFFFD862).w,$24(a0)
@@ -12482,7 +12482,7 @@ loc_BF00:				; CODE XREF: sub_BE72+74j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_BF1E
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$C00,6(a0)
 		move.w	#$21,$20(a0) ; '!'
 		move.w	a0,($FFFFD864).w
@@ -12491,10 +12491,10 @@ loc_BF1E:				; CODE XREF: sub_BE72+94j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	loc_BF62
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$402,6(a0)
 		move.w	($FFFFC9DE).w,d0
-		addi.w	#$88,d0	; 'à'
+		addi.w	#$88,d0	; 'ÔøΩ'
 		move.w	d0,8(a0)
 		move.w	($FFFFC9EE).w,d0
 		addi.w	#$70,d0	; 'p'
@@ -12509,7 +12509,7 @@ loc_BF62:				; CODE XREF: sub_BE72+B2j
 		moveq	#4,d0
 		jsr	sub_1918
 		bmi.s	locret_BF82
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$1400,6(a0)
 		move.w	#$21,$20(a0) ; '!'
 		move.w	($FFFFD864).w,$24(a0)
@@ -12971,7 +12971,7 @@ sub_C29E:				; CODE XREF: ROM:0000A53Ep
 		move.b	#$A,($FFFFFAE8).w
 		move.b	$2A(a6),d0
 		addi.b	#$20,d0	; ' '
-		andi.w	#$C0,d0	; '¿'
+		andi.w	#$C0,d0	; 'ÔøΩ'
 		lsr.w	#4,d0
 		jmp	loc_C2BE(pc,d0.w)
 ; End of function sub_C29E
@@ -13513,7 +13513,7 @@ locret_C744:				; CODE XREF: sub_C6D4+5Aj sub_C6D4+68j
 loc_C746:				; DATA XREF: ROM:0000A276o
 					; ROM:0000AB3Co
 		move.w	4(a6),d7
-		ori.w	#$80,d7	; 'Ä'
+		ori.w	#$80,d7	; 'ÔøΩ'
 		btst	#6,5(a6)
 		beq.s	loc_C75A
 		andi.w	#$FF7F,d7
@@ -13787,7 +13787,7 @@ sub_CA3C:				; CODE XREF: sub_C9DE+36p sub_CA3C+42j
 		move.l	d0,(a6)
 		rol.w	#2,d1
 		andi.w	#3,d1
-		ori.w	#$80,d1	; 'Ä'
+		ori.w	#$80,d1	; 'ÔøΩ'
 		move.w	d1,-(sp)
 		move.w	(sp)+,(a6)
 		tst.w	(a0)+
@@ -14032,7 +14032,7 @@ loc_CC62:				; CODE XREF: sub_CC5C+68j
 		moveq	#$C,d0
 		jsr	sub_1918
 		bmi.s	locret_CCC8
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$28,6(a0) ; '('
 		move.w	#$28,6(a0) ; '('
 		move.w	#$FF,$26(a0)
@@ -14052,7 +14052,7 @@ loc_CC62:				; CODE XREF: sub_CC5C+68j
 		move.l	d1,d4
 		addi.b	#$10,d6
 		bcc.s	loc_CCB8
-		subi.w	#$80,d6	; 'Ä'
+		subi.w	#$80,d6	; 'ÔøΩ'
 		bcc.s	loc_CCB8
 		move.w	#$288,d6
 
@@ -14081,7 +14081,7 @@ sub_CCCA:				; CODE XREF: ROM:00007F0Ep
 		ext.l	d1
 		add.l	d1,d0
 		lsr.l	#1,d0
-		subi.w	#$A0,d0	; '†'
+		subi.w	#$A0,d0	; 'ÔøΩ'
 		move.w	d0,($FFFFD830).w
 		move.w	$C(a0),d0
 		ext.l	d0
@@ -14392,7 +14392,7 @@ loc_CF90:	dc.w $5C2		; DATA XREF: sub_CCCA+268o
 		dc.w $FFFF
 		dc.w $FFFF
 loc_CFD0:	dc.b   0		; DATA XREF: sub_CCCA+38o
-		dc.b $80 ; Ä
+		dc.b $80 ; ÔøΩ
 		dc.b   0
 		dc.b $7F ; 
 		dc.b   0
@@ -14459,204 +14459,72 @@ loc_CFD0:	dc.b   0		; DATA XREF: sub_CCCA+38o
 		dc.b $7A ; z
 		dc.b $7C ; |
 		dc.b $7E ; ~
-		dc.b $80 ; Ä
-		dc.b $82 ; Ç
-		dc.b $84 ; Ñ
-		dc.b $86 ; Ü
-		dc.b $88 ; à
-		dc.b $8A ; ä
-		dc.b $8C ; å
-		dc.b $8E ; é
-		dc.b $90 ; ê
-		dc.b $92 ; í
-		dc.b $94 ; î
-		dc.b $96 ; ñ
-		dc.b $98 ; ò
-		dc.b $9A ; ö
-		dc.b $9C ; ú
-		dc.b $9E ; û
-		dc.b $A0 ; †
-		dc.b $A2 ; ¢
-		dc.b $A4 ; §
-		dc.b $A6 ; ¶
-		dc.b $A8 ; ®
-		dc.b $AA ; ™
-		dc.b $AC ; ¨
-		dc.b $AE ; Æ
-		dc.b $B0 ; ∞
-		dc.b $B2 ; ≤
-		dc.b $B4 ; ¥
-		dc.b $B6 ; ∂
-		dc.b $B8 ; ∏
-		dc.b $BA ; ∫
-		dc.b $BC ; º
-		dc.b $BE ; æ
-		dc.b $C0 ; ¿
-		dc.b $C2 ; ¬
-		dc.b $C4 ; ƒ
-		dc.b $C6 ; ∆
-		dc.b $C8 ; »
-		dc.b $CA ;  
-		dc.b $CC ; Ã
-		dc.b $CE ; Œ
-		dc.b $D0 ; –
-		dc.b $D2 ; “
-		dc.b $D4 ; ‘
-		dc.b $D6 ; ÷
-		dc.b $D8 ; ÿ
-		dc.b $DA ; ⁄
-		dc.b $DC ; ‹
-		dc.b $DE ; ﬁ
-		dc.b $E0 ; ‡
-		dc.b $E2 ; ‚
-		dc.b $E4 ; ‰
-		dc.b $E6 ; Ê
-		dc.b $E8 ; Ë
-		dc.b $EA ; Í
-		dc.b $EC ; Ï
-		dc.b $EE ; Ó
-		dc.b $F0 ; 
-		dc.b $F2 ; Ú
-		dc.b $F4 ; Ù
-		dc.b $F6 ; ˆ
-		dc.b $F8 ; ¯
-		dc.b $FA ; ˙
-		dc.b $FC ; ¸
-		dc.b $FE ; ˛
+		dc.b $80 ; ÔøΩ
+		dc.b $82 ; ÔøΩ
+		dc.b $84 ; ÔøΩ
+		dc.b $86 ; ÔøΩ
+		dc.b $88 ; ÔøΩ
+		dc.b $8A ; ÔøΩ
+		dc.b $8C ; ÔøΩ
+		dc.b $8E ; ÔøΩ
+		dc.b $90 ; ÔøΩ
+		dc.b $92 ; ÔøΩ
+		dc.b $94 ; ÔøΩ
+		dc.b $96 ; ÔøΩ
+		dc.b $98 ; ÔøΩ
+		dc.b $9A ; ÔøΩ
+		dc.b $9C ; ÔøΩ
+		dc.b $9E ; ÔøΩ
+		dc.b $A0 ; ÔøΩ
+		dc.b $A2 ; ÔøΩ
+		dc.b $A4 ; ÔøΩ
+		dc.b $A6 ; ÔøΩ
+		dc.b $A8 ; ÔøΩ
+		dc.b $AA ; ÔøΩ
+		dc.b $AC ; ÔøΩ
+		dc.b $AE ; ÔøΩ
+		dc.b $B0 ; ÔøΩ
+		dc.b $B2 ; ÔøΩ
+		dc.b $B4 ; ÔøΩ
+		dc.b $B6 ; ÔøΩ
+		dc.b $B8 ; ÔøΩ
+		dc.b $BA ; ÔøΩ
+		dc.b $BC ; ÔøΩ
+		dc.b $BE ; ÔøΩ
+		dc.b $C0 ; ÔøΩ
+		dc.b $C2 ; ÔøΩ
+		dc.b $C4 ; ÔøΩ
+		dc.b $C6 ; ÔøΩ
+		dc.b $C8 ; ÔøΩ
+		dc.b $CA ; ÔøΩ
+		dc.b $CC ; ÔøΩ
+		dc.b $CE ; ÔøΩ
+		dc.b $D0 ; ÔøΩ
+		dc.b $D2 ; ÔøΩ
+		dc.b $D4 ; ÔøΩ
+		dc.b $D6 ; ÔøΩ
+		dc.b $D8 ; ÔøΩ
+		dc.b $DA ; ÔøΩ
+		dc.b $DC ; ÔøΩ
+		dc.b $DE ; ÔøΩ
+		dc.b $E0 ; ÔøΩ
+		dc.b $E2 ; ÔøΩ
+		dc.b $E4 ; ÔøΩ
+		dc.b $E6 ; ÔøΩ
+		dc.b $E8 ; ÔøΩ
+		dc.b $EA ; ÔøΩ
+		dc.b $EC ; ÔøΩ
+		dc.b $EE ; ÔøΩ
+		dc.b $F0 ; ÔøΩ
+		dc.b $F2 ; ÔøΩ
+		dc.b $F4 ; ÔøΩ
+		dc.b $F6 ; ÔøΩ
+		dc.b $F8 ; ÔøΩ
+		dc.b $FA ; ÔøΩ
+		dc.b $FC ; ÔøΩ
+		dc.b $FE ; ÔøΩ
 		dc.b   0
-		dc.b $80 ; Ä
-		dc.b   0
-		dc.b $7F ; 
-		dc.b   0
-		dc.b   2
-		dc.b   4
-		dc.b   6
-		dc.b   8
-		dc.b  $A
-		dc.b  $C
-		dc.b  $E
-		dc.b $10
-		dc.b $12
-		dc.b $14
-		dc.b $16
-		dc.b $18
-		dc.b $1A
-		dc.b $1C
-		dc.b $1E
-		dc.b $20
-		dc.b $22 ; "
-		dc.b $24 ; $
-		dc.b $26 ; &
-		dc.b $28 ; (
-		dc.b $2A ; *
-		dc.b $2C ; ,
-		dc.b $2E ; .
-		dc.b $30 ; 0
-		dc.b $32 ; 2
-		dc.b $34 ; 4
-		dc.b $36 ; 6
-		dc.b $38 ; 8
-		dc.b $3A ; :
-		dc.b $3C ; <
-		dc.b $3E ; >
-		dc.b $40 ; @
-		dc.b $42 ; B
-		dc.b $44 ; D
-		dc.b $46 ; F
-		dc.b $48 ; H
-		dc.b $4A ; J
-		dc.b $4C ; L
-		dc.b $4E ; N
-		dc.b $50 ; P
-		dc.b $52 ; R
-		dc.b $54 ; T
-		dc.b $56 ; V
-		dc.b $58 ; X
-		dc.b $5A ; Z
-		dc.b $5C ; \
-		dc.b $5E ; ^
-		dc.b $60 ; `
-		dc.b $62 ; b
-		dc.b $64 ; d
-		dc.b $66 ; f
-		dc.b $68 ; h
-		dc.b $6A ; j
-		dc.b $6C ; l
-		dc.b $6E ; n
-		dc.b $70 ; p
-		dc.b $72 ; r
-		dc.b $74 ; t
-		dc.b $76 ; v
-		dc.b $78 ; x
-		dc.b $7A ; z
-		dc.b $7C ; |
-		dc.b $7E ; ~
-		dc.b $80 ; Ä
-		dc.b $82 ; Ç
-		dc.b $84 ; Ñ
-		dc.b $86 ; Ü
-		dc.b $88 ; à
-		dc.b $8A ; ä
-		dc.b $8C ; å
-		dc.b $8E ; é
-		dc.b $90 ; ê
-		dc.b $92 ; í
-		dc.b $94 ; î
-		dc.b $96 ; ñ
-		dc.b $98 ; ò
-		dc.b $9A ; ö
-		dc.b $9C ; ú
-		dc.b $9E ; û
-		dc.b $A0 ; †
-		dc.b $A2 ; ¢
-		dc.b $A4 ; §
-		dc.b $A6 ; ¶
-		dc.b $A8 ; ®
-		dc.b $AA ; ™
-		dc.b $AC ; ¨
-		dc.b $AE ; Æ
-		dc.b $B0 ; ∞
-		dc.b $B2 ; ≤
-		dc.b $B4 ; ¥
-		dc.b $B6 ; ∂
-		dc.b $B8 ; ∏
-		dc.b $BA ; ∫
-		dc.b $BC ; º
-		dc.b $BE ; æ
-		dc.b $C0 ; ¿
-		dc.b $C2 ; ¬
-		dc.b $C4 ; ƒ
-		dc.b $C6 ; ∆
-		dc.b $C8 ; »
-		dc.b $CA ;  
-		dc.b $CC ; Ã
-		dc.b $CE ; Œ
-		dc.b $D0 ; –
-		dc.b $D2 ; “
-		dc.b $D4 ; ‘
-		dc.b $D6 ; ÷
-		dc.b $D8 ; ÿ
-		dc.b $DA ; ⁄
-		dc.b $DC ; ‹
-		dc.b $DE ; ﬁ
-		dc.b $E0 ; ‡
-		dc.b $E2 ; ‚
-		dc.b $E4 ; ‰
-		dc.b $E6 ; Ê
-		dc.b $E8 ; Ë
-		dc.b $EA ; Í
-		dc.b $EC ; Ï
-		dc.b $EE ; Ó
-		dc.b $F0 ; 
-		dc.b $F2 ; Ú
-		dc.b $F4 ; Ù
-		dc.b $F6 ; ˆ
-		dc.b $F8 ; ¯
-		dc.b $FA ; ˙
-		dc.b $FC ; ¸
-		dc.b $FE ; ˛
-		dc.b   0
-		dc.b $80 ; Ä
+		dc.b $80 ; ÔøΩ
 		dc.b   0
 		dc.b $7F ; 
 		dc.b   0
@@ -14723,72 +14591,204 @@ loc_CFD0:	dc.b   0		; DATA XREF: sub_CCCA+38o
 		dc.b $7A ; z
 		dc.b $7C ; |
 		dc.b $7E ; ~
-		dc.b $80 ; Ä
-		dc.b $82 ; Ç
-		dc.b $84 ; Ñ
-		dc.b $86 ; Ü
-		dc.b $88 ; à
-		dc.b $8A ; ä
-		dc.b $8C ; å
-		dc.b $8E ; é
-		dc.b $90 ; ê
-		dc.b $92 ; í
-		dc.b $94 ; î
-		dc.b $96 ; ñ
-		dc.b $98 ; ò
-		dc.b $9A ; ö
-		dc.b $9C ; ú
-		dc.b $9E ; û
-		dc.b $A0 ; †
-		dc.b $A2 ; ¢
-		dc.b $A4 ; §
-		dc.b $A6 ; ¶
-		dc.b $A8 ; ®
-		dc.b $AA ; ™
-		dc.b $AC ; ¨
-		dc.b $AE ; Æ
-		dc.b $B0 ; ∞
-		dc.b $B2 ; ≤
-		dc.b $B4 ; ¥
-		dc.b $B6 ; ∂
-		dc.b $B8 ; ∏
-		dc.b $BA ; ∫
-		dc.b $BC ; º
-		dc.b $BE ; æ
-		dc.b $C0 ; ¿
-		dc.b $C2 ; ¬
-		dc.b $C4 ; ƒ
-		dc.b $C6 ; ∆
-		dc.b $C8 ; »
-		dc.b $CA ;  
-		dc.b $CC ; Ã
-		dc.b $CE ; Œ
-		dc.b $D0 ; –
-		dc.b $D2 ; “
-		dc.b $D4 ; ‘
-		dc.b $D6 ; ÷
-		dc.b $D8 ; ÿ
-		dc.b $DA ; ⁄
-		dc.b $DC ; ‹
-		dc.b $DE ; ﬁ
-		dc.b $E0 ; ‡
-		dc.b $E2 ; ‚
-		dc.b $E4 ; ‰
-		dc.b $E6 ; Ê
-		dc.b $E8 ; Ë
-		dc.b $EA ; Í
-		dc.b $EC ; Ï
-		dc.b $EE ; Ó
-		dc.b $F0 ; 
-		dc.b $F2 ; Ú
-		dc.b $F4 ; Ù
-		dc.b $F6 ; ˆ
-		dc.b $F8 ; ¯
-		dc.b $FA ; ˙
-		dc.b $FC ; ¸
-		dc.b $FE ; ˛
+		dc.b $80 ; ÔøΩ
+		dc.b $82 ; ÔøΩ
+		dc.b $84 ; ÔøΩ
+		dc.b $86 ; ÔøΩ
+		dc.b $88 ; ÔøΩ
+		dc.b $8A ; ÔøΩ
+		dc.b $8C ; ÔøΩ
+		dc.b $8E ; ÔøΩ
+		dc.b $90 ; ÔøΩ
+		dc.b $92 ; ÔøΩ
+		dc.b $94 ; ÔøΩ
+		dc.b $96 ; ÔøΩ
+		dc.b $98 ; ÔøΩ
+		dc.b $9A ; ÔøΩ
+		dc.b $9C ; ÔøΩ
+		dc.b $9E ; ÔøΩ
+		dc.b $A0 ; ÔøΩ
+		dc.b $A2 ; ÔøΩ
+		dc.b $A4 ; ÔøΩ
+		dc.b $A6 ; ÔøΩ
+		dc.b $A8 ; ÔøΩ
+		dc.b $AA ; ÔøΩ
+		dc.b $AC ; ÔøΩ
+		dc.b $AE ; ÔøΩ
+		dc.b $B0 ; ÔøΩ
+		dc.b $B2 ; ÔøΩ
+		dc.b $B4 ; ÔøΩ
+		dc.b $B6 ; ÔøΩ
+		dc.b $B8 ; ÔøΩ
+		dc.b $BA ; ÔøΩ
+		dc.b $BC ; ÔøΩ
+		dc.b $BE ; ÔøΩ
+		dc.b $C0 ; ÔøΩ
+		dc.b $C2 ; ÔøΩ
+		dc.b $C4 ; ÔøΩ
+		dc.b $C6 ; ÔøΩ
+		dc.b $C8 ; ÔøΩ
+		dc.b $CA ; ÔøΩ
+		dc.b $CC ; ÔøΩ
+		dc.b $CE ; ÔøΩ
+		dc.b $D0 ; ÔøΩ
+		dc.b $D2 ; ÔøΩ
+		dc.b $D4 ; ÔøΩ
+		dc.b $D6 ; ÔøΩ
+		dc.b $D8 ; ÔøΩ
+		dc.b $DA ; ÔøΩ
+		dc.b $DC ; ÔøΩ
+		dc.b $DE ; ÔøΩ
+		dc.b $E0 ; ÔøΩ
+		dc.b $E2 ; ÔøΩ
+		dc.b $E4 ; ÔøΩ
+		dc.b $E6 ; ÔøΩ
+		dc.b $E8 ; ÔøΩ
+		dc.b $EA ; ÔøΩ
+		dc.b $EC ; ÔøΩ
+		dc.b $EE ; ÔøΩ
+		dc.b $F0 ; ÔøΩ
+		dc.b $F2 ; ÔøΩ
+		dc.b $F4 ; ÔøΩ
+		dc.b $F6 ; ÔøΩ
+		dc.b $F8 ; ÔøΩ
+		dc.b $FA ; ÔøΩ
+		dc.b $FC ; ÔøΩ
+		dc.b $FE ; ÔøΩ
 		dc.b   0
-		dc.b $80 ; Ä
+		dc.b $80 ; ÔøΩ
+		dc.b   0
+		dc.b $7F ; 
+		dc.b   0
+		dc.b   2
+		dc.b   4
+		dc.b   6
+		dc.b   8
+		dc.b  $A
+		dc.b  $C
+		dc.b  $E
+		dc.b $10
+		dc.b $12
+		dc.b $14
+		dc.b $16
+		dc.b $18
+		dc.b $1A
+		dc.b $1C
+		dc.b $1E
+		dc.b $20
+		dc.b $22 ; "
+		dc.b $24 ; $
+		dc.b $26 ; &
+		dc.b $28 ; (
+		dc.b $2A ; *
+		dc.b $2C ; ,
+		dc.b $2E ; .
+		dc.b $30 ; 0
+		dc.b $32 ; 2
+		dc.b $34 ; 4
+		dc.b $36 ; 6
+		dc.b $38 ; 8
+		dc.b $3A ; :
+		dc.b $3C ; <
+		dc.b $3E ; >
+		dc.b $40 ; @
+		dc.b $42 ; B
+		dc.b $44 ; D
+		dc.b $46 ; F
+		dc.b $48 ; H
+		dc.b $4A ; J
+		dc.b $4C ; L
+		dc.b $4E ; N
+		dc.b $50 ; P
+		dc.b $52 ; R
+		dc.b $54 ; T
+		dc.b $56 ; V
+		dc.b $58 ; X
+		dc.b $5A ; Z
+		dc.b $5C ; \
+		dc.b $5E ; ^
+		dc.b $60 ; `
+		dc.b $62 ; b
+		dc.b $64 ; d
+		dc.b $66 ; f
+		dc.b $68 ; h
+		dc.b $6A ; j
+		dc.b $6C ; l
+		dc.b $6E ; n
+		dc.b $70 ; p
+		dc.b $72 ; r
+		dc.b $74 ; t
+		dc.b $76 ; v
+		dc.b $78 ; x
+		dc.b $7A ; z
+		dc.b $7C ; |
+		dc.b $7E ; ~
+		dc.b $80 ; ÔøΩ
+		dc.b $82 ; ÔøΩ
+		dc.b $84 ; ÔøΩ
+		dc.b $86 ; ÔøΩ
+		dc.b $88 ; ÔøΩ
+		dc.b $8A ; ÔøΩ
+		dc.b $8C ; ÔøΩ
+		dc.b $8E ; ÔøΩ
+		dc.b $90 ; ÔøΩ
+		dc.b $92 ; ÔøΩ
+		dc.b $94 ; ÔøΩ
+		dc.b $96 ; ÔøΩ
+		dc.b $98 ; ÔøΩ
+		dc.b $9A ; ÔøΩ
+		dc.b $9C ; ÔøΩ
+		dc.b $9E ; ÔøΩ
+		dc.b $A0 ; ÔøΩ
+		dc.b $A2 ; ÔøΩ
+		dc.b $A4 ; ÔøΩ
+		dc.b $A6 ; ÔøΩ
+		dc.b $A8 ; ÔøΩ
+		dc.b $AA ; ÔøΩ
+		dc.b $AC ; ÔøΩ
+		dc.b $AE ; ÔøΩ
+		dc.b $B0 ; ÔøΩ
+		dc.b $B2 ; ÔøΩ
+		dc.b $B4 ; ÔøΩ
+		dc.b $B6 ; ÔøΩ
+		dc.b $B8 ; ÔøΩ
+		dc.b $BA ; ÔøΩ
+		dc.b $BC ; ÔøΩ
+		dc.b $BE ; ÔøΩ
+		dc.b $C0 ; ÔøΩ
+		dc.b $C2 ; ÔøΩ
+		dc.b $C4 ; ÔøΩ
+		dc.b $C6 ; ÔøΩ
+		dc.b $C8 ; ÔøΩ
+		dc.b $CA ; ÔøΩ
+		dc.b $CC ; ÔøΩ
+		dc.b $CE ; ÔøΩ
+		dc.b $D0 ; ÔøΩ
+		dc.b $D2 ; ÔøΩ
+		dc.b $D4 ; ÔøΩ
+		dc.b $D6 ; ÔøΩ
+		dc.b $D8 ; ÔøΩ
+		dc.b $DA ; ÔøΩ
+		dc.b $DC ; ÔøΩ
+		dc.b $DE ; ÔøΩ
+		dc.b $E0 ; ÔøΩ
+		dc.b $E2 ; ÔøΩ
+		dc.b $E4 ; ÔøΩ
+		dc.b $E6 ; ÔøΩ
+		dc.b $E8 ; ÔøΩ
+		dc.b $EA ; ÔøΩ
+		dc.b $EC ; ÔøΩ
+		dc.b $EE ; ÔøΩ
+		dc.b $F0 ; ÔøΩ
+		dc.b $F2 ; ÔøΩ
+		dc.b $F4 ; ÔøΩ
+		dc.b $F6 ; ÔøΩ
+		dc.b $F8 ; ÔøΩ
+		dc.b $FA ; ÔøΩ
+		dc.b $FC ; ÔøΩ
+		dc.b $FE ; ÔøΩ
+		dc.b   0
+		dc.b $80 ; ÔøΩ
 		dc.b   0
 		dc.b $7F ; 
 		dc.b   0
@@ -14855,70 +14855,70 @@ unk_D184:	dc.b $48 ; H
 		dc.b $7A ; z
 		dc.b $7C ; |
 		dc.b $7E ; ~
-		dc.b $80 ; Ä
-		dc.b $82 ; Ç
-		dc.b $84 ; Ñ
-		dc.b $86 ; Ü
-		dc.b $88 ; à
-		dc.b $8A ; ä
-		dc.b $8C ; å
-		dc.b $8E ; é
-		dc.b $90 ; ê
-		dc.b $92 ; í
-		dc.b $94 ; î
-		dc.b $96 ; ñ
-		dc.b $98 ; ò
-		dc.b $9A ; ö
-		dc.b $9C ; ú
-		dc.b $9E ; û
-		dc.b $A0 ; †
-		dc.b $A2 ; ¢
-		dc.b $A4 ; §
-		dc.b $A6 ; ¶
-		dc.b $A8 ; ®
-		dc.b $AA ; ™
-		dc.b $AC ; ¨
-		dc.b $AE ; Æ
-		dc.b $B0 ; ∞
-		dc.b $B2 ; ≤
-		dc.b $B4 ; ¥
-		dc.b $B6 ; ∂
-		dc.b $B8 ; ∏
-		dc.b $BA ; ∫
-		dc.b $BC ; º
-		dc.b $BE ; æ
-		dc.b $C0 ; ¿
-		dc.b $C2 ; ¬
-		dc.b $C4 ; ƒ
-		dc.b $C6 ; ∆
-		dc.b $C8 ; »
-		dc.b $CA ;  
-		dc.b $CC ; Ã
-		dc.b $CE ; Œ
-		dc.b $D0 ; –
-		dc.b $D2 ; “
-		dc.b $D4 ; ‘
-		dc.b $D6 ; ÷
-		dc.b $D8 ; ÿ
-		dc.b $DA ; ⁄
-		dc.b $DC ; ‹
-		dc.b $DE ; ﬁ
-		dc.b $E0 ; ‡
-		dc.b $E2 ; ‚
-		dc.b $E4 ; ‰
-		dc.b $E6 ; Ê
-		dc.b $E8 ; Ë
-		dc.b $EA ; Í
-		dc.b $EC ; Ï
-		dc.b $EE ; Ó
-		dc.b $F0 ; 
-		dc.b $F2 ; Ú
-		dc.b $F4 ; Ù
-		dc.b $F6 ; ˆ
-		dc.b $F8 ; ¯
-		dc.b $FA ; ˙
-		dc.b $FC ; ¸
-		dc.b $FE ; ˛
+		dc.b $80 ; ÔøΩ
+		dc.b $82 ; ÔøΩ
+		dc.b $84 ; ÔøΩ
+		dc.b $86 ; ÔøΩ
+		dc.b $88 ; ÔøΩ
+		dc.b $8A ; ÔøΩ
+		dc.b $8C ; ÔøΩ
+		dc.b $8E ; ÔøΩ
+		dc.b $90 ; ÔøΩ
+		dc.b $92 ; ÔøΩ
+		dc.b $94 ; ÔøΩ
+		dc.b $96 ; ÔøΩ
+		dc.b $98 ; ÔøΩ
+		dc.b $9A ; ÔøΩ
+		dc.b $9C ; ÔøΩ
+		dc.b $9E ; ÔøΩ
+		dc.b $A0 ; ÔøΩ
+		dc.b $A2 ; ÔøΩ
+		dc.b $A4 ; ÔøΩ
+		dc.b $A6 ; ÔøΩ
+		dc.b $A8 ; ÔøΩ
+		dc.b $AA ; ÔøΩ
+		dc.b $AC ; ÔøΩ
+		dc.b $AE ; ÔøΩ
+		dc.b $B0 ; ÔøΩ
+		dc.b $B2 ; ÔøΩ
+		dc.b $B4 ; ÔøΩ
+		dc.b $B6 ; ÔøΩ
+		dc.b $B8 ; ÔøΩ
+		dc.b $BA ; ÔøΩ
+		dc.b $BC ; ÔøΩ
+		dc.b $BE ; ÔøΩ
+		dc.b $C0 ; ÔøΩ
+		dc.b $C2 ; ÔøΩ
+		dc.b $C4 ; ÔøΩ
+		dc.b $C6 ; ÔøΩ
+		dc.b $C8 ; ÔøΩ
+		dc.b $CA ; ÔøΩ
+		dc.b $CC ; ÔøΩ
+		dc.b $CE ; ÔøΩ
+		dc.b $D0 ; ÔøΩ
+		dc.b $D2 ; ÔøΩ
+		dc.b $D4 ; ÔøΩ
+		dc.b $D6 ; ÔøΩ
+		dc.b $D8 ; ÔøΩ
+		dc.b $DA ; ÔøΩ
+		dc.b $DC ; ÔøΩ
+		dc.b $DE ; ÔøΩ
+		dc.b $E0 ; ÔøΩ
+		dc.b $E2 ; ÔøΩ
+		dc.b $E4 ; ÔøΩ
+		dc.b $E6 ; ÔøΩ
+		dc.b $E8 ; ÔøΩ
+		dc.b $EA ; ÔøΩ
+		dc.b $EC ; ÔøΩ
+		dc.b $EE ; ÔøΩ
+		dc.b $F0 ; ÔøΩ
+		dc.b $F2 ; ÔøΩ
+		dc.b $F4 ; ÔøΩ
+		dc.b $F6 ; ÔøΩ
+		dc.b $F8 ; ÔøΩ
+		dc.b $FA ; ÔøΩ
+		dc.b $FC ; ÔøΩ
+		dc.b $FE ; ÔøΩ
 
 ; =============== S U B	R O U T	I N E =======================================
 ; star tether
@@ -14931,7 +14931,7 @@ loc_D1E2:				; CODE XREF: sub_D1E0+1Ej
 		moveq	#8,d0
 		jsr	sub_1918
 		bmi.s	locret_D202
-		move.w	#$80,4(a0) ; 'Ä'
+		move.w	#$80,4(a0) ; 'ÔøΩ'
 		move.w	#$800,6(a0)
 		move.l	#TethCodingValue,$10(a0)
 		dbf	d7,loc_D1E2
@@ -15769,7 +15769,7 @@ loc_DACE:				; CODE XREF: ROM:0000DAA6j
 loc_DB00:				; CODE XREF: ROM:0000DAF6j
 					; ROM:0000DAFCj
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d0 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d0 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		moveq	#0,d1
 		jsr	(loc_CB1C).l
 
@@ -15794,7 +15794,7 @@ loc_DB14:				; CODE XREF: ROM:0000DADCj
 loc_DB46:				; CODE XREF: ROM:0000DB3Cj
 					; ROM:0000DB42j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d0 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d0 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		moveq	#0,d1
 		jsr	(loc_CB1C).l
 
@@ -15852,7 +15852,7 @@ loc_DBBA:				; CODE XREF: ROM:0000DB92j
 loc_DBEC:				; CODE XREF: ROM:0000DBE2j
 					; ROM:0000DBE8j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d0 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d0 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		neg.l	d0
 		moveq	#0,d1
 		jsr	(loc_CB1C).l
@@ -15878,7 +15878,7 @@ loc_DC02:				; CODE XREF: ROM:0000DBC8j
 loc_DC34:				; CODE XREF: ROM:0000DC2Aj
 					; ROM:0000DC30j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d0 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d0 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		neg.l	d0
 		moveq	#0,d1
 		jsr	(loc_CB1C).l
@@ -15936,7 +15936,7 @@ loc_DCAA:				; CODE XREF: ROM:0000DC82j
 loc_DCDC:				; CODE XREF: ROM:0000DCD2j
 					; ROM:0000DCD8j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d1 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d1 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		neg.l	d1
 		moveq	#0,d0
 		jsr	(loc_CB1C).l
@@ -15962,7 +15962,7 @@ loc_DCF2:				; CODE XREF: ROM:0000DCB8j
 loc_DD24:				; CODE XREF: ROM:0000DD1Aj
 					; ROM:0000DD20j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d1 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d1 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		neg.l	d1
 		moveq	#0,d0
 		jsr	(loc_CB1C).l
@@ -16020,7 +16020,7 @@ loc_DD9A:				; CODE XREF: ROM:0000DD72j
 loc_DDCC:				; CODE XREF: ROM:0000DDC2j
 					; ROM:0000DDC8j
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d1 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d1 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		moveq	#0,d0
 		jsr	(loc_CB1C).l
 
@@ -16045,7 +16045,7 @@ loc_DDE0:				; CODE XREF: ROM:0000DDA8j
 loc_DE12:				; CODE XREF: ROM:0000DE08j
 					; ROM:0000DE0Ej
 		ori.w	#1,$2A(a6)
-		move.l	#ARTUNC_Tails,d1 ; "\x0EÏ\x0E∫Ã\x0E≤™\x0Eπ2\x0EªI\x0EÎDÓ¥ÓÎÏªÏªÏª\x0EÀ\x0EÃ„Ï\fÓŒ\x01\x1E\x1E"...
+		move.l	#ARTUNC_Tails,d1 ; "\x0EÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩÔøΩ\x0EÔøΩ2\x0EÔøΩI\x0EÔøΩDÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ\x0EÔøΩ\x0EÔøΩÔøΩÔøΩ\fÔøΩÔøΩ\x01\x1E\x1E"...
 		moveq	#0,d0
 		jsr	(loc_CB1C).l
 
@@ -17578,10 +17578,10 @@ loc_EBE0:				; CODE XREF: ROM:loc_EBC8j
 		tst.w	($FFFFD834).w
 		beq.s	loc_EC02
 		movea.w	($FFFFD862).w,a0
-		cmpi.w	#$8F,$C(a0) ; 'è'
+		cmpi.w	#$8F,$C(a0) ; 'ÔøΩ'
 		bcs.s	loc_EBFE
 		movea.w	($FFFFD864).w,a0
-		cmpi.w	#$8F,$C(a0) ; 'è'
+		cmpi.w	#$8F,$C(a0) ; 'ÔøΩ'
 		bcc.s	loc_EC02
 
 loc_EBFE:				; CODE XREF: ROM:0000EBF0j
@@ -17730,19 +17730,19 @@ unk_ECE6:	dc.b   0
 		dc.b $75 ; u
 		dc.b $77 ; w
 		dc.b $78 ; x
-		dc.b $80 ; Ä
-		dc.b $81 ; Å
-		dc.b $83 ; É
-		dc.b $84 ; Ñ
-		dc.b $86 ; Ü
-		dc.b $88 ; à
-		dc.b $89 ; â
-		dc.b $91 ; ë
-		dc.b $92 ; í
-		dc.b $94 ; î
-		dc.b $95 ; ï
-		dc.b $97 ; ó
-		dc.b $99 ; ô
+		dc.b $80 ; ÔøΩ
+		dc.b $81 ; ÔøΩ
+		dc.b $83 ; ÔøΩ
+		dc.b $84 ; ÔøΩ
+		dc.b $86 ; ÔøΩ
+		dc.b $88 ; ÔøΩ
+		dc.b $89 ; ÔøΩ
+		dc.b $91 ; ÔøΩ
+		dc.b $92 ; ÔøΩ
+		dc.b $94 ; ÔøΩ
+		dc.b $95 ; ÔøΩ
+		dc.b $97 ; ÔøΩ
+		dc.b $99 ; ÔøΩ
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -18263,7 +18263,7 @@ sub_F1CA:				; CODE XREF: sub_F116+Cp sub_F12Cp
 		lea	($FFFFC9DE).w,a0
 		dc.b $30, $28, $00, $00		; move.w  0(a0),d0
 		move.w	$10(a0),d1
-		addi.w	#$A0,d0	; '†'
+		addi.w	#$A0,d0	; 'ÔøΩ'
 		addi.w	#$70,d1	; 'p'
 		move.w	d0,($FFFFD8E4).w
 		move.w	d1,($FFFFD8E6).w
@@ -18273,7 +18273,7 @@ sub_F1CA:				; CODE XREF: sub_F116+Cp sub_F12Cp
 
 loc_F1EE:				; CODE XREF: sub_F1CA+20j
 		move.w	d0,($FFFFD8DC).w
-		subi.w	#$E0,d1	; '‡'
+		subi.w	#$E0,d1	; 'ÔøΩ'
 		bcc.s	loc_F1FA
 		moveq	#0,d1
 
@@ -18288,7 +18288,7 @@ loc_F1FA:				; CODE XREF: sub_F1CA+2Cj
 
 loc_F214:				; CODE XREF: sub_F1CA+44j
 		move.w	d0,($FFFFD8E0).w
-		addi.w	#$E0,d1	; '‡'
+		addi.w	#$E0,d1	; 'ÔøΩ'
 		cmp.w	($FFFFD8EA).w,d1
 		bcs.s	loc_F226
 		move.w	($FFFFD8EA).w,d1
@@ -18368,7 +18368,7 @@ sub_F286:				; CODE XREF: ROM:0000D38Ep
 
 loc_F29A:				; CODE XREF: ROM:0000F318p
 		move.w	4(a6),d0
-		ori.w	#$80,d0	; 'Ä'
+		ori.w	#$80,d0	; 'ÔøΩ'
 		move.w	d0,4(a6)
 		rts
 ; End of function loc_F29A
@@ -19021,7 +19021,7 @@ loc_F7F8:				; CODE XREF: sub_F538+2B8j
 		move.l	#$800E800D,d0
 		addi.w	#$12,d3
 		movem.w	d1/d3,-(sp)
-		subi.w	#$80,d3	; 'Ä'
+		subi.w	#$80,d3	; 'ÔøΩ'
 		bsr.w	sub_F904
 		movem.w	(sp)+,d1/d3
 		moveq	#$18,d0
