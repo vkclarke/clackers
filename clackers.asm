@@ -14,7 +14,8 @@
 ; #    #   #  # #    # #  #    #       #
 ;  ### #   ####  ### #  #  ##  #    ###
 
-
+VDATA equ $C00000
+VCTRL equ $C00004
 
 ; 68k vector table
 ; ----------------
@@ -152,8 +153,8 @@ SetupValues:
 	dc.l $A00000		; Z80 Ram start
 	dc.l $A11100		; Z80 Bus port
 	dc.l $A11200		; Z80 reset port
-	dc.l $C00000		; VDP Data port
-	dc.l $C00004		; VDP Address port
+	dc.l VDATA		; VDP Data port
+	dc.l VCTRL		; VDP Address port
 
 	dc.b $04 ; 8004
 	dc.b $14 ; 8114 Display Value
@@ -194,7 +195,7 @@ SetupValues:
 ; Game setup
 ; ----------
 GameSetup:
-		tst.w	($C00004).l
+		tst.w	VCTRL
 		lea	($FFFFFFC0).w,a0
 		move.l	(a0),d0
 		cmpi.l	#'SEGA',d0
@@ -250,14 +251,14 @@ loc_36E:
 		move.b	d0,($A1000D).l
 
 loc_38A:
-		move.w	($C00004).l,d0
+		move.w	VCTRL,d0
 		btst	#1,d0
 		bne.s	loc_38A
-		lea	($C00000).l,a0
-		move.w	#$8F02,($C00004).l
+		lea	VDATA,a0
+		move.w	#$8F02,VCTRL
 		move.w	#$8F02,($FFFFC9D6).w
 		moveq	#0,d0					; clear d0
-		move.l	#$40000000,($C00004).l			; set VDP in VRam write mode
+		move.l	#$40000000,VCTRL			; set VDP in VRam write mode
 		move.w	#$FFF,d1				; set repeat times
 
 Clear_VRam01:
@@ -266,7 +267,7 @@ Clear_VRam01:
 		move.l	d0,(a0)					; ''
 		move.l	d0,(a0)					; ''
 		dbf	d1,Clear_VRam01				; repeat til VRam is cleared
-		move.l	#$C0000000,($C00004).l			; set VDP in CRam write mode
+		move.l	#$C0000000,VCTRL			; set VDP in CRam write mode
 		move.w	#7,d1					; set repeat times
 
 Clear_CRam:
@@ -275,7 +276,7 @@ Clear_CRam:
 		move.l	d0,(a0)					; ''
 		move.l	d0,(a0)					; ''
 		dbf	d1,Clear_CRam				; repeat til CRam is cleared
-		move.l	#$40000010,($C00004).l			; set VDP mode
+		move.l	#$40000010,VCTRL			; set VDP mode
 		move.w	#4,d1					; set repeat times
 
 Clear_VRam02:
@@ -330,9 +331,9 @@ VDPSetup_01:
 loc_450:
 		btst	#0,($A11100).l				; has the Z80 stopped?
 		bne.s	loc_450					; if not, loop til stopped
-		move.w	#$8F02,($C00004).l			; set VDP Increment
+		move.w	#$8F02,VCTRL			; set VDP Increment
 		move.w	#$8F02,($FFFFC9D6).w
-		lea	($C00004).l,a0				; load VDP address port to a0
+		lea	VCTRL,a0				; load VDP address port to a0
 		ori.w	#$8114,($FFFFC9BA).w
 		move.w	($FFFFC9BA).w,(a0)
 		lea	VDPClearArr_01(pc),a1			; load VDP values address to a1
@@ -353,7 +354,7 @@ VDPClr_SetDMA:
 		andi.w	#$FFEF,($FFFFC9BA).w
 		move.w	($FFFFC9BA).w,(a0)
 		move.w	#$0,($A11100).l				; start the Z80
-		move.l	#$C0000000,($C00004).l			; set VDP in CRam write mode
+		move.l	#$C0000000,VCTRL			; set VDP in CRam write mode
 		move.w	($FFFFD3E4).w,-4(a0)			; move colour value in ram to VDP
 		rts						; return
 
@@ -369,7 +370,7 @@ VDPClearArr_02: even
 ; ---------------------------------------------------------------------------
 
 VDPSetup_02:
-		lea	($C00004).l,a4				; load VDP address port to a4
+		lea	VCTRL,a4				; load VDP address port to a4
 		moveq	#0,d3					; clear d3
 		move.w	#$100,($A11100).l			; stop the Z80
 
@@ -379,7 +380,7 @@ loc_4DC:
 		move.w	($FFFFC9BA).w,d0
 		bset	#4,d0
 		move.w	d0,(a4)
-		move.w	#$8F02,($C00004).l			; set VDP Increment
+		move.w	#$8F02,VCTRL			; set VDP Increment
 		move.w	#$8F02,($FFFFC9D6).w
 		lea	($FFFFD4F8).w,a1
 		move.w	(a1)+,d7				; load repeat times to d7
@@ -534,7 +535,7 @@ sub_626:
 		ori.w	#$4000,d3
 		rol.w	#2,d1
 		andi.w	#3,d1
-		lea	($C00004).l,a0
+		lea	VCTRL,a0
 		move.w	#$100,($A11100).l
 
 loc_64E:
@@ -543,7 +544,7 @@ loc_64E:
 		move.w	($FFFFC9BA).w,d4
 		bset	#4,d4
 		move.w	d4,(a0)
-		move.w	#$8F02,($C00004).l
+		move.w	#$8F02,VCTRL
 		move.w	#$8F02,($FFFFC9D6).w
 		move.w	d2,d4
 		move.w	#$9300,d5
@@ -801,7 +802,7 @@ locret_86C:
 ; ---------------------------------------------------------------------------
 
 sub_86E:
-		lea	($C00000).l,a1
+		lea	VDATA,a1
 		moveq	#0,d6
 		move.w	($FFFFD820).w,d6
 		swap	d6
@@ -830,7 +831,7 @@ loc_894:
 ; ---------------------------------------------------------------------------
 
 MapScreen:
-		lea	($C00000).l,a0			; load VDP data port to a0
+		lea	VDATA,a0			; load VDP data port to a0
 		moveq	#0,d6				; clear d6
 		move.w	($FFFFD820).w,d6		; load number of tiles to increase to for each set of columns to d6
 		swap	d6				; swap words (Sets it to left for long-word amount)
@@ -871,7 +872,7 @@ loc_8D4:
 		bge.s	loc_8F0
 		add.w	d1,d1
 		move.w	(a0),(a1,d1.w)
-		move.w	(a0)+,($C00004).l
+		move.w	(a0)+,VCTRL
 		bra.s	loc_8D4
 
 loc_8F0:
@@ -1377,7 +1378,7 @@ sub_DAA:
 
 NemDec:
 		lea	loc_E76(pc),a3
-		lea	($C00000).l,a4
+		lea	VDATA,a4
 		bra.s	loc_DD8
 
 loc_DD4:
@@ -1662,7 +1663,7 @@ locret_F84:
 		addi.w	#$60,($FFFFD79E).w
 
 loc_FBA:
-		lea	($C00004).l,a4
+		lea	VCTRL,a4
 		lsl.l	#2,d0
 		lsr.w	#2,d0
 		ori.w	#$4000,d0
@@ -1721,7 +1722,7 @@ loc_1034:
 		lsr.w	#2,d0
 		ori.w	#$4000,d0
 		swap	d0
-		move.l	d0,($C00004).l
+		move.l	d0,VCTRL
 		movem.l	d1/a1,-(sp)
 		bsr.w	NemDec
 		movem.l	(sp)+,d1/a1
@@ -2313,14 +2314,14 @@ loc_14B2:
 ; ---------------------------------------------------------------------------
 
 sub_14E4:
-		lea	($C00004).l,a1
+		lea	VCTRL,a1
 		lea	-4(a1),a2
 		move.w	$18(a5),d3
 		move.w	$1A(a5),d4
 		move.w	(a4),d0
 		beq.w	loc_1570
 		move.w	#0,(a4)+
-		move.w	#$8F80,($C00004).l
+		move.w	#$8F80,VCTRL
 		move.w	#$8F80,($FFFFC9D6).w
 		move.w	d0,d1
 		moveq	#$F,d7
@@ -2368,7 +2369,7 @@ loc_154C:
 loc_155C:
 		move.l	(a4)+,(a2)
 		dbf	d7,loc_155C
-		move.w	#$8F02,($C00004).l
+		move.w	#$8F02,VCTRL
 		move.w	#$8F02,($FFFFC9D6).w
 
 loc_1570:
@@ -4420,7 +4421,7 @@ sub_5090:
 		lsr.w	#2,d3
 		ori.w	#$4000,d3
 		swap	d3
-		move.l	d3,($C00004).l
+		move.l	d3,VCTRL
 		move.w	d0,d1
 		rol.w	#4,d1
 		bsr.s	sub_50B4
@@ -4435,7 +4436,7 @@ sub_50B4:
 		andi.w	#$F,d2
 		move.w	#0,d3
 		add.b	loc_50CA(pc,d2.w),d3
-		move.w	d3,($C00000).l
+		move.w	d3,VDATA
 		rts
 
 ; ???
@@ -4456,7 +4457,7 @@ loc_50CA:
 		lsr.w	#2,d3
 		ori.w	#$4000,d3
 		swap	d3
-		move.l	d3,($C00004).l
+		move.l	d3,VCTRL
 		cmpi.w	#$FFFF,d0
 		bcs.s	loc_50FC
 		move.w	#$FFFF,d0
@@ -4467,7 +4468,7 @@ loc_50FC:				; CODE XREF: ROM:000050F6j
 		move.w	#0,d4
 		move.w	#$10,d5
 		moveq	#0,d6
-		lea	($C00000).l,a1
+		lea	VDATA,a1
 		tst.w	d0
 		beq.s	loc_5142
 
@@ -4558,7 +4559,7 @@ UnknownRout002:
 		subi.w	#$20,d0
 		addi.w	#0,d0
 		or.w	d1,d0
-		move.w	d0,($C00000).l
+		move.w	d0,VDATA
 		bra.s	UnknownRout002
 
 UR002Return:
@@ -4688,9 +4689,9 @@ loc_64AA:
 		andi.w	#4,d0
 		move.w	d0,($FFFFFAC8).w
 		ori.w	#$8124,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		ori.w	#$8144,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		addq.w	#4,($FFFFD824).w		; increase sega screen mode
 
 loc_64F2:				; DATA XREF: ROM:loc_64F2o
@@ -4849,7 +4850,7 @@ loc_6626:
 		dc.b	$00,$00,$0E,$EE				; ori.b	  #$EE,d0 (makes the "TM" on the Sega screen white)
 
 loc_662A:
-		lea	($C00000).l,a3
+		lea	VDATA,a3
 		movea.l	a4,a5
 
 loc_6632:
@@ -4904,7 +4905,7 @@ loc_669A:				; CODE XREF: ROM:00006A84j
 
 loc_66A2:				; CODE XREF: sub_6CF0+8j
 		move.w	#$80F,d2
-		lea	($C00000).l,a3
+		lea	VDATA,a3
 
 loc_66AC:				; CODE XREF: sub_6CF0-5CEj
 		jsr	(sub_6F26).l
@@ -4969,7 +4970,7 @@ loc_66C2:				; CODE XREF: sub_6CF0-5DEj
 
 loc_6728:				; CODE XREF: ROM:00006A32j
 		move.w	#$80F,d2
-		lea	($C00000).l,a3
+		lea	VDATA,a3
 		movea.l	a4,a6
 		adda.w	($FFFFD816).w,a6
 
@@ -5098,7 +5099,7 @@ loc_67BC:				; CODE XREF: ROM:0000681Cj
 ; ---------------------------------------------------------------------------
 
 sub_682C:
-		lea	($C00000).l,a3				; load VDP address to a3
+		lea	VDATA,a3				; load VDP address to a3
 		moveq	#$F,d7					; set repeat times
 		move	#$2700,sr				; set the stack register (Stopping VBlank)
 		move.l	#$5E000000,4(a3)			; set VDP to VRam write mode
@@ -5277,7 +5278,7 @@ loc_697A:
 ; ---------------------------------------------------------------------------
 
 loc_69D2:				; CODE XREF: ROM:0000697Ej
-		move.w	#$8164,($C00004).l
+		move.w	#$8164,VCTRL
 		move.w	#$8164,($FFFFC9BA).w
 		bsr.w	sub_6612
 		lea	($FF0280).l,a0
@@ -5526,9 +5527,9 @@ loc_6C28:
 ; ---------------------------------------------------------------------------
 
 loc_6C48:				; CODE XREF: ROM:loc_6C28j
-		move.w	#$9003,($C00004).l
+		move.w	#$9003,VCTRL
 		move.w	#$9003,($FFFFC9D8).w
-		lea	($C00000).l,a3
+		lea	VDATA,a3
 		movea.w	($FFFFD816).w,a6
 		lea	$BE(a6),a6
 		move.l	#$A0F1A0F1,d2
@@ -5584,7 +5585,7 @@ sub_6CF0:				; CODE XREF: ROM:00006CBAp
 
 loc_6CFC:				; CODE XREF: ROM:00006C2Cj
 					; ROM:00006C34j
-		move.w	#$8164,($C00004).l
+		move.w	#$8164,VCTRL
 		move.w	#$8164,($FFFFC9BA).w
 		subi.w	#$10,($FFFFCA5E).w
 		subi.w	#$10,($FFFFCA60).w
@@ -5597,7 +5598,7 @@ locret_6D20:				; CODE XREF: ROM:00006D1Aj
 ; ---------------------------------------------------------------------------
 
 loc_6D22:				; CODE XREF: ROM:00006C30j
-		lea	($C00000).l,a3
+		lea	VDATA,a3
 		moveq	#0,d2
 		movea.w	($FFFFD816).w,a6
 		lea	$BE(a6),a6
@@ -5753,10 +5754,10 @@ loc_6EB4:				; DATA XREF: ROM:00006426o
 		ori.w	#$4000,d0
 		swap	d0
 		andi.w	#3,d0
-		move.l	d0,($C00004).l
-		move.l	($FFFFCA5E).w,($C00000).l
-		move.l	#$40000010,($C00004).l
-		move.l	($FFFFCDDE).w,($C00000).l
+		move.l	d0,VCTRL
+		move.l	($FFFFCA5E).w,VDATA
+		move.l	#$40000010,VCTRL
+		move.l	($FFFFCDDE).w,VDATA
 		move.w	($FFFFFFC4).w,d0
 		add.w	d0,d0
 		add.w	d0,d0
@@ -5791,7 +5792,7 @@ sub_6F26:				; CODE XREF: ROM:0000663Ap
 SegaToVDP:
 		move.l	(a0)+,d0			; load VDP settings to d0
 		move.w	(a0)+,d7			; load no of repeats to d7
-		lea	($C00000).l,a5			; load VDP address to a5
+		lea	VDATA,a5			; load VDP address to a5
 		move	sr,-(sp)			; move sr to stack pointer
 		move	#$2700,sr			; set the stack register (Stopping VBlank)
 		move.l	d0,4(a5)			; set VDP settings to VDP
@@ -5873,10 +5874,10 @@ loc_739A:
 		ori.w	#$4000,d0
 		swap	d0
 		andi.w	#3,d0
-		move.l	d0,($C00004).l
-		move.l	#0,($C00000).l
-		move.l	#$40000010,($C00004).l
-		move.l	#0,($C00000).l
+		move.l	d0,VCTRL
+		move.l	#0,VDATA
+		move.l	#$40000010,VCTRL
+		move.l	#0,VDATA
 		moveq	#$3F,d0	; '?'
 		moveq	#$3F,d1	; '?'
 		moveq	#0,d2
@@ -5888,7 +5889,7 @@ loc_739A:
 		move.w	#$E000,d3
 		jsr	sub_86E.w
 		lea	ARTNEM_MainMenusText(pc),a0			; load Main Menu text art address to a0
-		move.l	#$40000000,($C00004).l				; set VDP location to dump
+		move.l	#$40000000,VCTRL				; set VDP location to dump
 		jsr	NemDec.w						; decompress
 		move.l	#$41040003,d0					; prepare VDP settings
 		lea	MAPUNC_TitleMenu_1(pc),a1			; load uncompressed title mappings to a1 (Title Screen "Banner")
@@ -5920,9 +5921,9 @@ loc_7462:
 		move.l	(a0)+,(a1)+
 		dbf	d0,loc_7462
 		jsr	VDPSetup_01.w
-		move.l	#$78000003,($C00004).l
-		move.l	#0,($C00000).l
-		move.l	#$1E00D0,($C00000).l
+		move.l	#$78000003,VCTRL
+		move.l	#0,VDATA
+		move.l	#$1E00D0,VDATA
 		clr.w	($FFFFD826).w
 		clr.w	($FFFFD832).w
 		move	#$2300,sr					; set the stack register
@@ -6001,8 +6002,8 @@ loc_7562:				; CODE XREF: ROM:00007558j
 
 loc_7576:				; DATA XREF: ROM:00007368o
 		movem.l	d0-a6,-(sp)
-		move.l	#$78000003,($C00004).l
-		move.w	($FFFFD832).w,($C00000).l
+		move.l	#$78000003,VCTRL
+		move.w	($FFFFD832).w,VDATA
 		jsr	sub_96E.w
 		move.b	($FFFFC93C).w,d0
 		bsr.s	sub_75BC
@@ -6073,7 +6074,7 @@ Fields:
 		movem.l	(a0)+,d0-d7
 		movem.l	d0-d7,(a1)
 		andi.w	#$81BC,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		jsr	sub_8634.l
 		jsr	sub_15D0.w
 		move.w	#5,($FFFFD83C).w
@@ -6084,7 +6085,7 @@ Fields:
 		jsr	sub_D1E0.l
 		jsr	sub_FA44.l
 		ori.w	#$8144,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		bra.w	loc_7EEC
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -6220,8 +6221,8 @@ loc_8010:				; DATA XREF: ROM:00007E0Ao
 		move.w	($FFFFD81C).w,d1
 		move.w	#$1C0,d2
 		jsr	sub_5E8.w
-		move.l	#$40000010,($C00004).l
-		move.l	($FFFFCDDE).w,($C00000).l
+		move.l	#$40000010,VCTRL
+		move.l	($FFFFCDDE).w,VDATA
 		jsr	VDPSetup_01.w
 		jsr	sub_C9DE.l
 		move.l	#$FFFFD164,d0
@@ -6291,11 +6292,11 @@ loc_80E0:				; CODE XREF: sub_8064+7Ej
 		move.l	d0,(a0)+
 		dbf	d1,loc_80E0
 		move.l	d0,($FFFFCDDE).w
-		lea	($C00000).l,a0
-		move.w	#$8F02,($C00004).l
+		lea	VDATA,a0
+		move.w	#$8F02,VCTRL
 		move.w	#$8F02,($FFFFC9D6).w
 		moveq	#0,d0
-		move.l	#$40000000,($C00004).l
+		move.l	#$40000000,VCTRL
 		move.w	#$FFF,d1
 
 loc_810E:				; CODE XREF: sub_8064+B2j
@@ -6304,8 +6305,8 @@ loc_810E:				; CODE XREF: sub_8064+B2j
 		move.l	d0,(a0)
 		move.l	d0,(a0)
 		dbf	d1,loc_810E
-		move.l	#$40000010,($C00004).l
-		move.l	($FFFFCDDE).w,($C00000).l
+		move.l	#$40000010,VCTRL
+		move.l	($FFFFCDDE).w,VDATA
 		clr.w	($FFFFD824).w
 		addq.w	#1,($FFFFD836).w
 		tst.w	($FFFFD834).w
@@ -6996,13 +6997,13 @@ loc_86FC:				; CODE XREF: sub_86EA+3Cj
 		ori.w	#$4000,d0
 		swap	d0
 		andi.w	#3,d0
-		move.l	d0,($C00004).l
+		move.l	d0,VCTRL
 		move.w	d4,d2
 
 loc_8714:				; CODE XREF: sub_86EA+34j
 		move.w	(a0)+,d0
 		add.w	d5,d0
-		move.w	d0,($C00000).l
+		move.w	d0,VDATA
 		dbf	d2,loc_8714
 		addi.w	#$80,d6	; '�'
 		dbf	d3,loc_86FC
@@ -7187,7 +7188,7 @@ loc_88D2:				; CODE XREF: ROM:000088D4j
 		bsr.w	sub_F45C
 		bsr.w	sub_FA44
 		andi.w	#$81BC,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		clr.l	($FFFFD82C).w
 		jsr	sub_9514.l
 		bsr.w	sub_8BFE
@@ -7218,7 +7219,7 @@ loc_8968:				; CODE XREF: ROM:0000894Ej
 
 loc_896C:
 		ori.w	#$8144,($FFFFC9BA).w
-		move.w	($FFFFC9BA).w,($C00004).l
+		move.w	($FFFFC9BA).w,VCTRL
 		bsr.w	sub_F4FE
 		jsr	sub_F94A.l
 		bra.w	loc_89E0
@@ -7462,15 +7463,15 @@ sub_8C30:				; CODE XREF: ROM:00008934p
 		beq.s	locret_8C7E
 		move	#$2700,sr
 		lea	(ARTNEM_Springs).l,a0 ;	"A�\x063\x15\x1A&65\x17E\x16U\x18f8s\x01�\x03\x17x8�x��\x04\x05\x14\a%\x138��\x04\x04\x15"...
-		move.l	#$40E00002,($C00004).l
+		move.l	#$40E00002,VCTRL
 		jsr	NemDec.w
 		move	#$2700,sr
 		lea	(ARTNEM_SpikesVer).l,a0	; "�\x10�\x03\x03\x16;%\x1B5\x1CF:T\fr�\x03\x02\x17}�\a|�\x04\v�\x06<�\x05\x1A\x16=�\x03\x04�"...
-		move.l	#$7EE00001,($C00004).l
+		move.l	#$7EE00001,VCTRL
 		jsr	NemDec.w
 		move	#$2700,sr
 		lea	(ARTNEM_SpikesHoz).l,a0	; "�8�\x04\a\x15\x14&24\bE\x1AV3e\x18r�\x03\x02\x167'vWywr�\x04\x06\x1687tGwW"...
-		move.l	#$77E00001,($C00004).l
+		move.l	#$77E00001,VCTRL
 		jsr	NemDec.w
 
 locret_8C7E:				; CODE XREF: sub_8C30+4j
@@ -7493,7 +7494,7 @@ loc_8C86:				; CODE XREF: ROM:00008CB6j
 		swap	d0
 		andi.w	#3,d0
 		move	#$2700,sr
-		move.l	d0,($C00004).l
+		move.l	d0,VCTRL
 		jsr	NemDec.w
 		movem.l	(sp)+,d0-a6
 		bra.s	loc_8C86
@@ -7583,7 +7584,7 @@ loc_8E1C:				; CODE XREF: ROM:loc_8E14j
 		move.w	#$C000,d3
 		jsr	sub_86E.w
 		lea	ARTNEM_MenuSelectorBorder(pc),a0 ; "�\x10�\x04\f\x14\rq�\x05\x1ED\x0Er\x02\xFF�Vv\xFFD\x01�]���@\n�*�����\x1B�\x1D"...
-		move.l	#$4C000000,($C00004).l
+		move.l	#$4C000000,VCTRL
 		jsr	NemDec.w
 		move.l	#$42000003,d0
 		lea	MAPUNC_SelectMenu_1(pc),a1 ; "7777777003\x11\x12\x13\x14\x15\x16\x17\x11\x120"
@@ -7591,11 +7592,11 @@ loc_8E1C:				; CODE XREF: ROM:loc_8E14j
 		moveq	#3,d2
 		move.w	#0,d3
 		jsr	MapScreen.w
-		move.l	#$78000003,($C00004).l
-		move.l	#$1000001,($C00000).l
-		move.l	#$1E00A8,($C00000).l
-		move.l	#$A00F00,($C00000).l
-		move.l	#$600110,($C00000).l
+		move.l	#$78000003,VCTRL
+		move.l	#$1000001,VDATA
+		move.l	#$1E00A8,VDATA
+		move.l	#$A00F00,VDATA
+		move.l	#$600110,VDATA
 		move.w	#0,($FFFFD834).w
 		move.w	#0,($FFFFD836).w
 		move.l	#$EEE,($FFFFD3E4).w
@@ -7654,11 +7655,11 @@ loc_8F3A:				; CODE XREF: ROM:00008F12j
 		cmpi.w	#9,d1
 		bcc.s	loc_8F84
 		moveq	#0,d0
-		move.l	#$66100003,($C00004).l
+		move.l	#$66100003,VCTRL
 		move.w	#$17F,d1
 
 loc_8F50:				; CODE XREF: ROM:00008F56j
-		move.l	d0,($C00000).l
+		move.l	d0,VDATA
 		dbf	d1,loc_8F50
 		move.l	#$6B100003,d0
 		lea	MAPUNC_SelectMenu_4(pc),a1 ; "&)%,$!442!#4)/."
@@ -7676,11 +7677,11 @@ loc_8F50:				; CODE XREF: ROM:00008F56j
 
 loc_8F84:				; CODE XREF: ROM:00008F3Ej
 		moveq	#0,d0
-		move.l	#$66100003,($C00004).l
+		move.l	#$66100003,VCTRL
 		move.w	#$17F,d1
 
 loc_8F94:				; CODE XREF: ROM:00008F9Aj
-		move.l	d0,($C00000).l
+		move.l	d0,VDATA
 		dbf	d1,loc_8F94
 		move.l	#$6B100003,d0
 		lea	MAPUNC_SelectMenu_5(pc),a1 ; "30%#)!,34!'%"
@@ -7755,12 +7756,12 @@ loc_9022:				; CODE XREF: ROM:00009018j
 
 loc_903C:				; DATA XREF: ROM:00008E1Eo
 		movem.l	d0-a6,-(sp)
-		move.l	#$7C000003,($C00004).l
+		move.l	#$7C000003,VCTRL
 		move.w	($FFFFD830).w,d0
 		neg.w	d0
-		move.w	d0,($C00000).l
-		move.l	#$78000003,($C00004).l
-		move.w	($FFFFD832).w,($C00000).l
+		move.w	d0,VDATA
+		move.l	#$78000003,VCTRL
+		move.w	($FFFFD832).w,VDATA
 		jsr	sub_96E.w
 		move.b	($FFFFC93C).w,d0
 		bsr.s	sub_9098
@@ -7849,9 +7850,9 @@ loc_93DC:				; CODE XREF: ROM:loc_93D4j
 		moveq	#0,d2
 		move.w	#0,d3
 		jsr	MapScreen.w
-		move.l	#$78000003,($C00004).l
-		move.l	#0,($C00000).l
-		move.l	#0,($C00000).l
+		move.l	#$78000003,VCTRL
+		move.l	#0,VDATA
+		move.l	#0,VDATA
 		move.w	#$80,($FFFFD82A).w ; '�'
 		move	#$2300,sr
 		addq.w	#4,($FFFFD824).w
@@ -7905,8 +7906,8 @@ loc_94A8:				; CODE XREF: ROM:000094A4j
 
 loc_94B4:				; DATA XREF: ROM:000093DEo
 		movem.l	d0-a6,-(sp)
-		move.l	#$78000003,($C00004).l
-		move.w	($FFFFD832).w,($C00000).l
+		move.l	#$78000003,VCTRL
+		move.w	($FFFFD832).w,VDATA
 		jsr	sub_96E.w
 		move.b	($FFFFC93C).w,d0
 		bsr.s	sub_94F6
@@ -9164,11 +9165,11 @@ loc_9F90:
 loc_9FAC:				; CODE XREF: ROM:loc_9F90j
 		move.b	$1E(a1),d0
 		beq.s	locret_9FF8
-		move.w	#$8B00,($C00004).l
+		move.w	#$8B00,VCTRL
 		move.w	#$8B00,($FFFFC9CE).w
 		moveq	#0,d0
-		move.l	#$40000010,($C00004).l
-		move.l	d0,($C00000).l
+		move.l	#$40000010,VCTRL
+		move.l	d0,VDATA
 		moveq	#0,d1
 		move.w	($FFFFD81C).w,d1
 		lsl.l	#2,d1
@@ -9176,8 +9177,8 @@ loc_9FAC:				; CODE XREF: ROM:loc_9F90j
 		ori.w	#$4000,d1
 		swap	d1
 		andi.w	#3,d1
-		move.l	d1,($C00004).l
-		move.l	d0,($C00000).l
+		move.l	d1,VCTRL
+		move.l	d0,VDATA
 		move.b	#0,$1E(a1)
 
 locret_9FF8:				; CODE XREF: ROM:00009FB0j
@@ -9187,14 +9188,14 @@ locret_9FF8:				; CODE XREF: ROM:00009FB0j
 loc_9FFA:				; CODE XREF: ROM:00009F94j
 		move.b	$1E(a1),d0
 		beq.s	loc_A014
-		move.w	#$8B00,($C00004).l
+		move.w	#$8B00,VCTRL
 		move.w	#$8B00,($FFFFC9CE).w
 		move.b	#0,$1E(a1)
 
 loc_A014:				; CODE XREF: ROM:00009FFEj
-		move.l	#$40000010,($C00004).l
-		move.w	$10(a1),($C00000).l
-		move.w	($FFFFCA2E).w,($C00000).l
+		move.l	#$40000010,VCTRL
+		move.w	$10(a1),VDATA
+		move.w	($FFFFCA2E).w,VDATA
 		moveq	#0,d0
 		move.w	($FFFFD81C).w,d0
 		lsl.l	#2,d0
@@ -9202,41 +9203,41 @@ loc_A014:				; CODE XREF: ROM:00009FFEj
 		ori.w	#$4000,d0
 		swap	d0
 		andi.w	#3,d0
-		move.l	d0,($C00004).l
+		move.l	d0,VCTRL
 		dc.b $30, $29, $00, $00	; move.w  0(a1),d0
 		neg.w	d0
-		move.w	d0,($C00000).l
+		move.w	d0,VDATA
 		move.w	($FFFFCA1E).w,d1
 		neg.w	d1
-		move.w	d1,($C00000).l
+		move.w	d1,VDATA
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_A062:				; CODE XREF: ROM:00009F98j
 		move.b	$1E(a1),d0
 		beq.s	loc_A07C
-		move.w	#$8B03,($C00004).l
+		move.w	#$8B03,VCTRL
 		move.w	#$8B03,($FFFFC9CE).w
 		move.b	#0,$1E(a1)
 
 loc_A07C:				; CODE XREF: ROM:0000A066j
-		move.l	#$40000010,($C00004).l
-		move.w	$10(a1),($C00000).l
-		move.w	($FFFFCA2E).w,($C00000).l
+		move.l	#$40000010,VCTRL
+		move.w	$10(a1),VDATA
+		move.w	($FFFFCA2E).w,VDATA
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_A098:				; CODE XREF: ROM:00009F9Cj
 		move.b	$1E(a1),d0
 		beq.s	loc_A0B2
-		move.w	#$8B04,($C00004).l
+		move.w	#$8B04,VCTRL
 		move.w	#$8B04,($FFFFC9CE).w
 		move.b	#0,$1E(a1)
 
 loc_A0B2:				; CODE XREF: ROM:0000A09Cj
 		lea	($FFFFCDDE).w,a3
-		lea	($C00000).l,a4
-		move.l	#$40000010,($C00004).l
+		lea	VDATA,a4
+		move.l	#$40000010,VCTRL
 		bsr.w	sub_A14E
 		moveq	#0,d0
 		move.w	($FFFFD81C).w,d0
@@ -9245,27 +9246,27 @@ loc_A0B2:				; CODE XREF: ROM:0000A09Cj
 		ori.w	#$4000,d0
 		swap	d0
 		andi.w	#3,d0
-		move.l	d0,($C00004).l
+		move.l	d0,VCTRL
 		dc.b $30, $29, $00, $00	; move.w  0(a1),d0
 		neg.w	d0
-		move.w	d0,($C00000).l
+		move.w	d0,VDATA
 		move.w	($FFFFCA1E).w,d1
 		neg.w	d1
-		move.w	d1,($C00000).l
+		move.w	d1,VDATA
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_A0FE:				; CODE XREF: ROM:00009FA4j
 		move.b	$1E(a1),d0
 		beq.s	loc_A118
-		move.w	#$8B07,($C00004).l
+		move.w	#$8B07,VCTRL
 		move.w	#$8B07,($FFFFC9CE).w
 		move.b	#0,$1E(a1)
 
 loc_A118:				; CODE XREF: ROM:0000A102j
 		lea	($FFFFCDDE).w,a3
-		lea	($C00000).l,a4
-		move.l	#$40000010,($C00004).l
+		lea	VDATA,a4
+		move.l	#$40000010,VCTRL
 		bsr.w	sub_A14E
 		rts
 ; ---------------------------------------------------------------------------
@@ -13722,7 +13723,7 @@ locret_C9DC:				; CODE XREF: sub_C8CA+4j
 
 sub_C9DE:				; CODE XREF: ROM:0000803Cp
 					; ROM:00008B2Ep
-		lea	($C00004).l,a6
+		lea	VCTRL,a6
 		move.w	#$100,($A11100).l
 
 loc_C9EC:				; CODE XREF: sub_C9DE+16j
@@ -18164,12 +18165,12 @@ loc_F0DE:				; CODE XREF: sub_EFD4+6j
 		move.w	#$A000,d1
 		move.w	#$800,d2
 		jsr	sub_5E8.w
-		move.l	#$7F000003,($C00004).l
+		move.l	#$7F000003,VCTRL
 		move.l	#$DDDDDDDD,d0
 		moveq	#$3F,d1	; '?'
 
 loc_F106:				; CODE XREF: sub_EFD4+138j
-		move.l	d0,($C00000).l
+		move.l	d0,VDATA
 		dbf	d1,loc_F106
 		move	#$2300,sr
 		rts
@@ -18521,41 +18522,41 @@ loc_F3B6:
 ; ---------------------------------------------------------------------------
 
 loc_F3C6:				; CODE XREF: ROM:loc_F3B6j
-		move.w	#$9100,($C00004).l
+		move.w	#$9100,VCTRL
 		move.w	#$9100,($FFFFC9DA).w
-		move.w	#$9200,($C00004).l
+		move.w	#$9200,VCTRL
 		move.w	#$9200,($FFFFC9DC).w
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_F3E4:				; CODE XREF: ROM:0000F3B8j
-		move.w	#$9193,($C00004).l
+		move.w	#$9193,VCTRL
 		move.w	#$9193,($FFFFC9DA).w
-		move.w	#$929C,($C00004).l
+		move.w	#$929C,VCTRL
 		move.w	#$929C,($FFFFC9DC).w
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_F402:				; CODE XREF: ROM:0000F3BAj
-		move.w	#$9192,($C00004).l
+		move.w	#$9192,VCTRL
 		move.w	#$9192,($FFFFC9DA).w
-		move.w	#$9299,($C00004).l
+		move.w	#$9299,VCTRL
 		move.w	#$9299,($FFFFC9DC).w
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_F420:				; CODE XREF: ROM:0000F3BCj
-		move.w	#$9191,($C00004).l
+		move.w	#$9191,VCTRL
 		move.w	#$9191,($FFFFC9DA).w
-		move.w	#$9296,($C00004).l
+		move.w	#$9296,VCTRL
 		move.w	#$9296,($FFFFC9DC).w
 		rts
 ; ---------------------------------------------------------------------------
 
 loc_F43E:				; CODE XREF: ROM:0000F3BEj
-		move.w	#$9190,($C00004).l
+		move.w	#$9190,VCTRL
 		move.w	#$9190,($FFFFC9DA).w
-		move.w	#$9293,($C00004).l
+		move.w	#$9293,VCTRL
 		move.w	#$9293,($FFFFC9DC).w
 		rts
 
@@ -19103,8 +19104,8 @@ loc_F90C:				; CODE XREF: sub_F904+4j
 		ori.w	#$4000,d3
 		swap	d3
 		andi.w	#3,d3
-		lea	($C00000).l,a1
-		move.w	#$8F80,($C00004).l
+		lea	VDATA,a1
+		move.w	#$8F80,VCTRL
 		move.w	#$8F80,($FFFFC9D6).w
 		move.l	d3,4(a1)
 		lsr.l	#1,d1
@@ -19112,7 +19113,7 @@ loc_F90C:				; CODE XREF: sub_F904+4j
 loc_F934:				; CODE XREF: sub_F904+32j
 		move.l	d0,(a1)
 		dbf	d1,loc_F934
-		move.w	#$8F02,($C00004).l
+		move.w	#$8F02,VCTRL
 		move.w	#$8F02,($FFFFC9D6).w
 		rts
 ; End of function sub_F904
