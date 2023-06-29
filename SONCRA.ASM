@@ -20094,7 +20094,6 @@ ARTUNC_SonicArms:
 	if *<$64000
 		dcb.b $64000-*,$FF
 	endif
-AL08:		;dcb.b $64000-AL08,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_TailsArms:
 	incbin	 Uncompressed\ArtuncTailsArms.bin	; Tails' Arms
@@ -20207,7 +20206,6 @@ Map_TailsFields:
 	if *<$6C000
 		dcb.b $6C000-*,$FF
 	endif
-AU01:		;dcb.b $6C000-AU01,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (0006C000 - 0006CE07)
 ; Striped out
@@ -20231,7 +20229,6 @@ AU01:		;dcb.b $6C000-AU01,$FF			; Aligned
 	if *<$70000
 		dcb.b $70000-*,$FF
 	endif
-AU02:		;dcb.b $70000-AU02,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (00070000 - 00071813)
 ; Striped out
@@ -20246,7 +20243,6 @@ AU02:		;dcb.b $70000-AU02,$FF			; Aligned
 	if *<$72000
 		dcb.b $72000-*,$FF
 	endif
-AU03:		;dcb.b $72000-AU03,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (00072000 - 00072763)
 ; Striped out
@@ -20261,7 +20257,6 @@ AU03:		;dcb.b $72000-AU03,$FF			; Aligned
 	if *<$74000
 		dcb.b $74000-*,$FF
 	endif
-AU04:		;dcb.b $74000-AU04,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (00074000 - 0007562F)
 ; Striped out
@@ -20276,7 +20271,6 @@ AU04:		;dcb.b $74000-AU04,$FF			; Aligned
 	if *<$76000
 		dcb.b $76000-*,$FF
 	endif
-AU05:		;dcb.b $76000-AU05,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (00076000 - 00076703)
 ; Striped out
@@ -20291,7 +20285,6 @@ AU05:		;dcb.b $76000-AU05,$FF			; Aligned
 	if *<$80000
 		dcb.b $80000-*,$FF
 	endif
-AU06:		;dcb.b $80000-AU06,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_Sonic:	incbin	Uncompressed\ArtuncSonic.bin
 		even
@@ -20313,7 +20306,6 @@ ARTUNC_Sonic:	incbin	Uncompressed\ArtuncSonic.bin
 	if *<$90000
 		dcb.b $90000-*,$FF
 	endif
-AU06_B:		;dcb.b $90000-AU06_B,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_SonicField:
 		incbin  Uncompressed\ArtuncSonicField.bin
@@ -20336,7 +20328,6 @@ ARTUNC_SonicField:
 	if *<$96000
 		dcb.b $96000-*,$FF
 	endif
-AU07:		;dcb.b $96000-AU07,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (00096000 - 00096703)
 ; Striped out
@@ -20351,7 +20342,6 @@ AU07:		;dcb.b $96000-AU07,$FF			; Aligned
 	if *<$98000
 		dcb.b $98000-*,$FF
 	endif
-AU08:		;dcb.b $98000-AU08,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_UnknownHud:
 		incbin	"Uncompressed\Artunc_UnknownHud.bin"
@@ -20374,7 +20364,6 @@ ARTUNC_UnknownHud:
 	if *<$A0000
 		dcb.b $A0000-*,$FF
 	endif
-AU08_B:		;dcb.b $A0000-AU08_B,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_Tails:	incbin	Uncompressed\ArtuncTails.bin
 		even
@@ -20387,7 +20376,6 @@ ARTUNC_Tails:	incbin	Uncompressed\ArtuncTails.bin
 	if *<$AC000
 		dcb.b $AC000-*,$FF
 	endif
-AU09:		;dcb.b $AC000-AU09,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000AC000 - 000AD1F9)
 ; Striped out
@@ -20402,7 +20390,6 @@ AU09:		;dcb.b $AC000-AU09,$FF			; Aligned
 	if *<$B0000
 		dcb.b $B0000-*,$FF
 	endif
-AU0A:		;dcb.b $B0000-AU0A,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ARTUNC_TailsField:
 		incbin  Uncompressed\ArtuncTailsField.bin
@@ -20425,7 +20412,6 @@ ARTUNC_TailsField:
 	if *<$B6000
 		dcb.b $B6000-*,$FF
 	endif
-AU0B:		;dcb.b $B6000-AU0B,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000B6000 - 000B6703)
 ; Striped out
@@ -20440,7 +20426,6 @@ AU0B:		;dcb.b $B6000-AU0B,$FF			; Aligned
 	if *<$C0000
 		dcb.b $C0000-*,$FF
 	endif
-AU0C:		;dcb.b $C0000-AU0C,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000C0000 - 000CA887)
 ; Striped out
@@ -20455,7 +20440,6 @@ AU0C:		;dcb.b $C0000-AU0C,$FF			; Aligned
 	if *<$CC000
 		dcb.b $CC000-*,$FF
 	endif
-AU0D:		;dcb.b $CC000-AU0D,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000CC000 - 000D58BF)
 ; Striped out
@@ -20470,7 +20454,6 @@ AU0D:		;dcb.b $CC000-AU0D,$FF			; Aligned
 	if *<$D6000
 		dcb.b $D6000-*,$FF
 	endif
-AU0E:		;dcb.b $D6000-AU0E,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000D6000 - 000D6703)
 ; Striped out
@@ -20485,7 +20468,6 @@ AU0E:		;dcb.b $D6000-AU0E,$FF			; Aligned
 	if *<$D8000
 		dcb.b $D8000-*,$FF
 	endif
-AU0F:		;dcb.b $D8000-AU0F,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000D8000 - 000DA3FF)
 ; Striped out
@@ -20500,7 +20482,6 @@ AU0F:		;dcb.b $D8000-AU0F,$FF			; Aligned
 	if *<$E0000
 		dcb.b $E0000-*,$FF
 	endif
-AU10:		;dcb.b $E0000-AU10,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000E0000 - 000E3067)
 ; Striped out
@@ -20515,7 +20496,6 @@ AU10:		;dcb.b $E0000-AU10,$FF			; Aligned
 	if *<$E4000
 		dcb.b $E4000-*,$FF
 	endif
-AU11:		;dcb.b $E4000-AU11,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000E4000 - 000E4EC7)
 ; Striped out
@@ -20530,7 +20510,6 @@ AU11:		;dcb.b $E4000-AU11,$FF			; Aligned
 	if *<$E6000
 		dcb.b $E6000-*,$FF
 	endif
-AU12:		;dcb.b $E6000-AU12,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000E6000 - 000EAC5F)
 ; Striped out
@@ -20545,7 +20524,6 @@ AU12:		;dcb.b $E6000-AU12,$FF			; Aligned
 	if *<$EC000
 		dcb.b $EC000-*,$FF
 	endif
-AU13:		;dcb.b $EC000-AU13,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000EC000 - 000ED1FF)
 ; Striped out
@@ -20560,7 +20538,6 @@ AU13:		;dcb.b $EC000-AU13,$FF			; Aligned
 	if *<$F0000
 		dcb.b $F0000-*,$FF
 	endif
-AU14:		;dcb.b $F0000-AU14,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000F0000 - 000F1813)
 ; Striped out
@@ -20575,7 +20552,6 @@ AU14:		;dcb.b $F0000-AU14,$FF			; Aligned
 	if *<$F2000
 		dcb.b $F2000-*,$FF
 	endif
-AU15:		;dcb.b $F2000-AU15,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000F2000 - 000F2763)
 ; Striped out
@@ -20590,7 +20566,6 @@ AU15:		;dcb.b $F2000-AU15,$FF			; Aligned
 	if *<$F4000
 		dcb.b $F4000-*,$FF
 	endif
-AU16:		;dcb.b $F4000-AU16,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000F4000 - 000F562F)
 ; Striped out
@@ -20605,7 +20580,6 @@ AU16:		;dcb.b $F4000-AU16,$FF			; Aligned
 	if *<$F6000
 		dcb.b $F6000-*,$FF
 	endif
-AU17:		;dcb.b $F6000-AU17,$FF			; Aligned
 ; ---------------------------------------------------------------------------
 ; Data Location (000F6000 - 000F6703)
 ; Striped out
