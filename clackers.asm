@@ -22,18 +22,43 @@ VCTRL    equ $C00004
 
 ; 68k vector table
 ; ----------------
-	dc.l $FF0200, EntryPoint, SpinLock, SpinLock
+	; initial stack location, entry point
+	dc.l $FF0200, EntryPoint
+
+	; error vectors
+	dc.l SpinLock  ; bus error
+	dc.l SpinLock  ; address error
+	dc.l SpinLock  ; illegal instruction
+	dc.l SpinLock  ; division by zero
+	dc.l SpinLock  ; CHK exception
+	dc.l SpinLock  ; TRAPV exception
+	dc.l SpinLock  ; Privilege violation
+	dc.l $FFFFC81E ; TRACE exception
+	dc.l $FFFFC812 ; Line-A emulator
+	dc.l $FFFFC818 ; Line-F emulator
+
+	; unused on the Mega Drive
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
-	dc.l SpinLock, $FFFFC81E, $FFFFC812, $FFFFC818
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+
+	; interrupt vectors
+	dc.l $FFFFC824 ; spurious interrupt
+	dc.l SpinLock  ; IRQ level 1
+	dc.l $FFFFC82A ; IRQ level 2 (external interrupt)
+	dc.l SpinLock  ; IRQ level 3
+	dc.l $FFFFC836 ; IRQ level 4 (h-blank interrupt)
+	dc.l SpinLock  ; IRQ level 5
+	dc.l $FFFFC830 ; IRQ level 6 (v-blank interrupt)
+	dc.l SpinLock  ; IRQ level 7
+
+	; trap vectors (usually not used on the Mega Drive)
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
-	dc.l $FFFFC824, SpinLock, $FFFFC82A, SpinLock
-	dc.l $FFFFC836, SpinLock, $FFFFC830, SpinLock
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
-	dc.l SpinLock, SpinLock, SpinLock, SpinLock
-	dc.l SpinLock, SpinLock, SpinLock, SpinLock
-	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+
+	; unused on the Mega Drive
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
 	dc.l SpinLock, SpinLock, SpinLock, SpinLock
