@@ -17,22 +17,22 @@
 
 ; 68k vector table
 ; ----------------
-	dc.l $FF0200, EntryPoint, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, $FFFFC81E, $FFFFC812, $FFFFC818
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l $FFFFC824, ErrorTrapper, $FFFFC82A, ErrorTrapper
-	dc.l $FFFFC836, ErrorTrapper, $FFFFC830, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
-	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l $FF0200, EntryPoint, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, $FFFFC81E, $FFFFC812, $FFFFC818
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l $FFFFC824, SpinLock, $FFFFC82A, SpinLock
+	dc.l $FFFFC836, SpinLock, $FFFFC830, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
+	dc.l SpinLock, SpinLock, SpinLock, SpinLock
 
 ; Mega Drive ROM header
 ; ---------------------
@@ -304,10 +304,10 @@ UnknownRout000:
 UnknownRout001:
 		rts						; return
 ; ---------------------------------------------------------------------------
-ErrorTrapper:
-		nop						; Delay
-		nop						; Delay
-		bra.s	ErrorTrapper				; Trap
+SpinLock:
+	nop
+	nop
+	bra.s   SpinLock ; loop forever
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
