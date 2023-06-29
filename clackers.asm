@@ -3546,13 +3546,13 @@ loc_1E0C:
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 CollisionArrayNorm:
-		incbin	Collision\CollisionArray_Normal.bin
+		incbin	data/CollisionArray_Normal.bin
 		even
 CollisionArrayRota:
-		incbin	Collision\CollisionArray_Rotated.bin
+		incbin	data/CollisionArray_Rotated.bin
 		even
 CurveResistMappings:
-		incbin	Collision\CurveAndResistanceMappings.bin
+		incbin	data/CurveAndResistanceMappings.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -4200,7 +4200,7 @@ word_4368:	dc.w 0
 		dc.w $6B4E
 		dc.w $F9
 		dc.w $6000
-PAL_Unknown_1:	incbin	Palettes\PalUnknown01.bin
+PAL_Unknown_1:	incbin	data/PalUnknown01.bin
 		even
 		dc.b $82, $83, $84, $85, $8D, $90, $87,	$8B, $8C, $91, $92, 0, $48, 0, $89, 8
 		dc.b 0,	$FF, $4A, $FF, $6A, $61, $69, $4E, 0, $8A, $4E,	0, $8B,	$4E, 0,	$CC
@@ -4228,7 +4228,7 @@ PAL_Unknown_1:	incbin	Palettes\PalUnknown01.bin
 		dc.b $23, 0, 0,	$4E, $D, $4C, $7F, $60,	$4E, $80, 0, $1B, $7E, 0, $22, $77
 		dc.b 0,	$1F, $FF, $72, $32, $D8, 2, 0, $E3, $4E, $10, $60, $60,	$4E, $70, $30
 		dc.b $D8, 2, 0,	$ED, $43, 0, $8D, $D3, $41, $D4, $1E, 0, $30, $51, $FF,	$4E
-PAL_Unknown_2:	incbin	Palettes\PalUnknown02.bin
+PAL_Unknown_2:	incbin	data/PalUnknown02.bin
 		even
 		dc.b $4E, $4E, $30, $D8, $4E, 0, $60, 0, $60, 0, $48, $41, 2, $21, $C8,	$4C
 		dc.b 1,	$46, $27, $70, $72, $74, $36, $C0, $4E,	8, $41,	2, $23,	$4C, 0,	0
@@ -4630,7 +4630,7 @@ Z80Lag:
 
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
-Z80:		incbin	Music\Z80.bin				; Zilog	Z80 ROM
+Z80:		incbin	data/Z80.bin				; Zilog	Z80 ROM
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -5838,9 +5838,9 @@ SegatoVDPRep:
 		rte					; return
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
-PAL_Segalogo:	incbin	Palettes\PalSegaLogo.bin	; palettes used in the Sega logo
+PAL_Segalogo:	incbin	data/PalSegaLogo.bin	; palettes used in the Sega logo
 		even
-ARTCRA_SegaLogo:incbin	CrackersComp\ArtcraSegaLogo.bin	; compressed Sega patterns
+ARTCRA_SegaLogo:incbin	data/ArtcraSegaLogo.bin	; compressed Sega patterns
 		even
 ; ---------------------------------------------------------------------------
 ; Unknown Data
@@ -5959,7 +5959,7 @@ loc_7462:
 		rts
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
-PAL_MainMenus:	incbin	Palettes\PalMainMenus.bin
+PAL_MainMenus:	incbin	data/PalMainMenus.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -6068,16 +6068,16 @@ sub_75BC:				; CODE XREF: ROM:00007594p
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ARTNEM_MainMenusText:
-		incbin  NemesisComp\ArtnemMainMenusText.bin
+		incbin  data/ArtnemMainMenusText.bin
 		even
 MAPUNC_TitleMenu_1:
-		incbin  Uncompressed\MapuncTitleMenu01.bin		; Uncompressed mappings	for the	title screen banner
+		incbin  data/MapuncTitleMenu01.bin		; Uncompressed mappings	for the	title screen banner
 		even			
 MAPUNC_TitleMenu_2:
-		incbin  Uncompressed\MapuncTitleMenu02.bin		; Uncompressed mappings	for the	title menu selection
+		incbin  data/MapuncTitleMenu02.bin		; Uncompressed mappings	for the	title menu selection
 		even
 MAPUNC_TitleMenu_3:
-		incbin  Uncompressed\MapuncTitleMenu03.bin		; Uncompressed mappings	for the	title menu (1ST	ROM 19940401)
+		incbin  data/MapuncTitleMenu03.bin		; Uncompressed mappings	for the	title menu (1ST	ROM 19940401)
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -6118,7 +6118,7 @@ Fields:
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 PAL_PrimaryColours_Field:
-		incbin	 Palettes\PalPrimaryColoursField.bin
+		incbin	 data/PalPrimaryColoursField.bin
 		even
 ; ---------------------------------------------------------------------------
 loc_7ED8:	dc.w $8230		; DATA XREF: ROM:00007E16o
@@ -7252,7 +7252,7 @@ loc_896C:
 		jsr	sub_F94A.l
 		bra.w	loc_89E0
 ; ---------------------------------------------------------------------------
-PAL_PrimaryColours:incbin  Palettes\PalPrimaryColours.bin ; DATA XREF: ROM:000088C8o
+PAL_PrimaryColours:incbin  data/PalPrimaryColours.bin ; DATA XREF: ROM:000088C8o
 		even
 loc_89C8:	dc.w $8230		; DATA XREF: ROM:000088A4o
 		dc.w $832C
@@ -7577,7 +7577,7 @@ loc_8D00:				; CODE XREF: ROM:00008D02j
 		dbf	d7,loc_8D00
 		rts
 ; ---------------------------------------------------------------------------
-PAL_TechnoTowerZone:incbin  Palettes\PalTechnoTowerZone.bin ; DATA XREF: ROM:00008CF0o
+PAL_TechnoTowerZone:incbin  data/PalTechnoTowerZone.bin ; DATA XREF: ROM:00008CF0o
 		even
 ; ---------------------------------------------------------------------------
 
@@ -7827,22 +7827,22 @@ sub_9098:				; CODE XREF: ROM:00009070p
 
 ; ---------------------------------------------------------------------------
 ARTNEM_MenuSelectorBorder:
-		incbin  NemesisComp\ArtnemMenuSelectorBorder.bin	; Selector Art for Select Menu screen
+		incbin  data/ArtnemMenuSelectorBorder.bin	; Selector Art for Select Menu screen
 		even
 MAPUNC_SelectMenu_1:
-		incbin  Uncompressed\MapuncSelectMenu01.bin		; Uncompressed mappings	for the	select menu (Top W? numbers that scroll)
+		incbin  data/MapuncSelectMenu01.bin		; Uncompressed mappings	for the	select menu (Top W? numbers that scroll)
 		even
 MAPUNC_SelectMenu_2:
-		incbin  Uncompressed\MapuncSelectMenu02.bin		; Uncompressed mappings for the select menu (World ? words)
+		incbin  data/MapuncSelectMenu02.bin		; Uncompressed mappings for the select menu (World ? words)
 		even
 MAPUNC_SelectMenu_3:
-		incbin  Uncompressed\MapuncSelectMenu03.bin		; Uncompressed mappings	for the	select menu (Attraction	LV.? words)
+		incbin  data/MapuncSelectMenu03.bin		; Uncompressed mappings	for the	select menu (Attraction	LV.? words)
 		even
 MAPUNC_SelectMenu_4:
-		incbin  Uncompressed\MapuncSelectMenu04.bin		; Uncompressed mappings	for the	select menu (Field/Attraction words)
+		incbin  data/MapuncSelectMenu04.bin		; Uncompressed mappings	for the	select menu (Field/Attraction words)
 		even
 MAPUNC_SelectMenu_5:
-		incbin  Uncompressed\MapuncSelectMenu05.bin		; Uncompressed mappings	for the	select menu (Special Stage word)
+		incbin  data/MapuncSelectMenu05.bin		; Uncompressed mappings	for the	select menu (Special Stage word)
 		even
 ; ---------------------------------------------------------------------------
 
@@ -8808,7 +8808,7 @@ SSZ_MapBGLocs:	dc.l MAPENI_SSZ16x16_BG	; DATA XREF: ROM:000096E0o
 					; "\b\f``\x01!`��@�@��`�\x16\t�\x01�\x06��L\v\x05�0L\a\x02�0@��`s"...
 		dc.l MAPENI_SSZ128x128_BG ; "\a\x01\x01��xh@�\t\x06�O\x10�\bb8D�\b�\x18�7D�)\f\"(��H��C\x15�"...
 		dc.l MAPENI_SSZLayout_BG ; "\v\x01\x02�� �h8\x16\r\x06��@�@��"
-PAL_SpeedSliderZone:incbin  Palettes\PalSpeedSliderZone.bin ; DATA XREF: ROM:0000968Ao
+PAL_SpeedSliderZone:incbin  data/PalSpeedSliderZone.bin ; DATA XREF: ROM:0000968Ao
 		even
 TTZ_ArtLocs:	dc.l ARTNEM_TTZ8x8_FG	; DATA XREF: ROM:000098BAo
 					; "�/�\x03\x14\a$\b5\x13F.U\x12gkt\x06�\x04\x03\x15\x18't8�X��\x064\x18��\x04\x02\x162"...
@@ -8858,7 +8858,7 @@ TTZ_MapBGLocs:	dc.l MAPENI_TTZ16x16_BG	; DATA XREF: ROM:000098F6o
 					; "\t\x0F@�`N�z�\a�\x03�\x16\x01p\tWа\x17_\x01��\x1B�L\a�R�\x05x��t�I"...
 		dc.l MAPENI_TTZ128x128_BG ; "\v\x01\x01��x*@\x03@�\x01��7�\x06�	�\x10\f�\x01R\x01� \x1BD\a�p\x10@�\x0E\r "...
 		dc.l MAPENI_TTZLayout_BG ; "\v\x03\x04���z� \x11�\x12\x14�P��\x02t\x01\x01Q� 0\x04�o�� 2=B\x06�B��"...
-PAL_TechnoTowerZoneUnused:incbin  Palettes\PalTechnoTowerZoneUnused.bin
+PAL_TechnoTowerZoneUnused:incbin  data/PalTechnoTowerZoneUnused.bin
 					; DATA XREF: ROM:000098A0o
 		even
 
@@ -19409,7 +19409,7 @@ UnkData:	dc.w $0000						; VRam location
 ; Data Location (0000FB82 - 0000FDAF)
 ; Striped out
 ; UnkData_0000FB82:
-		incbin	"UnknownCodes\UnknownData_0000FB82.bin"
+		incbin	"data/UnknownData_0000FB82.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -19419,7 +19419,7 @@ UnkData:	dc.w $0000						; VRam location
 ; Data Location (0000FDB0 - 0000FFFF)
 ; Striped out
 ; UnkData_0000FDB0:
-		incbin	"UnknownCodes\UnknownData_0000FDB0.bin"
+		incbin	"data/UnknownData_0000FDB0.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -19431,12 +19431,12 @@ UnkData:	dc.w $0000						; VRam location
 		dcb.b $10000-*,$FF
 	endif
 ; ---------------------------------------------------------------------------
-Music81:	incbin	Music\Music81.bin 		; AKA Electoria (Chaotix Featuring Knuckles)
-Music82:	incbin	Music\Music82.bin 		; AKA Walkin' (Chaotix Featuring Knuckles)
-Music83:	incbin	Music\Music83.bin		; AKA Hyper-Hyper (Chaotix Featuring Knuckles)
-Music84:	incbin	Music\Music84.bin		; AKA Evening Star (Chaotix Featuring Knuckles)
-Music85:	incbin	Music\Music85.bin		; AKA Moonrise (ChaotiX Featuring Knuckles)
-Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
+Music81:	incbin	data/Music81.bin 		; AKA Electoria (Chaotix Featuring Knuckles)
+Music82:	incbin	data/Music82.bin 		; AKA Walkin' (Chaotix Featuring Knuckles)
+Music83:	incbin	data/Music83.bin		; AKA Hyper-Hyper (Chaotix Featuring Knuckles)
+Music84:	incbin	data/Music84.bin		; AKA Evening Star (Chaotix Featuring Knuckles)
+Music85:	incbin	data/Music85.bin		; AKA Moonrise (ChaotiX Featuring Knuckles)
+Music86:	incbin	data/Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19445,7 +19445,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00011C66 - 00012250)
 ; Striped out
 ; UnkData_00011C66:
-		incbin	"UnknownCodes\UnknownData_00011C66.bin"
+		incbin	"data/UnknownData_00011C66.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19454,7 +19454,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00012251 - 000123FF)
 ; Striped out
 ; UnkData_00012251:
-		incbin	"UnknownCodes\UnknownData_00012251.bin"
+		incbin	"data/UnknownData_00012251.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19463,7 +19463,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00012400 - 00012FFF)
 ; Striped out
 ; UnkData_00012400:
-		incbin	"UnknownCodes\UnknownData_00012400.bin"
+		incbin	"data/UnknownData_00012400.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19472,7 +19472,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00013000 - 000145FF)
 ; Striped out
 ; UnkData_00013000:
-		incbin	"UnknownCodes\UnknownData_00013000.bin"
+		incbin	"data/UnknownData_00013000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19481,7 +19481,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00014600 - 000150FF)
 ; Striped out
 ; UnkData_00014600:
-		incbin	"UnknownCodes\UnknownData_00014600.bin"
+		incbin	"data/UnknownData_00014600.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19490,7 +19490,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00015100 - 0001562F)
 ; Striped out
 ; UnkData_00013000:
-		incbin	"UnknownCodes\UnknownData_00015100.bin"
+		incbin	"data/UnknownData_00015100.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19504,7 +19504,7 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 ; Data Location (00016000 - 00016703)
 ; Striped out
 ; UnkData_00016000:
-		incbin	"UnknownCodes\UnknownData_00016000.bin"
+		incbin	"data/UnknownData_00016000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19515,28 +19515,28 @@ Music86:	incbin	Music\Music86.bin		; AKA Game Over (Sonic The Hedgehog)
 		dcb.b $18000-*,$FF
 	endif
 
-Sound00:	incbin	Music\Sound00.bin		; Jump SFX (Same as Sonic CD FM NO.02)
-Sound01:	incbin	Music\Sound01.bin		; Cash Machine SFX (Same as Sonic 1 SFX C5)
-Sound02:	incbin	Music\Sound02.bin		; strange noise (it has modulation of "01 01 28 00", which the "00" makes the modulation do nothing) (this MAY be a "get hit by spikes" SFX unfinished)
-Sound03:	incbin	Music\Sound03.bin		; Bomb explode SFX (Same as Sonic 1 SFX C4)
-Sound04:	incbin	Music\Sound04.bin		; Skidding SFX (Same as Sonic 1 SFX A4)
-Sound05:	incbin	Music\Sound05.bin		; Ring Loss SFX (Same as Sonic 1 SFX C6)
-Sound06:	incbin	Music\Sound06.bin		; Ring Collect SFX (Same as Sonic 1 SFX B5) (Plays on Right Speaker, may very well be the "right to left to right" speaker thing)
-Sound07:	incbin	Music\Sound07.bin		; Destroy Badnik/Monitor SFX (Same a Sonic 3 SFX 3D)
-Sound08:	incbin	Music\Sound08.bin		; Spring SFX (Same as Sonic 3 SFX B1)
-Sound09:	incbin	Music\Sound09.bin		; Check Point SFX (Same as Sonic 1 SFX A1)
+Sound00:	incbin	data/Sound00.bin		; Jump SFX (Same as Sonic CD FM NO.02)
+Sound01:	incbin	data/Sound01.bin		; Cash Machine SFX (Same as Sonic 1 SFX C5)
+Sound02:	incbin	data/Sound02.bin		; strange noise (it has modulation of "01 01 28 00", which the "00" makes the modulation do nothing) (this MAY be a "get hit by spikes" SFX unfinished)
+Sound03:	incbin	data/Sound03.bin		; Bomb explode SFX (Same as Sonic 1 SFX C4)
+Sound04:	incbin	data/Sound04.bin		; Skidding SFX (Same as Sonic 1 SFX A4)
+Sound05:	incbin	data/Sound05.bin		; Ring Loss SFX (Same as Sonic 1 SFX C6)
+Sound06:	incbin	data/Sound06.bin		; Ring Collect SFX (Same as Sonic 1 SFX B5) (Plays on Right Speaker, may very well be the "right to left to right" speaker thing)
+Sound07:	incbin	data/Sound07.bin		; Destroy Badnik/Monitor SFX (Same a Sonic 3 SFX 3D)
+Sound08:	incbin	data/Sound08.bin		; Spring SFX (Same as Sonic 3 SFX B1)
+Sound09:	incbin	data/Sound09.bin		; Check Point SFX (Same as Sonic 1 SFX A1)
 ; ---------------------------------------------------------------------------
 ; these SFX below play Nothing (this plays F2 strait away and does nothing)
 ; however they have the same SMPS Instrument in each of them ("blurrr.. (buzzer) noise with static")
 ; I'm asuming these are just simply blank SFX slots ready to be used when the sound
 ; programmers needed them.
 ; ---------------------------------------------------------------------------
-Sound0A:	incbin	Music\Sound0A.bin
-Sound0B:	incbin	Music\Sound0B.bin
-Sound0C:	incbin	Music\Sound0C.bin
-Sound0D:	incbin	Music\Sound0D.bin
-Sound0E:	incbin	Music\Sound0E.bin
-Sound0F:	incbin	Music\Sound0F.bin
+Sound0A:	incbin	data/Sound0A.bin
+Sound0B:	incbin	data/Sound0B.bin
+Sound0C:	incbin	data/Sound0C.bin
+Sound0D:	incbin	data/Sound0D.bin
+Sound0E:	incbin	data/Sound0E.bin
+Sound0F:	incbin	data/Sound0F.bin
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19547,7 +19547,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (00018341 - 00018740)
 ; Striped out
 ; UnkData_00018341:
-		incbin	"UnknownCodes\UnknownData_00018341.bin"
+		incbin	"data/UnknownData_00018341.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19556,7 +19556,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (00018741 - 0001C98F)
 ; Striped out
 ; UnkData_00018741:
-		incbin	"UnknownCodes\UnknownData_00018741.bin"
+		incbin	"data/UnknownData_00018741.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19565,7 +19565,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (0001C990 - 0001CD8F)
 ; Striped out
 ; UnkData_0001C990:
-		incbin	"UnknownCodes\UnknownData_0001C990.bin"
+		incbin	"data/UnknownData_0001C990.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19574,7 +19574,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (0001CD90 - 0001F761)
 ; Striped out
 ; UnkData_0001CD90:
-		incbin	"UnknownCodes\UnknownData_0001CD90.bin"
+		incbin	"data/UnknownData_0001CD90.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19584,7 +19584,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (0001F762 - 0001FB61)
 ; Striped out
 ; UnkData_0001F762:
-		incbin	"UnknownCodes\UnknownData_0001F762.bin"
+		incbin	"data/UnknownData_0001F762.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19593,7 +19593,7 @@ Sound0F:	incbin	Music\Sound0F.bin
 ; Data Location (0001FB62 - 0001FFFF)
 ; Striped out
 ; UnkData_0001FB62:
-		incbin	"UnknownCodes\UnknownData_0001FB62.bin"
+		incbin	"data/UnknownData_0001FB62.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19603,20 +19603,20 @@ Sound0F:	incbin	Music\Sound0F.bin
 		dcb.b $20000-*,$FF
 	endif
 
-PCM_01_Beat:	incbin	Music\PCM01.bin			; DAC 81 (Beat Sample)
+PCM_01_Beat:	incbin	data/PCM01.bin			; DAC 81 (Beat Sample)
 		even
-PCM_02_Snare:	incbin	Music\PCM02.bin			; DAC 82 (Snare Sample)
+PCM_02_Snare:	incbin	data/PCM02.bin			; DAC 82 (Snare Sample)
 		even
-PCM_03_Tim_Tom:	incbin	Music\PCM03.bin			; DAC 83-85 [Hi to Low pitches] (Timpani/Tom-beat Sample)
+PCM_03_Tim_Tom:	incbin	data/PCM03.bin			; DAC 83-85 [Hi to Low pitches] (Timpani/Tom-beat Sample)
 		even
 ; ---------------------------------------------------------------------------
 ; these two samples are read in the Z80 table and can be heard when note 86
 ; and 87 are triggered in the SMPS music (however they are not used in any of
 ; the SMPS music)
 ; ---------------------------------------------------------------------------
-PCM_04_Letsgo:	incbin	Music\PCM04.bin			; DAC 86 (Unknown voice "Let's Go" or "Ley'k Go" in Japanese accent)
+PCM_04_Letsgo:	incbin	data/PCM04.bin			; DAC 86 (Unknown voice "Let's Go" or "Ley'k Go" in Japanese accent)
 		even
-PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in Japanese accent)
+PCM_05_Hey:	incbin	data/PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in Japanese accent)
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -19626,7 +19626,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (000244A2 - 000247EF)
 ; Striped out
 ; UnkData_000244A2:
-		incbin	"UnknownCodes\UnknownData_000244A2.bin"
+		incbin	"data/UnknownData_000244A2.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19635,7 +19635,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (000247F0 - 00026009)
 ; Striped out
 ; UnkData_000247F0:
-		incbin	"UnknownCodes\UnknownData_000247F0.bin"
+		incbin	"data/UnknownData_000247F0.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19644,7 +19644,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (0002600A - 00028844)
 ; Striped out
 ; UnkData_0002600A:
-		incbin	"UnknownCodes\UnknownData_0002600A.bin"
+		incbin	"data/UnknownData_0002600A.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19653,7 +19653,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (00028845 - 0002A222)
 ; Striped out
 ; UnkData_00028845:
-		incbin	"UnknownCodes\UnknownData_00028845.bin"
+		incbin	"data/UnknownData_00028845.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19662,7 +19662,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (0002A223 - 0002AC5F)
 ; Striped out
 ; UnkData_0002A223:
-		incbin	"UnknownCodes\UnknownData_0002A223.bin"
+		incbin	"data/UnknownData_0002A223.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19677,7 +19677,7 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 ; Data Location (0002C000 - 0002D1FF)
 ; Striped out
 ; UnkData_0002C000:
-		incbin	"UnknownCodes\UnknownData_0002C000.bin"
+		incbin	"data/UnknownData_0002C000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19690,91 +19690,91 @@ PCM_05_Hey:	incbin	Music\PCM05.bin			; DAC 87 (Unknown voice "Hey!" or "Hez!" in
 
 ; ---------------------------------------------------------------------------
 ARTUNC_HUD:
-	incbin	Uncompressed\ArtuncHud.bin			; Hud Patterns
+	incbin	data/ArtuncHud.bin			; Hud Patterns
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_RingTetherStarsUnused:
-	incbin  NemesisComp\ArtnemRingTetherStarsUnused.bin	; unused Ring tether stars
+	incbin  data/ArtnemRingTetherStarsUnused.bin	; unused Ring tether stars
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_SSZ8x8_FG:
-	incbin	 NemesisComp\ArtnemSSZ8x8FG.bin			; 8x8 tiles for SSZ FG
+	incbin	 data/ArtnemSSZ8x8FG.bin			; 8x8 tiles for SSZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZ16x16_FG:
-	incbin  EnigmaComp\MapeniSSZ16x16FG.bin			; 16x16 blocks for SSZ FG
+	incbin  data/MapeniSSZ16x16FG.bin			; 16x16 blocks for SSZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZ128x128_FG:
-	incbin  EnigmaComp\MapeniSSZ128x128FG.bin		; 128x128 chunks for SSZ FG
+	incbin  data/MapeniSSZ128x128FG.bin		; 128x128 chunks for SSZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZLayout_FG:
-	incbin  EnigmaComp\MapeniSSZLayoutFG.bin		; Layout for SSZ FG
+	incbin  data/MapeniSSZLayoutFG.bin		; Layout for SSZ FG
 	even
 ; ---------------------------------------------------------------------------
 COL_SSZPrimary:	
-	incbin	Collision\ColSSZPrimary.bin			; Primary Collisions for SSZ
+	incbin	data/ColSSZPrimary.bin			; Primary Collisions for SSZ
 	even
 ; ---------------------------------------------------------------------------
 COL_SSZSecondary:
-	incbin	 Collision\ColSSZSecondary.bin			; Secondary Collisions for SSZ
+	incbin data/ColSSZSecondary.bin			; Secondary Collisions for SSZ
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_SSZ8x8_BG:
-	incbin	 NemesisComp\ArtnemSSZ8x8BG.bin			; 8x8 tiles for SSZ BG
+	incbin data/ArtnemSSZ8x8BG.bin			; 8x8 tiles for SSZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZ16x16_BG:
-	incbin  EnigmaComp\MapeniSSZ16x16BG.bin			; 16x16 blocks for SSZ BG
+	incbin data/MapeniSSZ16x16BG.bin			; 16x16 blocks for SSZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZ128x128_BG:
-	incbin  EnigmaComp\MapeniSSZ128x128BG.bin		; 128x128 chunks for SSZ BG
+	incbin data/MapeniSSZ128x128BG.bin		; 128x128 chunks for SSZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_SSZLayout_BG:
-	incbin  EnigmaComp\MapeniSSZLayoutBG.bin		; Layout for SSZ BG
+	incbin data/MapeniSSZLayoutBG.bin		; Layout for SSZ BG
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_TTZ8x8_FG:
-	incbin	 NemesisComp\ArtnemTTZ8x8FG.bin			; 8x8 tiles for TTZ FG
+	incbin data/ArtnemTTZ8x8FG.bin			; 8x8 tiles for TTZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZ16x16_FG:
-	incbin  EnigmaComp\MapeniTTZ16x16FG.bin			; 16x16 blocks for TTZ FG
+	incbin data/MapeniTTZ16x16FG.bin			; 16x16 blocks for TTZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZ128x128_FG:
-	incbin  EnigmaComp\MapeniTTZ128x128FG.bin		; 128x128 chunks for TTZ FG
+	incbin data/MapeniTTZ128x128FG.bin		; 128x128 chunks for TTZ FG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZLayout_FG:
-	incbin  EnigmaComp\MapeniTTZLayoutFG.bin		; Layout for TTZ FG
+	incbin data/MapeniTTZLayoutFG.bin		; Layout for TTZ FG
 	even
 ; ---------------------------------------------------------------------------
 COL_TTZPrimary:	
-	incbin	Collision\ColTTZPrimary.bin			; Primary Collisions for TTZ
+	incbin data/ColTTZPrimary.bin			; Primary Collisions for TTZ
 	even
 ; ---------------------------------------------------------------------------
 COL_TTZSecondary:
-	incbin	 Collision\ColTTZSecondary.bin			; Secondary Collisions for TTZ
+	incbin data/ColTTZSecondary.bin			; Secondary Collisions for TTZ
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_TTZ8x8_BG:
-	incbin	 NemesisComp\ArtnemTTZ8x8BG.bin			; 8x8 tiles for TTZ BG
+	incbin	 data/ArtnemTTZ8x8BG.bin			; 8x8 tiles for TTZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZ16x16_BG:
-	incbin  EnigmaComp\MapeniTTZ16x16BG.bin			; 16x16 blocks for TTZ BG
+	incbin  data/MapeniTTZ16x16BG.bin			; 16x16 blocks for TTZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZ128x128_BG:
-	incbin  EnigmaComp\MapeniTTZ128x128BG.bin		; 128x128 chunks for TTZ BG
+	incbin  data/MapeniTTZ128x128BG.bin		; 128x128 chunks for TTZ BG
 	even
 ; ---------------------------------------------------------------------------
 MAPENI_TTZLayout_BG:
-	incbin  EnigmaComp\MapeniTTZLayoutBG.bin		; Layout for TTZ BG
+	incbin  data/MapeniTTZLayoutBG.bin		; Layout for TTZ BG
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -19799,90 +19799,90 @@ MAPENI_TTZLayout_BG:
 ARTUNC_TitleCardBGAndPause:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG1.bin	; Yellow Pause Bar
+		incbin  data/Artunc_TCBG1.bin	; Yellow Pause Bar
 ; ---------------------------------------------------------------------------
 TCBG_Tile2:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG2.bin	; Title Card - Black tiles that appear to hide the level design before the title card appears
+		incbin  data/Artunc_TCBG2.bin	; Title Card - Black tiles that appear to hide the level design before the title card appears
 ; ---------------------------------------------------------------------------
 TCBG_Tile3:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG3.bin	; Title Card - Dark Gray/Blue Bar that comes down first
+		incbin  data/Artunc_TCBG3.bin	; Title Card - Dark Gray/Blue Bar that comes down first
 ; ---------------------------------------------------------------------------
 TCBG_Tile4:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG4.bin	; Title Card - Light Gray/Blue Bar that appears from top right
+		incbin  data/Artunc_TCBG4.bin	; Title Card - Light Gray/Blue Bar that appears from top right
 ; ---------------------------------------------------------------------------
 TCBG_Tile5:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG5.bin	; Title Card - Pure White tiles that appear from the left
+		incbin  data/Artunc_TCBG5.bin	; Title Card - Pure White tiles that appear from the left
 ; ---------------------------------------------------------------------------
 TCBG_Tile6:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG6.bin	; Title Card - Faded Blue tiles that appear from the bottom that move over the Pure White tiles
+		incbin  data/Artunc_TCBG6.bin	; Title Card - Faded Blue tiles that appear from the bottom that move over the Pure White tiles
 ; ---------------------------------------------------------------------------
 TCBG_Tile7:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG7.bin	; ??? (Unused)
+		incbin  data/Artunc_TCBG7.bin	; ??? (Unused)
 ; ---------------------------------------------------------------------------
 TCBG_Tile8:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG8.bin	; Title Card - Dark Blue tiles on bottom right
+		incbin  data/Artunc_TCBG8.bin	; Title Card - Dark Blue tiles on bottom right
 ; ---------------------------------------------------------------------------
 TCBG_Tile9:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBG9.bin	; Title Card - Light blue tiles that appear on the bottom and right
+		incbin  data/Artunc_TCBG9.bin	; Title Card - Light blue tiles that appear on the bottom and right
 ; ---------------------------------------------------------------------------
 TCBG_TileA:
 		dc.w $0020				; 20 Bytes (1 tile)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBGA.bin	; Title Card - Red thin bar that appears from the right
+		incbin  data/Artunc_TCBGA.bin	; Title Card - Red thin bar that appears from the right
 ; ---------------------------------------------------------------------------
 TCBG_TileB:
 		dc.w $0040				; 40 Bytes (2 tiles)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBGB.bin	; Title Card - White Zig-Zag tiles that appear overlapping the light Gray/Blue Bar that appears from top right
+		incbin  data/Artunc_TCBGB.bin	; Title Card - White Zig-Zag tiles that appear overlapping the light Gray/Blue Bar that appears from top right
 ; ---------------------------------------------------------------------------
 TCBG_TileC:
 		dc.w $0040				; 40 Bytes (2 tiles)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBGC.bin	; Title Card - White Zig-Zag tiles that appear overlapping middle section
+		incbin  data/Artunc_TCBGC.bin	; Title Card - White Zig-Zag tiles that appear overlapping middle section
 ; ---------------------------------------------------------------------------
 TCBG_TileD:
 		dc.w $0040				; 40 Bytes (2 tiles)
 		dc.l $00000006				; jump forward 6 bytes to art
-		incbin  Uncompressed\Artunc_TCBGD.bin	; Title Card - Light blue Zig-Zag tiles (The Light blue tiles overlapping the white Zig-Zag tiles basically)
+		incbin  data/Artunc_TCBGD.bin	; Title Card - Light blue Zig-Zag tiles (The Light blue tiles overlapping the white Zig-Zag tiles basically)
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Nemesis Compressed Object Patterns
 ; ---------------------------------------------------------------------------
 ARTNEM_Springs:
-	incbin	NemesisComp\ArtnemSprings.bin			; Red and Yellow Springs
+	incbin	data/ArtnemSprings.bin			; Red and Yellow Springs
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_SpikesHoz:
-	incbin	NemesisComp\ArtnemSpikesHorizontal.bin		; Horizontal Spikes
+	incbin	data/ArtnemSpikesHorizontal.bin		; Horizontal Spikes
 	even
 ; ---------------------------------------------------------------------------
 ARTNEM_SpikesVer:
-	incbin	NemesisComp\ArtnemSpikesVertical.bin		; Vertical Spikes
+	incbin	data/ArtnemSpikesVertical.bin		; Vertical Spikes
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Sprite Mappings - "Sprngs" and "Spikes" Objects
 ; ---------------------------------------------------------------------------
-	include	"PLCMAPANI\MAP_Springs.asm"		; Spring Mappings
-	include	"PLCMAPANI\MAP_Spikes.asm"		; Spikes Mappings
+	include	"data/MAP_Springs.asm"		; Spring Mappings
+	include	"data/MAP_Spikes.asm"		; Spikes Mappings
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -19982,11 +19982,11 @@ unk_42364:		dc.b $FF,$A0,$FF,$AC,$FF,$B8
 ; ===========================================================================
 ; --------------------------------------------------------------------------
 Objpos_SSZ:
-	incbin	Uncompressed\Objpos_SSZ.bin			; Speed Slider Zone's Object Position
+	incbin	data/Objpos_SSZ.bin			; Speed Slider Zone's Object Position
 	even
 ; ---------------------------------------------------------------------------
 Objpos_TTZ:
-	incbin	Uncompressed\Objpos_TTZ.bin			; Techno Tower Zone's Object Position
+	incbin	data/Objpos_TTZ.bin			; Techno Tower Zone's Object Position
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -19996,39 +19996,39 @@ Objpos_TTZ:
 ; uncompressed Art (Used for Animating)
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedFanFG1:
-	incbin	 Uncompressed\ArtuncTTZAnimatedFanFG1.bin	; Fan tiles 1
+	incbin	 data/ArtuncTTZAnimatedFanFG1.bin	; Fan tiles 1
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedFanFG2:
-	incbin	 Uncompressed\ArtuncTTZAnimatedFanFG2.bin	; Fan tiles 2
+	incbin	 data/ArtuncTTZAnimatedFanFG2.bin	; Fan tiles 2
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG1:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG1.bin	; Turbine tiles 1
+	incbin  data/ArtuncTTZAnimatedTurbineBG1.bin	; Turbine tiles 1
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG2:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG2.bin	; Turbine tiles 2
+	incbin  data/ArtuncTTZAnimatedTurbineBG2.bin	; Turbine tiles 2
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG3:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG3.bin	; Turbine tiles 3
+	incbin  data/ArtuncTTZAnimatedTurbineBG3.bin	; Turbine tiles 3
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG4:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG4.bin	; Turbine tiles 4
+	incbin  data/ArtuncTTZAnimatedTurbineBG4.bin	; Turbine tiles 4
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG5:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG5.bin	; Turbine tiles 5
+	incbin  data/ArtuncTTZAnimatedTurbineBG5.bin	; Turbine tiles 5
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG6:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG6.bin	; Turbine tiles 6
+	incbin  data/ArtuncTTZAnimatedTurbineBG6.bin	; Turbine tiles 6
 	even
 ; ---------------------------------------------------------------------------
 ARTUNC_TTZAnimatedTurbineBG7:
-	incbin  Uncompressed\ArtuncTTZAnimatedTurbineBG7.bin	; Turbine tiles 7
+	incbin  data/ArtuncTTZAnimatedTurbineBG7.bin	; Turbine tiles 7
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20036,27 +20036,27 @@ ARTUNC_TTZAnimatedTurbineBG7:
 ; Multiple Uncompressed Art (some of these are unused)
 ; ---------------------------------------------------------------------------
 AniArt_Combi:							; "COMBI" (Unused)
-	incbin	Uncompressed\Artunc_Combi_Un.bin
+	incbin	data/Artunc_Combi_Un.bin
 AniArt_Limits:							; "LIMITS" (Unused)
-	incbin	Uncompressed\Artunc_Limits_Un.bin
+	incbin	data/Artunc_Limits_Un.bin
 AniArt_StripBlock:						; Striped Block (Unused)
-	incbin	Uncompressed\Artunc_StripBlock_Un.bin
+	incbin	data/Artunc_StripBlock_Un.bin
 AniArt_Score:							; "SCORE" (Unused)
-	incbin	Uncompressed\Artunc_Score_Un.bin
+	incbin	data/Artunc_Score_Un.bin
 AniArt_Rings:							; "RINGS" (Unused)
-	incbin	Uncompressed\Artunc_Rings_Un.bin
+	incbin	data/Artunc_Rings_Un.bin
 AniArt_SLTime:							; "/TIME" (Unused)
-	incbin	Uncompressed\Artunc_SLTime_Un.bin
+	incbin	data/Artunc_SLTime_Un.bin
 AniArt_Hud1to9_Sym:						; "0" to "9" Hud (Exclaimation Mark, and Minute/Second Symbol)
-	incbin	Uncompressed\Artunc_Hud0to9_Sym.bin
+	incbin	data/Artunc_Hud0to9_Sym.bin
 AniArt_RingSprites:						; Ring Sprites
-	incbin	Uncompressed\Artunc_Spark_Ring.bin
+	incbin	data/Artunc_Spark_Ring.bin
 AniArt_Tether:							; Tether Star Sprites
-	incbin	Uncompressed\Artunc_Tether.bin
+	incbin	data/Artunc_Tether.bin
 AniArt_MultiStars:						; Multiple Stars (Unused)
-	incbin	Uncompressed\Artunc_MultipleStars_Un.bin
+	incbin	data/Artunc_MultipleStars_Un.bin
 AniArt_MiliSymbol:						; "''" (Second/Mili-Second Symbol)
-	incbin	Uncompressed\Artunc_Hud_Sym2.bin
+	incbin	data/Artunc_Hud_Sym2.bin
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20064,28 +20064,28 @@ AniArt_MiliSymbol:						; "''" (Second/Mili-Second Symbol)
 ; ---------------------------------------------------------------------------
 
 PAL_RainbowField:
-	incbin	 Palettes\PalRainbowField.bin			; Palettes for Rainbow Field
+	incbin	 data/PalRainbowField.bin			; Palettes for Rainbow Field
 	even
 ARTCRA_RainbowField8x8:
-	incbin  CrackersComp\ArtcraRainbowField.bin		; 8x8 tiles for Rainbow Field
+	incbin  data/ArtcraRainbowField.bin		; 8x8 tiles for Rainbow Field
 	even
 MAPUNC_RainbowFieldFG:
-	incbin  Uncompressed\MapuncRainbowFieldFG.bin		; Screen Map Codes for Rainbow Field FG
+	incbin  data/MapuncRainbowFieldFG.bin		; Screen Map Codes for Rainbow Field FG
 	even
 MAPUNC_RainbowFieldBG:
-	incbin  Uncompressed\MapuncRainbowFieldBG.bin		; Screen Map Codes for Rainbow Field BG
+	incbin	data/MapuncRainbowFieldBG.bin		; Screen Map Codes for Rainbow Field BG
 	even
 PAL_ElectricField:
-	incbin  Palettes\PalElectricField.bin			; Palettes for Electric Field
+	incbin  data/PalElectricField.bin			; Palettes for Electric Field
 	even
 ARTCRA_ElectricField8x8:
-	incbin	CrackersComp\ArtcraElectricField.bin		; 8x8 tiles for Electric Field
+	incbin	data/ArtcraElectricField.bin		; 8x8 tiles for Electric Field
 	even
 MAPUNC_ElectricFieldFG:
-	incbin  Uncompressed\MapuncElectricFieldFG.bin		; Screen Map Codes for Electric Field FG
+	incbin  data/MapuncElectricFieldFG.bin		; Screen Map Codes for Electric Field FG
 	even
 MAPUNC_ElectricFieldBG:
-	incbin  Uncompressed\MapuncElectricFieldBG.bin		; Screen Map Codes for Electric Field BG
+	incbin  data/MapuncElectricFieldBG.bin		; Screen Map Codes for Electric Field BG
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20098,7 +20098,7 @@ MAPUNC_ElectricFieldBG:
 ; Data Location (00054460 - 00025A3FF)
 ; Striped out
 ; UnkData_00054460:
-		incbin	"UnknownCodes\UnknownData_00054460.bin"
+		incbin	"data/UnknownData_00054460.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20110,7 +20110,7 @@ MAPUNC_ElectricFieldBG:
 	endif
 
 ARTUNC_SonicArms:
-	incbin	 Uncompressed\ArtuncSonicArms.bin	; Sonic's Arms
+	incbin	 data/ArtuncSonicArms.bin	; Sonic's Arms
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20123,7 +20123,7 @@ ARTUNC_SonicArms:
 	endif
 ; ---------------------------------------------------------------------------
 ARTUNC_TailsArms:
-	incbin	 Uncompressed\ArtuncTailsArms.bin	; Tails' Arms
+	incbin	 data/ArtuncTailsArms.bin	; Tails' Arms
 	even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20131,90 +20131,90 @@ ARTUNC_TailsArms:
 ; PLC, Mappings & Main Index Block - Sonic's Arm
 ; ---------------------------------------------------------------------------
 PLCMAP_SonArm_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_SonicArm.asm"
+	include	"data/PLCMAP_IndxBlck_SonicArm.asm"
 ; ---------------------------------------------------------------------------
 PLC_SonicArm:
-	include	"PLCMAPANI\PLC_SonicArm.asm"
+	include	"data/PLC_SonicArm.asm"
 ; ---------------------------------------------------------------------------
 Map_SonicArm:
-	include	"PLCMAPANI\MAP_SonicArm.asm"
+	include	"data/MAP_SonicArm.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Animation, PLC, Mappings & Main Index Block - Sonic
 ; ---------------------------------------------------------------------------
 ANI_Sonic:
-	include	"PLCMAPANI\ANI_Sonic.asm"
+	include	"data/ANI_Sonic.asm"
 ; ---------------------------------------------------------------------------
 PLCMAP_Sonic_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_Sonic.asm"
+	include	"data/PLCMAP_IndxBlck_Sonic.asm"
 ; ---------------------------------------------------------------------------
 PLC_Sonic:
-	include	"PLCMAPANI\PLC_Sonic.asm"
+	include	"data/PLC_Sonic.asm"
 ; ---------------------------------------------------------------------------
 MAP_Sonic:
-	include	"PLCMAPANI\MAP_Sonic.asm"
+	include	"data/MAP_Sonic.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; PLC, Mappings & Main Index Block - Tails' Arm
 ; ---------------------------------------------------------------------------
 PLCMAP_TalArm_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_TailsArm.asm"
+	include	"data/PLCMAP_IndxBlck_TailsArm.asm"
 ; ---------------------------------------------------------------------------
 PLC_TailsArm:
-	include	"PLCMAPANI\PLC_TailsArm.asm"
+	include	"data/PLC_TailsArm.asm"
 ; ---------------------------------------------------------------------------
 MAP_TailsArm:
-	include	"PLCMAPANI\MAP_TailsArm.asm"
+	include	"data/MAP_TailsArm.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Animation, PLC, Mappings & Main Index Block - Tails
 ; ---------------------------------------------------------------------------
 ANI_Tails:
-	include	"PLCMAPANI\ANI_Tails.asm"
+	include	"data/ANI_Tails.asm"
 ; ---------------------------------------------------------------------------
 PLCMAP_Tails_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_Tails.asm"
+	include	"data/PLCMAP_IndxBlck_Tails.asm"
 ; ---------------------------------------------------------------------------
 PLC_Tails:
-	include	"PLCMAPANI\PLC_Tails.asm"
+	include	"data/PLC_Tails.asm"
 ; ---------------------------------------------------------------------------
 MAP_Tails:
-	include	"PLCMAPANI\MAP_Tails.asm"
+	include	"data/MAP_Tails.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Animation, PLC, Mappings & Main Index Block - Sonic Fields
 ; ---------------------------------------------------------------------------
 ANI_SonicFields:
-	include	"PLCMAPANI\ANI_SonicFields.asm"
+	include	"data/ANI_SonicFields.asm"
 ; ---------------------------------------------------------------------------
 PLCMAP_SonicFields_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_SonicFields.asm"
+	include	"data/PLCMAP_IndxBlck_SonicFields.asm"
 ; ---------------------------------------------------------------------------
 PLC_SonicFields:
-	include	"PLCMAPANI\PLC_SonicFields.asm"
+	include	"data/PLC_SonicFields.asm"
 ; ---------------------------------------------------------------------------
 Map_SonicFields:
-	include	"PLCMAPANI\MAP_SonicFields.asm"
+	include	"data/MAP_SonicFields.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Animation, PLC, Mappings & Main Index Block - Tails Fields
 ; ---------------------------------------------------------------------------
 ANI_TailsFields:
-	include	"PLCMAPANI\ANI_TailsFields.asm"
+	include	"data/ANI_TailsFields.asm"
 ; ---------------------------------------------------------------------------
 PLCMAP_TailsFields_MainIndex:
-	include	"PLCMAPANI\PLCMAP_IndxBlck_TailsFields.asm"
+	include	"data/PLCMAP_IndxBlck_TailsFields.asm"
 ; ---------------------------------------------------------------------------
 PLC_TailsFields:
-	include	"PLCMAPANI\PLC_TailsFields.asm"
+	include	"data/PLC_TailsFields.asm"
 ; ---------------------------------------------------------------------------
 Map_TailsFields:
-	include	"PLCMAPANI\MAP_TailsFields.asm"
+	include	"data/MAP_TailsFields.asm"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20223,7 +20223,7 @@ Map_TailsFields:
 ; Data Location (00068FD6 - 0006AC5F)
 ; Striped out
 ; UnkData_00068FD6:
-		incbin	"UnknownCodes\UnknownData_00068FD6.bin"
+		incbin	"data/UnknownData_00068FD6.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20237,7 +20237,7 @@ Map_TailsFields:
 ; Data Location (0006C000 - 0006CE07)
 ; Striped out
 ; UnkData_0006C000:
-		incbin	"UnknownCodes\UnknownData_0006C000.bin"
+		incbin	"data/UnknownData_0006C000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20246,7 +20246,7 @@ Map_TailsFields:
 ; Data Location (0006CE08 - 0006D1FF)
 ; Striped out
 ; UnkData_0006CE08:
-		incbin	"UnknownCodes\UnknownData_0006CE08.bin"
+		incbin	"data/UnknownData_0006CE08.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20260,7 +20260,7 @@ Map_TailsFields:
 ; Data Location (00070000 - 00071813)
 ; Striped out
 ; UnkData_00070000:
-		incbin	"UnknownCodes\UnknownData_00070000.bin"
+		incbin	"data/UnknownData_00070000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20274,7 +20274,7 @@ Map_TailsFields:
 ; Data Location (00072000 - 00072763)
 ; Striped out
 ; UnkData_00072000:
-		incbin	"UnknownCodes\UnknownData_00072000.bin"
+		incbin	"data/UnknownData_00072000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20288,7 +20288,7 @@ Map_TailsFields:
 ; Data Location (00074000 - 0007562F)
 ; Striped out
 ; UnkData_00074000:
-		incbin	"UnknownCodes\UnknownData_00074000.bin"
+		incbin	"data/UnknownData_00074000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20302,7 +20302,7 @@ Map_TailsFields:
 ; Data Location (00076000 - 00076703)
 ; Striped out
 ; UnkData_00076000:
-		incbin	"UnknownCodes\UnknownData_00076000.bin"
+		incbin	"data/UnknownData_00076000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20313,7 +20313,7 @@ Map_TailsFields:
 		dcb.b $80000-*,$FF
 	endif
 ; ---------------------------------------------------------------------------
-ARTUNC_Sonic:	incbin	Uncompressed\ArtuncSonic.bin
+ARTUNC_Sonic:	incbin	data/ArtuncSonic.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20323,7 +20323,7 @@ ARTUNC_Sonic:	incbin	Uncompressed\ArtuncSonic.bin
 ; Data Location (0008C0A0 - 00090000)
 ; Striped out
 ; UnkData_0008C0A0:
-		incbin	"UnknownCodes\UnknownData_0008C0A0.bin"
+		incbin	"data/UnknownData_0008C0A0.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20335,7 +20335,7 @@ ARTUNC_Sonic:	incbin	Uncompressed\ArtuncSonic.bin
 	endif
 ; ---------------------------------------------------------------------------
 ARTUNC_SonicField:
-		incbin  Uncompressed\ArtuncSonicField.bin
+		incbin  data/ArtuncSonicField.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20345,7 +20345,7 @@ ARTUNC_SonicField:
 ; Data Location (00093B20 - 0009562F)
 ; Striped out
 ; UnkData_00093B20:
-		incbin	"UnknownCodes\UnknownData_00093B20.bin"
+		incbin	"data/UnknownData_00093B20.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20359,7 +20359,7 @@ ARTUNC_SonicField:
 ; Data Location (00096000 - 00096703)
 ; Striped out
 ; UnkData_00096000:
-		incbin	"UnknownCodes\UnknownData_00096000.bin"
+		incbin	"data/UnknownData_00096000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20371,7 +20371,7 @@ ARTUNC_SonicField:
 	endif
 ; ---------------------------------------------------------------------------
 ARTUNC_UnknownHud:
-		incbin	"Uncompressed\Artunc_UnknownHud.bin"
+		incbin	"data/Artunc_UnknownHud.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20381,7 +20381,7 @@ ARTUNC_UnknownHud:
 ; Data Location (00098740 - 0009FFFF)
 ; Striped out
 ; UnkData_00098740:
-		incbin	"UnknownCodes\UnknownData_00098740.bin"
+		incbin	"data/UnknownData_00098740.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20392,7 +20392,7 @@ ARTUNC_UnknownHud:
 		dcb.b $A0000-*,$FF
 	endif
 ; ---------------------------------------------------------------------------
-ARTUNC_Tails:	incbin	Uncompressed\ArtuncTails.bin
+ARTUNC_Tails:	incbin	data/ArtuncTails.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20407,7 +20407,7 @@ ARTUNC_Tails:	incbin	Uncompressed\ArtuncTails.bin
 ; Data Location (000AC000 - 000AD1F9)
 ; Striped out
 ; UnkData_000AC000:
-		incbin	"UnknownCodes\UnknownData_000AC000.bin"
+		incbin	"data/UnknownData_000AC000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20419,7 +20419,7 @@ ARTUNC_Tails:	incbin	Uncompressed\ArtuncTails.bin
 	endif
 ; ---------------------------------------------------------------------------
 ARTUNC_TailsField:
-		incbin  Uncompressed\ArtuncTailsField.bin
+		incbin  data/ArtuncTailsField.bin
 		even
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
@@ -20429,7 +20429,7 @@ ARTUNC_TailsField:
 ; Data Location (000B3820 - 000B562F)
 ; Striped out
 ; UnkData_000B3820:
-		incbin	"UnknownCodes\UnknownData_000B3820.bin"
+		incbin	"data/UnknownData_000B3820.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20443,7 +20443,7 @@ ARTUNC_TailsField:
 ; Data Location (000B6000 - 000B6703)
 ; Striped out
 ; UnkData_000B6000:
-		incbin	"UnknownCodes\UnknownData_000B6000.bin"
+		incbin	"data/UnknownData_000B6000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20457,7 +20457,7 @@ ARTUNC_TailsField:
 ; Data Location (000C0000 - 000CA887)
 ; Striped out
 ; UnkData_000C0000:
-		incbin	"UnknownCodes\UnknownData_000C0000.bin"
+		incbin	"data/UnknownData_000C0000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20471,7 +20471,7 @@ ARTUNC_TailsField:
 ; Data Location (000CC000 - 000D58BF)
 ; Striped out
 ; UnkData_000CC000:
-		incbin	"UnknownCodes\UnknownData_000CC000.bin"
+		incbin	"data/UnknownData_000CC000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20485,7 +20485,7 @@ ARTUNC_TailsField:
 ; Data Location (000D6000 - 000D6703)
 ; Striped out
 ; UnkData_000D6000:
-		incbin	"UnknownCodes\UnknownData_000D6000.bin"
+		incbin	"data/UnknownData_000D6000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20499,7 +20499,7 @@ ARTUNC_TailsField:
 ; Data Location (000D8000 - 000DA3FF)
 ; Striped out
 ; UnkData_000D8000:
-		incbin	"UnknownCodes\UnknownData_000D8000.bin"
+		incbin	"data/UnknownData_000D8000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20513,7 +20513,7 @@ ARTUNC_TailsField:
 ; Data Location (000E0000 - 000E3067)
 ; Striped out
 ; UnkData_000E0000:
-		incbin	"UnknownCodes\UnknownData_000E0000.bin"
+		incbin	"data/UnknownData_000E0000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20527,7 +20527,7 @@ ARTUNC_TailsField:
 ; Data Location (000E4000 - 000E4EC7)
 ; Striped out
 ; UnkData_000E4000:
-		incbin	"UnknownCodes\UnknownData_000E4000.bin"
+		incbin	"data/UnknownData_000E4000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20541,7 +20541,7 @@ ARTUNC_TailsField:
 ; Data Location (000E6000 - 000EAC5F)
 ; Striped out
 ; UnkData_000E6000:
-		incbin	"UnknownCodes\UnknownData_000E6000.bin"
+		incbin	"data/UnknownData_000E6000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20555,7 +20555,7 @@ ARTUNC_TailsField:
 ; Data Location (000EC000 - 000ED1FF)
 ; Striped out
 ; UnkData_000EC000:
-		incbin	"UnknownCodes\UnknownData_000EC000.bin"
+		incbin	"data/UnknownData_000EC000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20569,7 +20569,7 @@ ARTUNC_TailsField:
 ; Data Location (000F0000 - 000F1813)
 ; Striped out
 ; UnkData_000F0000:
-		incbin	"UnknownCodes\UnknownData_000F0000.bin"
+		incbin	"data/UnknownData_000F0000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20583,7 +20583,7 @@ ARTUNC_TailsField:
 ; Data Location (000F2000 - 000F2763)
 ; Striped out
 ; UnkData_000F2000:
-		incbin	"UnknownCodes\UnknownData_000F2000.bin"
+		incbin	"data/UnknownData_000F2000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20597,7 +20597,7 @@ ARTUNC_TailsField:
 ; Data Location (000F4000 - 000F562F)
 ; Striped out
 ; UnkData_000F4000:
-		incbin	"UnknownCodes\UnknownData_000F4000.bin"
+		incbin	"data/UnknownData_000F4000.bin"
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -20611,7 +20611,7 @@ ARTUNC_TailsField:
 ; Data Location (000F6000 - 000F6703)
 ; Striped out
 ; UnkData_000F6000:
-		incbin	"UnknownCodes\UnknownData_000F6000.bin"
+		incbin	"data/UnknownData_000F6000.bin"
 
 
 ; End of ROM
