@@ -15,6 +15,7 @@
 ;  ### #   ####  ### #  #  ##  #    ###
 
 
+
 ; 68k vector table
 ; ----------------
 	dc.l $FF0200, EntryPoint, SpinLock, SpinLock
@@ -55,18 +56,14 @@ Checksum:
 IOS:
 	dc.b "J               "
 ROM_Start:
-	dc.l 0
-ROM_Finish:
-	dc.l $200000-1
-RAM_Start:
-	dc.l $FF0000
-RAM_Finish:
-	dc.l $1000000-1
+	dc.l 0, $200000-1
+RAMRange:
+	dc.l $FF0000, $1000000-1
 SRAMSupport:
 	dc.b "    "
-SRAM_Start:
+SRAMStart:
 	dc.b "    "
-SRAM_Finish:
+SRAMFinish:
 	dc.b "    "
 ProductNotes:
 	dc.b "                                                    "
@@ -19229,18 +19226,19 @@ loc_FA06:
 		lea	TTZ_AniTileLocs(pc),a0
 		bra.w	loc_F974
 ; ---------------------------------------------------------------------------
-TTZ_AniTileLocs:dc.l $001023E0
-		dc.l $00000016
-		dc.l $29600101
-		dc.l $00000000
-		dc.l $04020100
-		dc.l ARTUNC_TTZAnimatedFanFG1
-		dc.l ARTUNC_TTZAnimatedFanFG2
-		dc.l $02040200
-		dc.l ARTUNC_TTZAnimatedTurbineBG1
-		dc.l ARTUNC_TTZAnimatedTurbineBG2
-		dc.l ARTUNC_TTZAnimatedTurbineBG3
-		dc.l ARTUNC_TTZAnimatedTurbineBG4
+TTZ_AniTileLocs:
+	dc.l $001023E0
+	dc.l $00000016
+	dc.l $29600101
+	dc.l $00000000
+	dc.l $04020100
+	dc.l ARTUNC_TTZAnimatedFanFG1
+	dc.l ARTUNC_TTZAnimatedFanFG2
+	dc.l $02040200
+	dc.l ARTUNC_TTZAnimatedTurbineBG1
+	dc.l ARTUNC_TTZAnimatedTurbineBG2
+	dc.l ARTUNC_TTZAnimatedTurbineBG3
+	dc.l ARTUNC_TTZAnimatedTurbineBG4
 ; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
