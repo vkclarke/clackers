@@ -19,38 +19,58 @@
 ; Sonic Crackers Disassembly
 ; ---------------------------------------------------------------------------
 
-RomStart:	dc.l $FF0200,		EntryPoint,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	$FFFFC81E,	$FFFFC812,	$FFFFC818
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l $FFFFC824,		ErrorTrapper,	$FFFFC82A,	ErrorTrapper
-		dc.l $FFFFC836,		ErrorTrapper,	$FFFFC830,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-		dc.l ErrorTrapper,	ErrorTrapper,	ErrorTrapper,	ErrorTrapper
-ConsoleName:	dc.b 'SEGA MEGA DRIVE '
-ProductDate:	dc.b '(C)SEGA 1994.JUL'
-LocalTitle:	dc.b 'SONIC STUDIUM                                   '
-InterTitle:	dc.b 'SONIC STUDIUM                                   '
-SerialNo:	dc.b 'GM XXXXXXXX-XX'
-Checksum:	dc.w $0000
-IOS:		dc.b 'J               '
-ROM_Start:	dc.l RomStart
-ROM_Finish:	dc.l $001FFFFF
-RAM_Start:	dc.l $00FF0000
-RAM_Finish:	dc.l $00FFFFFF
-SRAMSupport:	dc.l $20202020
-SRAM_Start:	dc.l $20202020
-SRAM_Finish:	dc.l $20202020
-ProductNotes:	dc.b '                                                    '
-RegionsFor:	dc.b 'JUE             '
+	dc.l $FF0200, EntryPoint, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, $FFFFC81E, $FFFFC812, $FFFFC818
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l $FFFFC824, ErrorTrapper, $FFFFC82A, ErrorTrapper
+	dc.l $FFFFC836, ErrorTrapper, $FFFFC830, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+	dc.l ErrorTrapper, ErrorTrapper, ErrorTrapper, ErrorTrapper
+ConsoleName:
+	dc.b "SEGA MEGA DRIVE "
+ProductDate:
+	dc.b "(C)SEGA 1994.JUL"
+LocalTitle:
+	dc.b "SONIC STUDIUM   "
+	dc.b "                "
+	dc.b "                "
+InterTitle:
+	dc.b "SONIC STUDIUM   "
+	dc.b "                "
+	dc.b "                "
+SerialNo:
+	dc.b "GM XXXXXXXX-XX"
+Checksum:
+	dc.w 0
+IOS:
+	dc.b "J               "
+ROM_Start:
+	dc.l 0
+ROM_Finish:
+	dc.l $200000-1
+RAM_Start:
+	dc.l $FF0000
+RAM_Finish:
+	dc.l $1000000-1
+SRAMSupport:
+	dc.b "    "
+SRAM_Start:
+	dc.b "    "
+SRAM_Finish:
+	dc.b "    "
+ProductNotes:
+	dc.b "                                                    "
+RegionsFor:
+	dc.b "JUE             "
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Beginning Entry Point of Game
@@ -4814,7 +4834,7 @@ loc_65D2:
 		bne.w	MultiReturn
 		move.w	#8,($FFFFD822).w			; set screen mode to title screen
 		clr.l	($FFFFD824).w				; clear sub mode
-		movea.l	(RomStart).w,sp
+		movea.l 0.w,sp
 		jmp	MAINPROG				; jump to Main game array
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -4827,7 +4847,7 @@ loc_65F6:
 		bne.w	MultiReturn
 		move.w	#8,($FFFFD822).w
 		clr.l	($FFFFD824).w
-		movea.l	(RomStart).w,sp
+		movea.l 0.w,sp
 		jmp	MAINPROG
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -5306,7 +5326,7 @@ loc_6A02:				; CODE XREF: ROM:000069EAj
 		move.w	#$FFA0,($FFFFCA60).w
 		move.w	#$18,($FFFFCDDE).w
 		move.w	#$14,($FFFFCDE0).w
-		lea	(RomStart).w,a4
+		lea     0.w,a4
 		move.w	#$80,d4	; '�'
 		moveq	#3,d6
 		moveq	#$F,d7
@@ -6314,7 +6334,7 @@ loc_810E:				; CODE XREF: sub_8064+B2j
 
 loc_813E:				; CODE XREF: sub_8064+D4j
 		move.w	#$18,($FFFFD822).w
-		movea.l	(RomStart).w,sp
+		movea.l	0.w,sp
 		jmp	MAINPROG
 ; ---------------------------------------------------------------------------
 
@@ -17622,7 +17642,7 @@ loc_EC34:				; CODE XREF: ROM:0000EC38j
 		move.w	d0,($FFFFD834).w
 		clr.w	($FFFFD836).w
 		move.w	#$10,($FFFFD822).w
-		movea.l	(RomStart).w,sp
+		movea.l 0.w,sp
 		jmp	MAINPROG
 ; ---------------------------------------------------------------------------
 
