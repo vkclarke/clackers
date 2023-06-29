@@ -14,8 +14,11 @@
 ; #    #   #  # #    # #  #    #       #
 ;  ### #   ####  ### #  #  ##  #    ###
 
-VDATA equ $C00000
-VCTRL equ $C00004
+Z80RAM   equ $A00000
+Z80BUS   equ $A11100
+Z80RESET equ $A11200
+VDATA    equ $C00000
+VCTRL    equ $C00004
 
 ; 68k vector table
 ; ----------------
@@ -150,9 +153,9 @@ SetupValues:
 	dc.w ($10000/4)-1 ; loop count for RAM clear ((size / 4) - 1)
 	dc.w $100
 
-	dc.l $A00000		; Z80 Ram start
-	dc.l $A11100		; Z80 Bus port
-	dc.l $A11200		; Z80 reset port
+	dc.l Z80RAM		; Z80 Ram start
+	dc.l Z80BUS		; Z80 Bus port
+	dc.l Z80RESET		; Z80 reset port
 	dc.l VDATA		; VDP Data port
 	dc.l VCTRL		; VDP Address port
 
@@ -287,7 +290,7 @@ Clear_VRam02:
 		dbf	d1,Clear_VRam02				; repeat til VDP stuff is cleared
 		lea	VDPSetupArray(pc),a0			; load VDP setup values address to a0
 		jsr	(sub_8D0).l
-		move.w	#$100,($A11200).l			; reset the Z80
+		move.w	#$100,Z80RESET			; reset the Z80
 		move	#$2000,sr				; set the stack register
 
 MAINPROGLOOP:
@@ -326,10 +329,10 @@ VDPSetupArray:	dc.w $8004,$8104	; Display mode
 ; ---------------------------------------------------------------------------
 
 VDPSetup_01:
-		move.w	#$100,($A11100).l			; stop the Z80
+		move.w	#$100,Z80BUS			; stop the Z80
 
 loc_450:
-		btst	#0,($A11100).l				; has the Z80 stopped?
+		btst	#0,Z80BUS				; has the Z80 stopped?
 		bne.s	loc_450					; if not, loop til stopped
 		move.w	#$8F02,VCTRL			; set VDP Increment
 		move.w	#$8F02,($FFFFC9D6).w
@@ -353,7 +356,7 @@ VDPClr_SetDMA:
 		move.w	(sp)+,(a0)
 		andi.w	#$FFEF,($FFFFC9BA).w
 		move.w	($FFFFC9BA).w,(a0)
-		move.w	#$0,($A11100).l				; start the Z80
+		move.w	#$0,Z80BUS				; start the Z80
 		move.l	#$C0000000,VCTRL			; set VDP in CRam write mode
 		move.w	($FFFFD3E4).w,-4(a0)			; move colour value in ram to VDP
 		rts						; return
@@ -372,10 +375,10 @@ VDPClearArr_02: even
 VDPSetup_02:
 		lea	VCTRL,a4				; load VDP address port to a4
 		moveq	#0,d3					; clear d3
-		move.w	#$100,($A11100).l			; stop the Z80
+		move.w	#$100,Z80BUS			; stop the Z80
 
 loc_4DC:
-		btst	#0,($A11100).l				; has the Z80 stopped?
+		btst	#0,Z80BUS				; has the Z80 stopped?
 		bne.s	loc_4DC					; if not, loop til stopped
 		move.w	($FFFFC9BA).w,d0
 		bset	#4,d0
@@ -419,7 +422,7 @@ loc_542:
 		move.w	($FFFFC9BA).w,d1
 		bclr	#4,d1
 		move.w	d1,(a4)
-		move.w	#0,($A11100).l				; start the Z80
+		move.w	#0,Z80BUS				; start the Z80
 		clr.w	($FFFFD4F8).w
 		rts						; return
 
@@ -536,10 +539,10 @@ sub_626:
 		rol.w	#2,d1
 		andi.w	#3,d1
 		lea	VCTRL,a0
-		move.w	#$100,($A11100).l
+		move.w	#$100,Z80BUS
 
 loc_64E:
-		btst	#0,($A11100).l
+		btst	#0,Z80BUS
 		bne.s	loc_64E
 		move.w	($FFFFC9BA).w,d4
 		bset	#4,d4
@@ -578,7 +581,7 @@ loc_64E:
 		move.w	($FFFFC9BA).w,d4
 		bclr	#4,d4
 		move.w	d4,(a0)
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 ; ===========================================================================
@@ -920,17 +923,17 @@ loc_8FA:
 ; ---------------------------------------------------------------------------
 
 ControlInit_Unused:
-		move.b	#$1,($A11200).l
-		move.w	#$100,($A11100).l		; stop the Z80
+		move.b	#$1,Z80RESET
+		move.w	#$100,Z80BUS		; stop the Z80
 
 CI_WaitZ80:
-		btst	#0,($A11100).l			; has the Z80 stopped?
+		btst	#0,Z80BUS			; has the Z80 stopped?
 		bne.s	CI_WaitZ80			; if not, loop til stopped
 		moveq	#$40,d0				; prepare Initiation value
 		move.b	d0,($A10009).l			; ...dump to Control Port A
 		move.b	d0,($A1000B).l			; ...Control Port B
 		move.b	d0,($A1000D).l			; ...and Extra port
-		move.w	#0,($A11100).l			; start the Z80
+		move.w	#0,Z80BUS			; start the Z80
 		rts					; return
 
 ; ===========================================================================
@@ -1019,7 +1022,7 @@ loc_9E6:	nop
 ; ===========================================================================
 
 sub_A06:
-		move.w	#$100,($A11100).l		; stop the Z80
+		move.w	#$100,Z80BUS		; stop the Z80
 		move.b	#$40,6(a0)
 		move.b	#$40,(a0)
 		moveq	#0,d0
@@ -1038,7 +1041,7 @@ sub_A06:
 		and.b	d1,d2
 		or.b	byte_A4A(pc,d2.w),d0
 		move.b	#$40,(a0)
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 ; ===========================================================================
@@ -1053,7 +1056,7 @@ byte_A4A:	dc.b $00,$01,$01,$01
 loc_A5A:
 		dc.b	$13,$7C,$00,$02,$00,$00		; move.b  #2,0(a1)
 		move.w	#$FF,d7
-		move.w	#$100,($A11100).l
+		move.w	#$100,Z80BUS
 		move.b	#$60,6(a0)
 		move.b	#$20,(a0)
 		btst	#4,(a0)
@@ -1070,7 +1073,7 @@ loc_A96:
 		btst	#4,(a0)
 		dbne	d7,loc_A96
 		beq.w	loc_C62
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 loc_AAC:
@@ -1081,7 +1084,7 @@ loc_AB4:
 		btst	#4,(a0)
 		dbne	d7,loc_AB4
 		beq.w	loc_C62
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 sub_ACA:
@@ -1115,7 +1118,7 @@ sub_ACA:
 ; ===========================================================================
 
 loc_B30:
-		move.w	#$100,($A11100).l			; stop the Z80
+		move.w	#$100,Z80BUS			; stop the Z80
 		move.b	#$40,6(a0)
 		moveq	#2,d3
 
@@ -1145,7 +1148,7 @@ loc_B6E:
 		move.b	#0,(a0)
 		swap	d2
 		dc.b	$14,$28,$00,$00				; move.b  0(a0),d2
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		dc.b	$13,$7C,$00,$01,$00,$00			; move.b  #1,0(a1)
 		move.w	d1,d0
 		swap	d1
@@ -1179,7 +1182,7 @@ loc_BDA:
 		move.w	d1,d0
 		swap	d1
 		move.b	#$40,(a0)
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		asl.b	#2,d0
 		andi.w	#$C0,d0
 		andi.w	#$3F,d1
@@ -1237,14 +1240,14 @@ loc_C5C:
 		rts
 
 loc_C62:
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		ori	#1,ccr
 		rts
 
 ; ===========================================================================
 
 loc_C70:
-		move.w	#$100,($A11100).l
+		move.w	#$100,Z80BUS
 		move.b	#$20,(a0)
 		move.b	#$60,6(a0)
 		move.w	#$FF,d7
@@ -1287,7 +1290,7 @@ loc_CFA:
 		btst	#4,(a0)
 		dbne	d7,loc_CFA
 		beq.w	loc_C62
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 loc_D10:
@@ -1307,7 +1310,7 @@ loc_D24:
 		btst	#4,(a0)
 		dbne	d7,loc_D24
 		beq.w	loc_C62
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 
 sub_D3A:
@@ -4572,14 +4575,14 @@ UR002Return:
 
 Z80Load:
 		move	#$2700,sr				; set the stack register (Stopping VBlank)
-		move.w	#$100,($A11100).l			; stop the Z80
+		move.w	#$100,Z80BUS			; stop the Z80
 
 Z80WaitStop:
-		btst	#0,($A11100).l				; has the Z80 stopped?
+		btst	#0,Z80BUS				; has the Z80 stopped?
 		bne.s	Z80WaitStop				; if not, loop til stopped
-		move.w	#$100,($A11200).l			; reset the Z80
+		move.w	#$100,Z80RESET			; reset the Z80
 		lea	Z80(pc),a0				; load Z80 location on Rom to a0
-		lea	($A00000).l,a1				; load current Z80 Ram
+		lea	Z80RAM,a1				; load current Z80 Ram
 		move.w	#$1215,d0				; set repeat times
 
 Z80DumpRep:
@@ -4590,13 +4593,13 @@ Z80WaitEnd:
 		move.b	#0,(a1)+				; clear the remaining Z80 space
 		cmpa.l	#$A02000,a1				; has the end of Z80 been reached?
 		bne.s	Z80WaitEnd				; if not, loop til it has
-		move.w	#0,($A11200).l
+		move.w	#0,Z80RESET
 		moveq	#$7F,d0					; set repeat times
 
 Z80Lag:
 		dbf	d0,Z80Lag				; loop? (I think this simply lags the system for a short while)
-		move.w	#0,($A11100).l				; start the Z80
-		move.w	#$100,($A11200).l			; reset the Z80
+		move.w	#0,Z80BUS				; start the Z80
+		move.w	#$100,Z80RESET			; reset the Z80
 		move	#$2300,sr				; set the stack register (Starting VBlank)
 		rts						; return
 
@@ -4611,13 +4614,13 @@ Z80:		incbin	Music\Z80.bin				; Zilog	Z80 ROM
 ; ---------------------------------------------------------------------------
 
 PlayMusic:
-		move.w	#$100,($A11100).l			; stop the Z80
+		move.w	#$100,Z80BUS			; stop the Z80
 
 PM_WaitZ80:
-		btst	#0,($A11100).l				; has the Z80 stopped?
+		btst	#0,Z80BUS				; has the Z80 stopped?
 		bne.s	PM_WaitZ80				; if not, loop til stopped
 		move.b	d0,($A01C0A).l				; save BGM number to Z80
-		move.w	#0,($A11100).l				; start the Z80
+		move.w	#0,Z80BUS				; start the Z80
 		rts						; return
 
 ; ===========================================================================
@@ -13724,10 +13727,10 @@ locret_C9DC:				; CODE XREF: sub_C8CA+4j
 sub_C9DE:				; CODE XREF: ROM:0000803Cp
 					; ROM:00008B2Ep
 		lea	VCTRL,a6
-		move.w	#$100,($A11100).l
+		move.w	#$100,Z80BUS
 
 loc_C9EC:				; CODE XREF: sub_C9DE+16j
-		btst	#0,($A11100).l
+		btst	#0,Z80BUS
 		bne.s	loc_C9EC
 		move.w	#$8154,(a6)
 
@@ -13752,7 +13755,7 @@ loc_CA16:				; CODE XREF: sub_C9DE+30j
 		addq.w	#2,a2
 		dbf	d4,loc_CA0C
 		move.w	#$8164,(a6)
-		move.w	#0,($A11100).l
+		move.w	#0,Z80BUS
 		rts
 ; End of function sub_C9DE
 
