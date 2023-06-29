@@ -1,3 +1,3 @@
 @echo off
-ASM68K.EXE /p SONCRA.ASM, clackers.mdrv
+ASM68K.EXE /p clackers.asm, clackers.mdrv
 pause
